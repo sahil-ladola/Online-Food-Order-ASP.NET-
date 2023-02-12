@@ -18,18 +18,19 @@ namespace FOODIVE.Customer
         {
             con.Open();
             lbluser.Text = Session["username"].ToString();
-            string select = "select * from register where email = '" + Session["email"].ToString()+ "'";
+            string select = "select * from register where email = '" + Session["email"].ToString() + "'";
             SqlCommand result = new SqlCommand(select, con);
             SqlDataReader dr = result.ExecuteReader();
-            if(dr.Read() == true)
+            if (dr.Read() == true)
             {
-                txtAddress.Text = dr["address"].ToString();
-                txtCity.Text = dr["city"].ToString();
-                txtEmail.Text = dr["email"].ToString();
-                txtFname.Text = dr["fname"].ToString();
-                txtLname.Text = dr["lname"].ToString();
-                txtMobileNum.Text = dr["mobile_num"].ToString();
-                txtPincode.Text = dr["pincode"].ToString();
+                Address.Text = dr["address"].ToString();
+                //.Text = dr["city"].ToString();
+                Email.Text = dr["email"].ToString();
+                //txtFname.Text = dr["fname"].ToString();
+                //txtLname.Text = dr["lname"].ToString();
+                Username.Text = dr["fname"] + " " + dr["lname"];
+                ContactNumber.Text = dr["mobile_num"].ToString();
+                //txtPincode.Text = dr["pincode"].ToString();
             }
         }
     }

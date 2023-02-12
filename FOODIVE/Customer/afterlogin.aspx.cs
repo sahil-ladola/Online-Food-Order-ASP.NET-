@@ -13,7 +13,7 @@ namespace FOODIVE.Customer
         {
             //if (!IsPostBack)
             //{
-                if (Session["login"] != "login")
+                if (Session["login"] == null )
                 {
                     Response.Redirect("Login.aspx");
                 }
