@@ -115,7 +115,7 @@
                         <asp:HyperLink ID="HyperLink3" class="nav-link text-decoration-none text-muted" runat="server" NavigateUrl="~/Customer/order.aspx">My Orders</asp:HyperLink>
                     </li>
                     <li class="nav-item">
-                        <asp:HyperLink ID="HyperLink4" class="nav-link text-decoration-none text-muted" runat="server" NavigateUrl="~/Logout.aspx">Logout</asp:HyperLink>
+                        <asp:HyperLink ID="HyperLink4" class="nav-link text-decoration-none text-muted" runat="server" NavigateUrl="~/Customer/Logout.aspx">Logout</asp:HyperLink>
                     </li>
                 </ul>
                 <div class="text-end">
@@ -157,18 +157,17 @@
                         <div class="px-4 mt-1">
                             <p class="fonts">Address :
                                 <asp:Label ID="Address" runat="server"></asp:Label></p>
-
                         </div>
 
-                        <%--<ul class="social-list">
-                            <li></li>
-                            <li></li>
+                       <%-- <ul class="social-list">
+                            <li><asp:Label ID="City" runat="server"></asp:Label></li>
+                            <li><asp:Label ID="Pincode" runat="server"></asp:Label></li>
                         </ul>--%>
 
                         <div class="buttons">
                             <form runat="server">
-                                <asp:Button ID="Button1" class="btn btn-outline-primary px-4" runat="server" PostBackUrl="~/Customer/update profile.aspx" Text="Update Profile" />
-                                <asp:Button ID="Button2" class="btn btn-primary px-4 ms-3" runat="server" PostBackUrl="~/Customer/change password.aspx" Text="Change Password" />
+                                <%--<asp:Button ID="Button1" class="btn btn-outline-primary px-4" runat="server" PostBackUrl="~/Customer/update profile.aspx" Text="Update Profile" />--%>
+                                <asp:Button ID="Button2" class="btn btn-primary px-4 ms-3" runat="server" PostBackUrl="~/Customer/edit profile.aspx" Text="Edit Profile" />
                             </form>
                         </div>
                     </div>

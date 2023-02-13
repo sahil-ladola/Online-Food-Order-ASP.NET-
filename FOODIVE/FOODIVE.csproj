@@ -402,6 +402,7 @@
     <Content Include="Customer\AddToCart.aspx" />
     <Content Include="Customer\afterlogin.aspx" />
     <Content Include="Customer\change password.aspx" />
+    <Content Include="Customer\edit profile.aspx" />
     <Content Include="Customer\order.aspx" />
     <Content Include="Customer\profile.aspx" />
     <Content Include="Customer\update profile.aspx" />
@@ -495,6 +496,13 @@
     </Compile>
     <Compile Include="Customer\change password.aspx.designer.cs">
       <DependentUpon>change password.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\edit profile.aspx.cs">
+      <DependentUpon>edit profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer\edit profile.aspx.designer.cs">
+      <DependentUpon>edit profile.aspx</DependentUpon>
     </Compile>
     <Compile Include="Customer\order.aspx.cs">
       <DependentUpon>order.aspx</DependentUpon>

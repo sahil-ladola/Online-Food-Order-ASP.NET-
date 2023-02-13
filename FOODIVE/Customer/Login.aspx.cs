@@ -36,6 +36,7 @@ namespace FOODIVE
                     txtPassword.Attributes["value"] = Request.Cookies["password"].Value;
                 }
             }
+            con.Close();
         }
 
         protected void btnlogin_Click(object sender, EventArgs e)
@@ -56,12 +57,13 @@ namespace FOODIVE
 
             ViewState["txtEmail"] = txtEmail.Text;
             ViewState["txtPassword"] = txtPassword.Text;
-
+            con.Open();
             string select = "select fname , lname , email , password , r_id from register where email = '" + txtEmail.Text+"' and password = '"+txtPassword.Text+"'";
             SqlCommand result = new SqlCommand(select, con);
             SqlDataReader dr = result.ExecuteReader();
             if (dr.Read() == true)
             {
+                Session["rid"] = dr["r_id"];
                 Session["login"] = "login";
                 Session["email"] = dr["email"];
                 Session["username"] = dr["fname"] + " " + dr["lname"];
@@ -71,6 +73,8 @@ namespace FOODIVE
             {
                 Page.ClientScript.RegisterStartupScript(this.GetType(), "script", "<script>alert('Invalid Credential!')</script>");
             }
+            dr.Close();
+            con.Close();
         }
     }
 }

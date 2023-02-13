@@ -24,13 +24,13 @@ namespace FOODIVE.Customer
             if (dr.Read() == true)
             {
                 Address.Text = dr["address"].ToString();
-                //.Text = dr["city"].ToString();
+                //City.Text = dr["city"].ToString();
                 Email.Text = dr["email"].ToString();
                 //txtFname.Text = dr["fname"].ToString();
                 //txtLname.Text = dr["lname"].ToString();
                 Username.Text = dr["fname"] + " " + dr["lname"];
                 ContactNumber.Text = dr["mobile_num"].ToString();
-                //txtPincode.Text = dr["pincode"].ToString();
+                //Pincode.Text = dr["pincode"].ToString();
             }
         }
     }
