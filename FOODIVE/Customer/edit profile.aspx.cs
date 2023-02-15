@@ -37,18 +37,31 @@ namespace FOODIVE.Customer
 
         protected void SaveProfile_Click(object sender, EventArgs e)
         {
+            Page.Validate("SaveProfile");
             con.Open();
-            string update = "update register set fname = '" + txtFirstName.Text + "' , lname = '" + txtLastName.Text + "' , mobile_num = '" + txtMobileNumber.Text + "', address = '" + txtAddress.Text + "', email = '" + txtEmail.Text + "', city = '" + txtCity.Text + "', pincode = '" + txtPincode.Text + "' where r_id = '" + Session["rid"] + "'";
+            string update = "update register set fname = '"+txtFirstName.Text+"' , lname = '"+txtLastName.Text+ "' , mobile_num='" + txtMobileNumber.Text + "' , address='" + txtAddress.Text + "' , email='" + txtEmail.Text + "' , city='" + txtCity.Text + "' , pincode='" + txtPincode.Text + "' where r_id='" + Session["rid"] + "'";
             SqlCommand com = new SqlCommand(update, con);
             if (com.ExecuteNonQuery() != 0)
             {
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "script", "<script>alert('Profile Updated Successfully !!!')</script>");
+                Response.Write(txtFirstName.Text);
+                Response.Write(txtLastName.Text);
+                Response.Write(txtMobileNumber.Text);
+                Response.Write(txtAddress.Text);
+                Response.Write(txtEmail.Text);
+                Response.Write(txtCity.Text);
+                Response.Write(txtPincode.Text);
+                //Page.ClientScript.RegisterStartupScript(this.GetType(), "script", "<script>alert('Profile Updated Successfully !!!')</script>");
+            }
+            else
+            {
+                Response.Write("can't update ");
             }
             con.Close();
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+            Page.Validate("ChangePassword");
             con.Open();
             string select = "select * from register where email = '" + Session["email"] + "'";
             SqlCommand result = new SqlCommand(select, con);
@@ -60,9 +73,11 @@ namespace FOODIVE.Customer
 
                     string pass = "update register set password ='" + txtNewPassword.Text + "' where email = '" + Session["email"] + "'";
                     SqlCommand com = new SqlCommand(pass, con);
-                    com.ExecuteNonQuery();
-                    //Page.ClientScript.RegisterStartupScript(this.GetType(), "script", "<script>alert('Password update successfully!')</script>");
-                    Response.Redirect("Login.aspx");
+                    if (com.ExecuteNonQuery() != 0)
+                    {
+                        //Page.ClientScript.RegisterStartupScript(this.GetType(), "script", "<script>alert('Password update successfully!');</script>");
+                        Response.Redirect("Login.aspx");
+                    }
                 }
                 else
                 {
