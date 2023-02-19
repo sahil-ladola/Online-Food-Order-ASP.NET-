@@ -30,10 +30,10 @@ namespace FOODIVE
             }
             if (!IsPostBack)
             {
-                if (Request.Cookies["userName"] != null && Request.Cookies["password"] != null)
+                if (Request.Cookies["email"] != null && Request.Cookies["pass"] != null)
                 {
-                    txtEmail.Text = Request.Cookies["userName"].Value;
-                    txtPassword.Attributes["value"] = Request.Cookies["password"].Value;
+                    txtEmail.Text = Request.Cookies["email"].Value;
+                    txtPassword.Attributes["value"] = Request.Cookies["pass"].Value;
                 }
             }
             con.Close();
@@ -41,20 +41,6 @@ namespace FOODIVE
 
         protected void btnlogin_Click(object sender, EventArgs e)
         {
-            //Remember me
-            if(chkRememberme.Checked)
-            {
-                Response.Cookies["username"].Expires = DateTime.Now.AddDays(30);
-                Response.Cookies["password"].Expires = DateTime.Now.AddDays(30);
-            }
-            else
-            {
-                Response.Cookies["username"].Expires = DateTime.Now.AddDays(-1);
-                Response.Cookies["password"].Expires = DateTime.Now.AddDays(-1);
-            }
-            Response.Cookies["username"].Value = txtEmail.Text.Trim();
-            Response.Cookies["password"].Value = txtPassword.Text.Trim();
-
             ViewState["txtEmail"] = txtEmail.Text;
             ViewState["txtPassword"] = txtPassword.Text;
             con.Open();
@@ -63,6 +49,20 @@ namespace FOODIVE
             SqlDataReader dr = result.ExecuteReader();
             if (dr.Read() == true)
             {
+                //Remember me
+                if (chkRememberme.Checked)
+                {
+                    Response.Cookies["email"].Expires = DateTime.Now.AddDays(30);
+                    Response.Cookies["pass"].Expires = DateTime.Now.AddDays(30);
+                }
+                else
+                {
+                    Response.Cookies["email"].Expires = DateTime.Now.AddDays(-1);
+                    Response.Cookies["pass"].Expires = DateTime.Now.AddDays(-1);
+                }
+                Response.Cookies["email"].Value = txtEmail.Text.Trim();
+                Response.Cookies["pass"].Value = txtpass.Text.Trim();
+
                 Session["rid"] = dr["r_id"];
                 Session["login"] = "login";
                 Session["email"] = dr["email"];
