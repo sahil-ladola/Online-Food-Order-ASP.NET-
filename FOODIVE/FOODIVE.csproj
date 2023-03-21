@@ -67,6 +67,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="admin\add_category.aspx" />
+    <Content Include="admin\add_menu.aspx" />
+    <Content Include="admin\all_category.aspx" />
+    <Content Include="admin\all_menu.aspx" />
+    <Content Include="admin\all_orders.aspx" />
+    <Content Include="admin\all_restaurant.aspx" />
+    <Content Include="admin\all_users.aspx" />
     <Content Include="admin\assets\css\bootstrap.css" />
     <Content Include="admin\assets\css\bootstrap.min.css" />
     <Content Include="admin\assets\css\font-awesome.min.css" />
@@ -130,6 +137,7 @@
     <Content Include="admin\css\login.css" />
     <Content Include="admin\css\spinners.css" />
     <Content Include="admin\css\style.css" />
+    <Content Include="admin\dashboard.aspx" />
     <Content Include="admin\icons\font-awesome\css\font-awesome.min.css" />
     <Content Include="admin\icons\font-awesome\fonts\fontawesome-webfont3e6e.svg" />
     <Content Include="admin\icons\material-design-iconic-font\css\materialdesignicons.min.css" />
@@ -176,66 +184,9 @@
     <Content Include="admin\js\lib\sticky-kit-master\dist\sticky-kit.min.js" />
     <Content Include="admin\js\scripts.js" />
     <Content Include="admin\js\sidebarmenu.js" />
-    <Content Include="admin\Res_img\632d2406ea6ce.jpg" />
-    <Content Include="admin\Res_img\632e8ff4c8265.jpg" />
-    <Content Include="admin\Res_img\632e9058ec62a.jpg" />
-    <Content Include="admin\Res_img\632e914a15bf1.jpg" />
-    <Content Include="admin\Res_img\633fe97bd7a81.jpg" />
-    <Content Include="admin\Res_img\634d9e55c2c42.jpg" />
-    <Content Include="admin\Res_img\634d9e9dacda7.jpg" />
-    <Content Include="admin\Res_img\634d9f2250cc7.jpg" />
-    <Content Include="admin\Res_img\634d9ffbcb4a9.jpg" />
-    <Content Include="admin\Res_img\638c7510861d7.jpg" />
-    <Content Include="admin\Res_img\638ef0ac83c6e.jpg" />
-    <Content Include="admin\Res_img\638ef0f7b424d.jpg" />
-    <Content Include="admin\Res_img\638ef1583abf2.jpg" />
-    <Content Include="admin\Res_img\638f2a1e8ae95.jpg" />
-    <Content Include="admin\Res_img\6394497108e98.jpg" />
-    <Content Include="admin\Res_img\dishes638f38229dcb1.jpg" />
-    <Content Include="admin\Res_img\dishes638f3847400f2.jpg" />
-    <Content Include="admin\Res_img\dishes638f38df8e8c1.jpg" />
-    <Content Include="admin\Res_img\dishes\632d242357307.jpg" />
-    <Content Include="admin\Res_img\dishes\632d380f084f0.jpg" />
-    <Content Include="admin\Res_img\dishes\632d4a06615c6.jpg" />
-    <Content Include="admin\Res_img\dishes\632de31ba88ea.jpg" />
-    <Content Include="admin\Res_img\dishes\632e90a916ec4.jpg" />
-    <Content Include="admin\Res_img\dishes\632e9118105dd.jpg" />
-    <Content Include="admin\Res_img\dishes\632e91701d911.jpg" />
-    <Content Include="admin\Res_img\dishes\632eb35a4965a.jpg" />
-    <Content Include="admin\Res_img\dishes\632eb39a77c14.jpg" />
-    <Content Include="admin\Res_img\dishes\634a81b68050f.jpg" />
-    <Content Include="admin\Res_img\dishes\634da15d36d3a.jpg" />
-    <Content Include="admin\Res_img\dishes\634da1fb81377.jpg" />
-    <Content Include="admin\Res_img\dishes\634da2a4ca714.jpg" />
-    <Content Include="admin\Res_img\dishes\638ef34f7a3b2.jpg" />
-    <Content Include="admin\Res_img\dishes\638ef3b6cdaf5.jpg" />
-    <Content Include="admin\Res_img\dishes\638ef4164ffc1.jpg" />
-    <Content Include="admin\Res_img\dishes\638ef44cf4124.jpg" />
-    <Content Include="admin\Res_img\dishes\638ef48875b4a.jpg" />
-    <Content Include="admin\Res_img\dishes\638ef4f10bb8c.jpg" />
-    <Content Include="admin\Res_img\dishes\638ef5470fe28.jpg" />
-    <Content Include="admin\Res_img\dishes\638ef5924fa02.jpg" />
-    <Content Include="admin\Res_img\dishes\638ef611b9819.jpg" />
-    <Content Include="admin\Res_img\dishes\638ef65d3fd64.jpg" />
-    <Content Include="admin\Res_img\dishes\638ef6b0d3b21.jpg" />
-    <Content Include="admin\Res_img\dishes\638f29ffcc9d9.jpg" />
-    <Content Include="admin\Res_img\dishes\638f390d63da3.jpg" />
-    <Content Include="admin\Res_img\dishes\638f392461620.jpg" />
-    <Content Include="admin\Res_img\dishes\638f397a071b6.jpg" />
-    <Content Include="admin\Res_img\dishes\63933b4953854.jpg" />
-    <Content Include="admin\Res_img\dishes\63933bb8a2cae.jpg" />
-    <Content Include="admin\Res_img\dishes\639349a884245.jpg" />
-    <Content Include="admin\Res_img\dishes\63934a6fdf860.jpg" />
-    <Content Include="admin\Res_img\dishes\63934af297038.jpg" />
-    <Content Include="admin\Res_img\dishes\63934b5c0769d.jpg" />
-    <Content Include="admin\Res_img\dishes\63934bd183b08.jpg" />
-    <Content Include="admin\Res_img\dishes\63934c3b8ccdd.jpg" />
-    <Content Include="admin\Res_img\dishes\63934c76d4eab.jpg" />
-    <Content Include="admin\Res_img\dishes\63934cdb6e5b3.jpg" />
-    <Content Include="admin\Res_img\dishes\63934d7e1e66d.jpg" />
-    <Content Include="admin\Res_img\dishes\63934e1ebcf63.jpg" />
-    <Content Include="admin\Res_img\dishes\63934e682dea3.jpg" />
-    <Content Include="admin\Res_img\dishes\639448932a726.jpg" />
+    <Content Include="admin\Login.aspx" />
+    <Content Include="admin\logout.aspx" />
+    <Content Include="admin\restaurant_request.aspx" />
     <Content Include="assets\css\animate.css" />
     <Content Include="assets\css\bootstrap.min.css" />
     <Content Include="assets\css\chosen-sprite%402x.png" />
@@ -476,6 +427,83 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="admin\add_category.aspx.cs">
+      <DependentUpon>add_category.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\add_category.aspx.designer.cs">
+      <DependentUpon>add_category.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\add_menu.aspx.cs">
+      <DependentUpon>add_menu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\add_menu.aspx.designer.cs">
+      <DependentUpon>add_menu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\all_category.aspx.cs">
+      <DependentUpon>all_category.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\all_category.aspx.designer.cs">
+      <DependentUpon>all_category.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\all_menu.aspx.cs">
+      <DependentUpon>all_menu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\all_menu.aspx.designer.cs">
+      <DependentUpon>all_menu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\all_orders.aspx.cs">
+      <DependentUpon>all_orders.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\all_orders.aspx.designer.cs">
+      <DependentUpon>all_orders.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\all_restaurant.aspx.cs">
+      <DependentUpon>all_restaurant.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\all_restaurant.aspx.designer.cs">
+      <DependentUpon>all_restaurant.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\all_users.aspx.cs">
+      <DependentUpon>all_users.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\all_users.aspx.designer.cs">
+      <DependentUpon>all_users.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\dashboard.aspx.cs">
+      <DependentUpon>dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\dashboard.aspx.designer.cs">
+      <DependentUpon>dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\logout.aspx.cs">
+      <DependentUpon>logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\logout.aspx.designer.cs">
+      <DependentUpon>logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\restaurant_request.aspx.cs">
+      <DependentUpon>restaurant_request.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\restaurant_request.aspx.designer.cs">
+      <DependentUpon>restaurant_request.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Customer\AddToCart.aspx.cs">
       <DependentUpon>AddToCart.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -694,9 +722,6 @@
     <Content Include="admin\icons\themify-icons\fonts\themify.woff" />
     <Content Include="admin\icons\themify-icons\fonts\themify9f24.eot" />
     <Content Include="admin\icons\themify-icons\fonts\themifyd41d.eot" />
-    <Content Include="admin\Res_img\632de55139c04.avif" />
-    <Content Include="admin\Res_img\632e93a189b67.avif" />
-    <Content Include="admin\Res_img\632e9495caa32.avif" />
     <Content Include="assets\fonts\fontawesome-webfont3295.eot" />
     <Content Include="assets\fonts\fontawesome-webfont3295.ttf" />
     <Content Include="assets\fonts\fontawesome-webfont3295.woff" />
@@ -734,6 +759,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="admin\dishes\" />
+    <Folder Include="admin\Res_img\dishes\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

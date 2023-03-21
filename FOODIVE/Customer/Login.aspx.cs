@@ -49,7 +49,6 @@ namespace FOODIVE
             SqlDataReader dr = result.ExecuteReader();
             if (dr.Read() == true)
             {
-                //Remember me
                 if (chkRememberme.Checked)
                 {
                     Response.Cookies["email"].Expires = DateTime.Now.AddDays(30);
@@ -61,7 +60,7 @@ namespace FOODIVE
                     Response.Cookies["pass"].Expires = DateTime.Now.AddDays(-1);
                 }
                 Response.Cookies["email"].Value = txtEmail.Text.Trim();
-                Response.Cookies["pass"].Value = txtpass.Text.Trim();
+                Response.Cookies["pass"].Value = txtPassword.Text.Trim();
 
                 Session["rid"] = dr["r_id"];
                 Session["login"] = "login";
