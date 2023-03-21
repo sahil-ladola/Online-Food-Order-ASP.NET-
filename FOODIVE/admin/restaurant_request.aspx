@@ -22,7 +22,8 @@
                 <div class="navbar-header">
                     <a class="navbar-brand" href="../Admin/dashboard.aspx">
                         <span>
-                            <img src="../Image/LOGO/foodive-logos_black.png" width="50px" alt="LOGO" class="dark-logo" /></span>
+                            <img src="../Image/LOGO/foodive-logos_black.png" width="50px" alt="LOGO" class="dark-logo" />
+                        </span>
                     </a>
                 </div>
 

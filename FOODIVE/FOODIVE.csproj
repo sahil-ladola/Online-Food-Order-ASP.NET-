@@ -185,6 +185,36 @@
     <Content Include="admin\js\scripts.js" />
     <Content Include="admin\js\sidebarmenu.js" />
     <Content Include="admin\Login.aspx" />
+    <Content Include="admin\Login\css\main.css" />
+    <Content Include="admin\Login\css\util.css" />
+    <Content Include="admin\Login\fonts\font-awesome-4.7.0\css\font-awesome.css" />
+    <Content Include="admin\Login\fonts\font-awesome-4.7.0\css\font-awesome.min.css" />
+    <Content Include="admin\Login\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="admin\Login\fonts\font-awesome-4.7.0\HELP-US-OUT.txt" />
+    <Content Include="admin\Login\fonts\montserrat\OFL.txt" />
+    <Content Include="admin\Login\images\icons\favicon.ico" />
+    <Content Include="admin\Login\images\img-01.png" />
+    <Content Include="admin\Login\js\main.js" />
+    <Content Include="admin\Login\vendor\animate\animate.css" />
+    <Content Include="admin\Login\vendor\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="admin\Login\vendor\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="admin\Login\vendor\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="admin\Login\vendor\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="admin\Login\vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="admin\Login\vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="admin\Login\vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="admin\Login\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="admin\Login\vendor\bootstrap\js\popper.js" />
+    <Content Include="admin\Login\vendor\bootstrap\js\popper.min.js" />
+    <Content Include="admin\Login\vendor\bootstrap\js\tooltip.js" />
+    <Content Include="admin\Login\vendor\css-hamburgers\hamburgers.css" />
+    <Content Include="admin\Login\vendor\css-hamburgers\hamburgers.min.css" />
+    <Content Include="admin\Login\vendor\jquery\jquery-3.2.1.min.js" />
+    <Content Include="admin\Login\vendor\select2\select2.css" />
+    <Content Include="admin\Login\vendor\select2\select2.js" />
+    <Content Include="admin\Login\vendor\select2\select2.min.css" />
+    <Content Include="admin\Login\vendor\select2\select2.min.js" />
+    <Content Include="admin\Login\vendor\tilt\tilt.jquery.min.js" />
     <Content Include="admin\logout.aspx" />
     <Content Include="admin\restaurant_request.aspx" />
     <Content Include="assets\css\animate.css" />
@@ -379,6 +409,7 @@
     <Content Include="Image\Icon\User.png" />
     <Content Include="Image\Img\Add-Restro.jpg" />
     <Content Include="Image\Img\AddToCart.jpg" />
+    <Content Include="Image\Img\admin_login.jpg" />
     <Content Include="Image\Img\Customer_Login.jpg" />
     <Content Include="Image\Img\Customer_SignUp.jpg" />
     <Content Include="Image\Img\Delivery-card.jpg" />
@@ -417,12 +448,160 @@
     <Content Include="Image\LOGO\foodive-logos_white.png" />
     <Content Include="Image\LOGO\logo_info.txt" />
     <Content Include="Image\LOGO\white_bg_logo.png" />
+    <Content Include="Image\Img\restro_login.jpg" />
     <Content Include="index.aspx" />
     <Content Include="Customer\Login.aspx" />
     <Content Include="Customer\Registration.aspx" />
     <Content Include="Customer\Logout.aspx" />
     <Content Include="OTP.aspx" />
     <Content Include="Reset Password.aspx" />
+    <Content Include="Restaurant\add_menu.aspx" />
+    <Content Include="Restaurant\add_restaurant.aspx" />
+    <Content Include="Restaurant\all_menu.aspx" />
+    <Content Include="Restaurant\all_orders.aspx" />
+    <Content Include="Restaurant\all_restaurant.aspx" />
+    <Content Include="Restaurant\assets\css\bootstrap.css" />
+    <Content Include="Restaurant\assets\css\bootstrap.min.css" />
+    <Content Include="Restaurant\assets\css\font-awesome.min.css" />
+    <Content Include="Restaurant\assets\css\owl.carousel.min.css" />
+    <Content Include="Restaurant\assets\css\owl.theme.default.min.css" />
+    <Content Include="Restaurant\assets\css\style.css" />
+    <Content Include="Restaurant\assets\fonts\et-line.svg" />
+    <Content Include="Restaurant\assets\fonts\fontawesome-webfont.svg" />
+    <Content Include="Restaurant\assets\fonts\icomoon.svg" />
+    <Content Include="Restaurant\assets\fonts\roboto-bold-webfont.svg" />
+    <Content Include="Restaurant\assets\fonts\robotocondensed-regular-webfont.svg" />
+    <Content Include="Restaurant\assets\images\bg-01.jpg" />
+    <Content Include="Restaurant\assets\images\vector.png" />
+    <Content Include="Restaurant\assets\js\bootstrap.bundle.js" />
+    <Content Include="Restaurant\assets\js\bootstrap.bundle.min.js" />
+    <Content Include="Restaurant\assets\js\bootstrap.esm.js" />
+    <Content Include="Restaurant\assets\js\bootstrap.esm.min.js" />
+    <Content Include="Restaurant\assets\js\bootstrap.js" />
+    <Content Include="Restaurant\assets\js\bootstrap.min.js" />
+    <Content Include="Restaurant\assets\js\jquery.min.js" />
+    <Content Include="Restaurant\assets\js\owl.carousel.min.js" />
+    <Content Include="Restaurant\css\animate.css" />
+    <Content Include="Restaurant\css\helper.css" />
+    <Content Include="Restaurant\css\lib\amchart\export.css" />
+    <Content Include="Restaurant\css\lib\barRating\barRating.css" />
+    <Content Include="Restaurant\css\lib\bootstrap\bootstrap.min.css" />
+    <Content Include="Restaurant\css\lib\c3\c3.min.css" />
+    <Content Include="Restaurant\css\lib\calendar2\pignose.calendar.min.css" />
+    <Content Include="Restaurant\css\lib\calendar2\semantic.ui.min.css" />
+    <Content Include="Restaurant\css\lib\calendar\fullcalendar.css" />
+    <Content Include="Restaurant\css\lib\chartist\chartist.min.css" />
+    <Content Include="Restaurant\css\lib\data-table\buttons.bootstrap.min.css" />
+    <Content Include="Restaurant\css\lib\data-table\buttons.dataTables.min.css" />
+    <Content Include="Restaurant\css\lib\data-table\dataTables.bootstrap.min.css" />
+    <Content Include="Restaurant\css\lib\datepicker\bootstrap-datepicker3.min.css" />
+    <Content Include="Restaurant\css\lib\dropzone\dropzone.css" />
+    <Content Include="Restaurant\css\lib\html5-editor\bootstrap-wysihtml5.css" />
+    <Content Include="Restaurant\css\lib\jsgrid\jsgrid-theme.min.css" />
+    <Content Include="Restaurant\css\lib\jsgrid\jsgrid.min.css" />
+    <Content Include="Restaurant\css\lib\line-progress\jquery.lineProgressbar.css" />
+    <Content Include="Restaurant\css\lib\lobi-panel\lobipanel.min.css" />
+    <Content Include="Restaurant\css\lib\menubar\sidebar.css" />
+    <Content Include="Restaurant\css\lib\metismenu\menu.css" />
+    <Content Include="Restaurant\css\lib\nestable\nestable.css" />
+    <Content Include="Restaurant\css\lib\owl.carousel.min.css" />
+    <Content Include="Restaurant\css\lib\owl.theme.default.min.css" />
+    <Content Include="Restaurant\css\lib\preloader\pace.css" />
+    <Content Include="Restaurant\css\lib\rangSlider\ion.rangeSlider.css" />
+    <Content Include="Restaurant\css\lib\rangSlider\ion.rangeSlider.skinFlat.css" />
+    <Content Include="Restaurant\css\lib\rangSlider\ion.rangeSlider.skinHTML5.css" />
+    <Content Include="Restaurant\css\lib\rangSlider\ion.rangeSlider.skinModern.css" />
+    <Content Include="Restaurant\css\lib\rangSlider\ion.rangeSlider.skinNice.css" />
+    <Content Include="Restaurant\css\lib\rangSlider\ion.rangeSlider.skinSimple.css" />
+    <Content Include="Restaurant\css\lib\rangSlider\normalize.css" />
+    <Content Include="Restaurant\css\lib\rickshaw-chart\rickshaw.min.css" />
+    <Content Include="Restaurant\css\lib\scrollable\scrollable.min.css" />
+    <Content Include="Restaurant\css\lib\select2\select2.min.css" />
+    <Content Include="Restaurant\css\lib\sweetalert\sweetalert.css" />
+    <Content Include="Restaurant\css\lib\toastr\toastr.min.css" />
+    <Content Include="Restaurant\css\lib\vector-map\jqvmap.min.css" />
+    <Content Include="Restaurant\css\login.css" />
+    <Content Include="Restaurant\css\spinners.css" />
+    <Content Include="Restaurant\css\style.css" />
+    <Content Include="Restaurant\dashboard.aspx" />
+    <Content Include="Restaurant\icons\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Restaurant\icons\font-awesome\fonts\fontawesome-webfont3e6e.svg" />
+    <Content Include="Restaurant\icons\material-design-iconic-font\css\materialdesignicons.min.css" />
+    <Content Include="Restaurant\icons\material-design-iconic-font\fonts\materialdesignicons-webfontdc99.svg" />
+    <Content Include="Restaurant\icons\themify-icons\fonts\themify9f24.svg" />
+    <Content Include="Restaurant\icons\themify-icons\themify-icons.css" />
+    <Content Include="Restaurant\images\bookingSystem\user-icn.png" />
+    <Content Include="Restaurant\js\custom.min.js" />
+    <Content Include="Restaurant\js\index.js" />
+    <Content Include="Restaurant\js\jquery.slimscroll.js" />
+    <Content Include="Restaurant\js\lib\01 LOGIN DETAILS &amp; PROJECT INFO.txt" />
+    <Content Include="Restaurant\js\lib\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Restaurant\js\lib\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Restaurant\js\lib\bootstrap\js\popper.min.js" />
+    <Content Include="Restaurant\js\lib\c3\c3-init.js" />
+    <Content Include="Restaurant\js\lib\c3\c3.min.js" />
+    <Content Include="Restaurant\js\lib\c3\d3.min.js" />
+    <Content Include="Restaurant\js\lib\calendar-2\moment.latest.min.js" />
+    <Content Include="Restaurant\js\lib\calendar-2\pignose.calendar.min.js" />
+    <Content Include="Restaurant\js\lib\calendar-2\pignose.init.js" />
+    <Content Include="Restaurant\js\lib\calendar-2\prism.min.js" />
+    <Content Include="Restaurant\js\lib\calendar-2\semantic.ui.min.js" />
+    <Content Include="Restaurant\js\lib\calendar\fullcalendar-init.js" />
+    <Content Include="Restaurant\js\lib\calendar\fullcalendar.min.js" />
+    <Content Include="Restaurant\js\lib\datatables\cdn.datatables.net\buttons\1.2.2\js\buttons.flash.min.js" />
+    <Content Include="Restaurant\js\lib\datatables\cdn.datatables.net\buttons\1.2.2\js\buttons.html5.min.js" />
+    <Content Include="Restaurant\js\lib\datatables\cdn.datatables.net\buttons\1.2.2\js\buttons.print.min.js" />
+    <Content Include="Restaurant\js\lib\datatables\cdn.datatables.net\buttons\1.2.2\js\dataTables.buttons.min.js" />
+    <Content Include="Restaurant\js\lib\datatables\cdn.rawgit.com\bpampuch\pdfmake\0.1.18\build\pdfmake.min.js" />
+    <Content Include="Restaurant\js\lib\datatables\cdn.rawgit.com\bpampuch\pdfmake\0.1.18\build\vfs_fonts.js" />
+    <Content Include="Restaurant\js\lib\datatables\cdn.rawgit.com\google\code-prettify\master\loader\run_prettify2102.js" />
+    <Content Include="Restaurant\js\lib\datatables\cdnjs.cloudflare.com\ajax\libs\jqueryui-touch-punch\0.2.3\jquery.ui.touch-punch.min.js" />
+    <Content Include="Restaurant\js\lib\datatables\cdnjs.cloudflare.com\ajax\libs\jszip\2.5.0\jszip.min.js" />
+    <Content Include="Restaurant\js\lib\datatables\datatables-init.js" />
+    <Content Include="Restaurant\js\lib\datatables\datatables.min.js" />
+    <Content Include="Restaurant\js\lib\datepicker\bootstrap-datepicker.min.js" />
+    <Content Include="Restaurant\js\lib\form-validation\jquery.validate-init.js" />
+    <Content Include="Restaurant\js\lib\form-validation\jquery.validate.min.js" />
+    <Content Include="Restaurant\js\lib\jquery-ui\jquery-ui.min.js" />
+    <Content Include="Restaurant\js\lib\jquery-ui\jquery.ui.touch-punch.min.js" />
+    <Content Include="Restaurant\js\lib\jquery\jquery.min.js" />
+    <Content Include="Restaurant\js\lib\menubar\sidebar.js" />
+    <Content Include="Restaurant\js\lib\preloader\pace.min.js" />
+    <Content Include="Restaurant\js\lib\sticky-kit-master\dist\sticky-kit.min.js" />
+    <Content Include="Restaurant\js\scripts.js" />
+    <Content Include="Restaurant\js\sidebarmenu.js" />
+    <Content Include="Restaurant\Login.aspx" />
+    <Content Include="Restaurant\Login\css\main.css" />
+    <Content Include="Restaurant\Login\css\util.css" />
+    <Content Include="Restaurant\Login\fonts\font-awesome-4.7.0\css\font-awesome.css" />
+    <Content Include="Restaurant\Login\fonts\font-awesome-4.7.0\css\font-awesome.min.css" />
+    <Content Include="Restaurant\Login\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="Restaurant\Login\fonts\font-awesome-4.7.0\HELP-US-OUT.txt" />
+    <Content Include="Restaurant\Login\fonts\montserrat\OFL.txt" />
+    <Content Include="Restaurant\Login\images\icons\favicon.ico" />
+    <Content Include="Restaurant\Login\images\img-01.png" />
+    <Content Include="Restaurant\Login\js\main.js" />
+    <Content Include="Restaurant\Login\vendor\animate\animate.css" />
+    <Content Include="Restaurant\Login\vendor\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="Restaurant\Login\vendor\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="Restaurant\Login\vendor\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="Restaurant\Login\vendor\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="Restaurant\Login\vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="Restaurant\Login\vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Restaurant\Login\vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="Restaurant\Login\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Restaurant\Login\vendor\bootstrap\js\popper.js" />
+    <Content Include="Restaurant\Login\vendor\bootstrap\js\popper.min.js" />
+    <Content Include="Restaurant\Login\vendor\bootstrap\js\tooltip.js" />
+    <Content Include="Restaurant\Login\vendor\css-hamburgers\hamburgers.css" />
+    <Content Include="Restaurant\Login\vendor\css-hamburgers\hamburgers.min.css" />
+    <Content Include="Restaurant\Login\vendor\jquery\jquery-3.2.1.min.js" />
+    <Content Include="Restaurant\Login\vendor\select2\select2.css" />
+    <Content Include="Restaurant\Login\vendor\select2\select2.js" />
+    <Content Include="Restaurant\Login\vendor\select2\select2.min.css" />
+    <Content Include="Restaurant\Login\vendor\select2\select2.min.js" />
+    <Content Include="Restaurant\Login\vendor\tilt\tilt.jquery.min.js" />
+    <Content Include="Restaurant\logout.aspx" />
     <Content Include="Verify OTP.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -603,6 +782,62 @@
     <Compile Include="Reset Password.aspx.designer.cs">
       <DependentUpon>Reset Password.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Restaurant\add_menu.aspx.cs">
+      <DependentUpon>add_menu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Restaurant\add_menu.aspx.designer.cs">
+      <DependentUpon>add_menu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Restaurant\add_restaurant.aspx.cs">
+      <DependentUpon>add_restaurant.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Restaurant\add_restaurant.aspx.designer.cs">
+      <DependentUpon>add_restaurant.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Restaurant\all_menu.aspx.cs">
+      <DependentUpon>all_menu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Restaurant\all_menu.aspx.designer.cs">
+      <DependentUpon>all_menu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Restaurant\all_orders.aspx.cs">
+      <DependentUpon>all_orders.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Restaurant\all_orders.aspx.designer.cs">
+      <DependentUpon>all_orders.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Restaurant\all_restaurant.aspx.cs">
+      <DependentUpon>all_restaurant.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Restaurant\all_restaurant.aspx.designer.cs">
+      <DependentUpon>all_restaurant.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Restaurant\dashboard.aspx.cs">
+      <DependentUpon>dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Restaurant\dashboard.aspx.designer.cs">
+      <DependentUpon>dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Restaurant\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Restaurant\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Restaurant\logout.aspx.cs">
+      <DependentUpon>logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Restaurant\logout.aspx.designer.cs">
+      <DependentUpon>logout.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Verify OTP.aspx.cs">
       <DependentUpon>Verify OTP.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -749,7 +984,267 @@
     <Content Include="Image\Img\Radhe.avif" />
     <Content Include="Image\Img\Subway.avif" />
     <Content Include="Image\Img\Trishiv.avif" />
+    <Content Include="admin\Login\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="admin\Login\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="admin\Login\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="admin\Login\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff2" />
+    <Content Include="admin\Login\fonts\font-awesome-4.7.0\fonts\FontAwesome.otf" />
+    <Content Include="admin\Login\fonts\font-awesome-4.7.0\less\animated.less" />
+    <Content Include="admin\Login\fonts\font-awesome-4.7.0\less\bordered-pulled.less" />
+    <Content Include="admin\Login\fonts\font-awesome-4.7.0\less\core.less" />
+    <Content Include="admin\Login\fonts\font-awesome-4.7.0\less\fixed-width.less" />
+    <Content Include="admin\Login\fonts\font-awesome-4.7.0\less\font-awesome.less" />
+    <Content Include="admin\Login\fonts\font-awesome-4.7.0\less\icons.less" />
+    <Content Include="admin\Login\fonts\font-awesome-4.7.0\less\larger.less" />
+    <Content Include="admin\Login\fonts\font-awesome-4.7.0\less\list.less" />
+    <Content Include="admin\Login\fonts\font-awesome-4.7.0\less\mixins.less" />
+    <Content Include="admin\Login\fonts\font-awesome-4.7.0\less\path.less" />
+    <Content Include="admin\Login\fonts\font-awesome-4.7.0\less\rotated-flipped.less" />
+    <Content Include="admin\Login\fonts\font-awesome-4.7.0\less\screen-reader.less" />
+    <Content Include="admin\Login\fonts\font-awesome-4.7.0\less\stacked.less" />
+    <Content Include="admin\Login\fonts\font-awesome-4.7.0\less\variables.less" />
+    <Content Include="admin\Login\fonts\font-awesome-4.7.0\scss\font-awesome.scss" />
+    <Content Include="admin\Login\fonts\font-awesome-4.7.0\scss\_animated.scss" />
+    <Content Include="admin\Login\fonts\font-awesome-4.7.0\scss\_bordered-pulled.scss" />
+    <Content Include="admin\Login\fonts\font-awesome-4.7.0\scss\_core.scss" />
+    <Content Include="admin\Login\fonts\font-awesome-4.7.0\scss\_fixed-width.scss" />
+    <Content Include="admin\Login\fonts\font-awesome-4.7.0\scss\_icons.scss" />
+    <Content Include="admin\Login\fonts\font-awesome-4.7.0\scss\_larger.scss" />
+    <Content Include="admin\Login\fonts\font-awesome-4.7.0\scss\_list.scss" />
+    <Content Include="admin\Login\fonts\font-awesome-4.7.0\scss\_mixins.scss" />
+    <Content Include="admin\Login\fonts\font-awesome-4.7.0\scss\_path.scss" />
+    <Content Include="admin\Login\fonts\font-awesome-4.7.0\scss\_rotated-flipped.scss" />
+    <Content Include="admin\Login\fonts\font-awesome-4.7.0\scss\_screen-reader.scss" />
+    <Content Include="admin\Login\fonts\font-awesome-4.7.0\scss\_stacked.scss" />
+    <Content Include="admin\Login\fonts\font-awesome-4.7.0\scss\_variables.scss" />
+    <Content Include="admin\Login\fonts\montserrat\Montserrat-Black.ttf" />
+    <Content Include="admin\Login\fonts\montserrat\Montserrat-BlackItalic.ttf" />
+    <Content Include="admin\Login\fonts\montserrat\Montserrat-Bold.ttf" />
+    <Content Include="admin\Login\fonts\montserrat\Montserrat-BoldItalic.ttf" />
+    <Content Include="admin\Login\fonts\montserrat\Montserrat-ExtraBold.ttf" />
+    <Content Include="admin\Login\fonts\montserrat\Montserrat-ExtraBoldItalic.ttf" />
+    <Content Include="admin\Login\fonts\montserrat\Montserrat-ExtraLight.ttf" />
+    <Content Include="admin\Login\fonts\montserrat\Montserrat-ExtraLightItalic.ttf" />
+    <Content Include="admin\Login\fonts\montserrat\Montserrat-Italic.ttf" />
+    <Content Include="admin\Login\fonts\montserrat\Montserrat-Light.ttf" />
+    <Content Include="admin\Login\fonts\montserrat\Montserrat-LightItalic.ttf" />
+    <Content Include="admin\Login\fonts\montserrat\Montserrat-Medium.ttf" />
+    <Content Include="admin\Login\fonts\montserrat\Montserrat-MediumItalic.ttf" />
+    <Content Include="admin\Login\fonts\montserrat\Montserrat-Regular.ttf" />
+    <Content Include="admin\Login\fonts\montserrat\Montserrat-SemiBold.ttf" />
+    <Content Include="admin\Login\fonts\montserrat\Montserrat-SemiBoldItalic.ttf" />
+    <Content Include="admin\Login\fonts\montserrat\Montserrat-Thin.ttf" />
+    <Content Include="admin\Login\fonts\montserrat\Montserrat-ThinItalic.ttf" />
+    <Content Include="admin\Login\fonts\poppins\Poppins-Black.ttf" />
+    <Content Include="admin\Login\fonts\poppins\Poppins-BlackItalic.ttf" />
+    <Content Include="admin\Login\fonts\poppins\Poppins-Bold.ttf" />
+    <Content Include="admin\Login\fonts\poppins\Poppins-BoldItalic.ttf" />
+    <Content Include="admin\Login\fonts\poppins\Poppins-ExtraBold.ttf" />
+    <Content Include="admin\Login\fonts\poppins\Poppins-ExtraBoldItalic.ttf" />
+    <Content Include="admin\Login\fonts\poppins\Poppins-ExtraLight.ttf" />
+    <Content Include="admin\Login\fonts\poppins\Poppins-ExtraLightItalic.ttf" />
+    <Content Include="admin\Login\fonts\poppins\Poppins-Italic.ttf" />
+    <Content Include="admin\Login\fonts\poppins\Poppins-Light.ttf" />
+    <Content Include="admin\Login\fonts\poppins\Poppins-LightItalic.ttf" />
+    <Content Include="admin\Login\fonts\poppins\Poppins-Medium.ttf" />
+    <Content Include="admin\Login\fonts\poppins\Poppins-MediumItalic.ttf" />
+    <Content Include="admin\Login\fonts\poppins\Poppins-Regular.ttf" />
+    <Content Include="admin\Login\fonts\poppins\Poppins-SemiBold.ttf" />
+    <Content Include="admin\Login\fonts\poppins\Poppins-SemiBoldItalic.ttf" />
+    <Content Include="admin\Login\fonts\poppins\Poppins-Thin.ttf" />
+    <Content Include="admin\Login\fonts\poppins\Poppins-ThinItalic.ttf" />
+    <Content Include="admin\Login\vendor\bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="admin\Login\vendor\bootstrap\css\bootstrap-grid.min.css.map" />
+    <Content Include="admin\Login\vendor\bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Include="admin\Login\vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
+    <Content Include="admin\Login\vendor\bootstrap\css\bootstrap.css.map" />
+    <Content Include="admin\Login\vendor\bootstrap\css\bootstrap.min.css.map" />
     <None Include="packages.config" />
+    <Content Include="Restaurant\assets\fonts\et-line.eot" />
+    <Content Include="Restaurant\assets\fonts\et-line.ttf" />
+    <Content Include="Restaurant\assets\fonts\et-line.woff" />
+    <Content Include="Restaurant\assets\fonts\fontawesome-webfont.eot" />
+    <Content Include="Restaurant\assets\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Restaurant\assets\fonts\fontawesome-webfont.woff" />
+    <Content Include="Restaurant\assets\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Restaurant\assets\fonts\FontAwesome.otf" />
+    <Content Include="Restaurant\assets\fonts\icomoon.eot" />
+    <Content Include="Restaurant\assets\fonts\icomoon.ttf" />
+    <Content Include="Restaurant\assets\fonts\icomoon.woff" />
+    <Content Include="Restaurant\assets\fonts\roboto-bold-webfont.eot" />
+    <Content Include="Restaurant\assets\fonts\roboto-bold-webfont.ttf" />
+    <Content Include="Restaurant\assets\fonts\roboto-bold-webfont.woff" />
+    <Content Include="Restaurant\assets\fonts\roboto-bold-webfont.woff2" />
+    <Content Include="Restaurant\assets\fonts\roboto-light-webfont.woff" />
+    <Content Include="Restaurant\assets\fonts\roboto-light-webfont.woff2" />
+    <Content Include="Restaurant\assets\fonts\roboto-regular-webfont.woff" />
+    <Content Include="Restaurant\assets\fonts\roboto-regular-webfont.woff2" />
+    <Content Include="Restaurant\assets\fonts\robotocondensed-regular-webfont.eot" />
+    <Content Include="Restaurant\assets\fonts\robotocondensed-regular-webfont.ttf" />
+    <Content Include="Restaurant\assets\fonts\robotocondensed-regular-webfont.woff" />
+    <Content Include="Restaurant\assets\fonts\robotocondensed-regular-webfont.woff2" />
+    <Content Include="Restaurant\assets\js\bootstrap.bundle.js.map" />
+    <Content Include="Restaurant\assets\js\bootstrap.bundle.min.js.map" />
+    <Content Include="Restaurant\assets\js\bootstrap.esm.js.map" />
+    <Content Include="Restaurant\assets\js\bootstrap.esm.min.js.map" />
+    <Content Include="Restaurant\assets\js\bootstrap.js.map" />
+    <Content Include="Restaurant\assets\js\bootstrap.min.js.map" />
+    <Content Include="Restaurant\css\less\advance-widget.less" />
+    <Content Include="Restaurant\css\less\amchart.less" />
+    <Content Include="Restaurant\css\less\badge.less" />
+    <Content Include="Restaurant\css\less\booking-system.less" />
+    <Content Include="Restaurant\css\less\breadcrumb.less" />
+    <Content Include="Restaurant\css\less\button.less" />
+    <Content Include="Restaurant\css\less\calendar.less" />
+    <Content Include="Restaurant\css\less\card.less" />
+    <Content Include="Restaurant\css\less\carousel.less" />
+    <Content Include="Restaurant\css\less\chart.less" />
+    <Content Include="Restaurant\css\less\chartist.less" />
+    <Content Include="Restaurant\css\less\chat.less" />
+    <Content Include="Restaurant\css\less\compose-email.less" />
+    <Content Include="Restaurant\css\less\data-table.less" />
+    <Content Include="Restaurant\css\less\datamap.less" />
+    <Content Include="Restaurant\css\less\error.less" />
+    <Content Include="Restaurant\css\less\favourite_menu.less" />
+    <Content Include="Restaurant\css\less\flot-chart.less" />
+    <Content Include="Restaurant\css\less\font.less" />
+    <Content Include="Restaurant\css\less\fonts.less" />
+    <Content Include="Restaurant\css\less\footer.less" />
+    <Content Include="Restaurant\css\less\form-validation.less" />
+    <Content Include="Restaurant\css\less\forms.less" />
+    <Content Include="Restaurant\css\less\global.less" />
+    <Content Include="Restaurant\css\less\gmap.less" />
+    <Content Include="Restaurant\css\less\header.less" />
+    <Content Include="Restaurant\css\less\invoice-edit.less" />
+    <Content Include="Restaurant\css\less\invoice.less" />
+    <Content Include="Restaurant\css\less\knob.less" />
+    <Content Include="Restaurant\css\less\login.less" />
+    <Content Include="Restaurant\css\less\menu-upload.less" />
+    <Content Include="Restaurant\css\less\mixins.less" />
+    <Content Include="Restaurant\css\less\modal.less" />
+    <Content Include="Restaurant\css\less\morris-chart.less" />
+    <Content Include="Restaurant\css\less\nestable.less" />
+    <Content Include="Restaurant\css\less\order-list.less" />
+    <Content Include="Restaurant\css\less\order-progress.less" />
+    <Content Include="Restaurant\css\less\pagination.less" />
+    <Content Include="Restaurant\css\less\panel.less" />
+    <Content Include="Restaurant\css\less\preloader.less" />
+    <Content Include="Restaurant\css\less\products_1.less" />
+    <Content Include="Restaurant\css\less\products_2.less" />
+    <Content Include="Restaurant\css\less\products_3.less" />
+    <Content Include="Restaurant\css\less\profile-widget.less" />
+    <Content Include="Restaurant\css\less\profile.less" />
+    <Content Include="Restaurant\css\less\progress-bar.less" />
+    <Content Include="Restaurant\css\less\recent-comments.less" />
+    <Content Include="Restaurant\css\less\recent-message.less" />
+    <Content Include="Restaurant\css\less\responsive.less" />
+    <Content Include="Restaurant\css\less\scrollable.less" />
+    <Content Include="Restaurant\css\less\search.less" />
+    <Content Include="Restaurant\css\less\sidebar.less" />
+    <Content Include="Restaurant\css\less\social-media-stats.less" />
+    <Content Include="Restaurant\css\less\style.less" />
+    <Content Include="Restaurant\css\less\tab.less" />
+    <Content Include="Restaurant\css\less\table-export.less" />
+    <Content Include="Restaurant\css\less\table.less" />
+    <Content Include="Restaurant\css\less\timeline.less" />
+    <Content Include="Restaurant\css\less\todo-list.less" />
+    <Content Include="Restaurant\css\less\ui-block-quote.less" />
+    <Content Include="Restaurant\css\less\ui-element-basic.less" />
+    <Content Include="Restaurant\css\less\ui-user-card.less" />
+    <Content Include="Restaurant\css\less\variable.less" />
+    <Content Include="Restaurant\css\less\vector-map.less" />
+    <Content Include="Restaurant\css\less\vertical-carousel.less" />
+    <Content Include="Restaurant\css\less\weather.less" />
+    <Content Include="Restaurant\css\less\widget-stat.less" />
+    <Content Include="Restaurant\icons\font-awesome\fonts\fontawesome-webfont3e6e.eot" />
+    <Content Include="Restaurant\icons\font-awesome\fonts\fontawesome-webfont3e6e.ttf" />
+    <Content Include="Restaurant\icons\font-awesome\fonts\fontawesome-webfont3e6e.woff" />
+    <Content Include="Restaurant\icons\font-awesome\fonts\fontawesome-webfont3e6e.woff2" />
+    <Content Include="Restaurant\icons\font-awesome\fonts\fontawesome-webfontd41d.eot" />
+    <Content Include="Restaurant\icons\material-design-iconic-font\fonts\materialdesignicons-webfontd41d.eot" />
+    <Content Include="Restaurant\icons\material-design-iconic-font\fonts\materialdesignicons-webfontdc99.eot" />
+    <Content Include="Restaurant\icons\material-design-iconic-font\fonts\materialdesignicons-webfontdc99.ttf" />
+    <Content Include="Restaurant\icons\material-design-iconic-font\fonts\materialdesignicons-webfontdc99.woff" />
+    <Content Include="Restaurant\icons\material-design-iconic-font\fonts\materialdesignicons-webfontdc99.woff2" />
+    <Content Include="Restaurant\icons\themify-icons\fonts\themify.ttf" />
+    <Content Include="Restaurant\icons\themify-icons\fonts\themify.woff" />
+    <Content Include="Restaurant\icons\themify-icons\fonts\themify9f24.eot" />
+    <Content Include="Restaurant\icons\themify-icons\fonts\themifyd41d.eot" />
+    <Content Include="Restaurant\Login\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="Restaurant\Login\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Restaurant\Login\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="Restaurant\Login\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Restaurant\Login\fonts\font-awesome-4.7.0\fonts\FontAwesome.otf" />
+    <Content Include="Restaurant\Login\fonts\font-awesome-4.7.0\less\animated.less" />
+    <Content Include="Restaurant\Login\fonts\font-awesome-4.7.0\less\bordered-pulled.less" />
+    <Content Include="Restaurant\Login\fonts\font-awesome-4.7.0\less\core.less" />
+    <Content Include="Restaurant\Login\fonts\font-awesome-4.7.0\less\fixed-width.less" />
+    <Content Include="Restaurant\Login\fonts\font-awesome-4.7.0\less\font-awesome.less" />
+    <Content Include="Restaurant\Login\fonts\font-awesome-4.7.0\less\icons.less" />
+    <Content Include="Restaurant\Login\fonts\font-awesome-4.7.0\less\larger.less" />
+    <Content Include="Restaurant\Login\fonts\font-awesome-4.7.0\less\list.less" />
+    <Content Include="Restaurant\Login\fonts\font-awesome-4.7.0\less\mixins.less" />
+    <Content Include="Restaurant\Login\fonts\font-awesome-4.7.0\less\path.less" />
+    <Content Include="Restaurant\Login\fonts\font-awesome-4.7.0\less\rotated-flipped.less" />
+    <Content Include="Restaurant\Login\fonts\font-awesome-4.7.0\less\screen-reader.less" />
+    <Content Include="Restaurant\Login\fonts\font-awesome-4.7.0\less\stacked.less" />
+    <Content Include="Restaurant\Login\fonts\font-awesome-4.7.0\less\variables.less" />
+    <Content Include="Restaurant\Login\fonts\font-awesome-4.7.0\scss\_animated.scss" />
+    <Content Include="Restaurant\Login\fonts\font-awesome-4.7.0\scss\_bordered-pulled.scss" />
+    <Content Include="Restaurant\Login\fonts\font-awesome-4.7.0\scss\_core.scss" />
+    <Content Include="Restaurant\Login\fonts\font-awesome-4.7.0\scss\_fixed-width.scss" />
+    <Content Include="Restaurant\Login\fonts\font-awesome-4.7.0\scss\_icons.scss" />
+    <Content Include="Restaurant\Login\fonts\font-awesome-4.7.0\scss\_larger.scss" />
+    <Content Include="Restaurant\Login\fonts\font-awesome-4.7.0\scss\_list.scss" />
+    <Content Include="Restaurant\Login\fonts\font-awesome-4.7.0\scss\_mixins.scss" />
+    <Content Include="Restaurant\Login\fonts\font-awesome-4.7.0\scss\_path.scss" />
+    <Content Include="Restaurant\Login\fonts\font-awesome-4.7.0\scss\_rotated-flipped.scss" />
+    <Content Include="Restaurant\Login\fonts\font-awesome-4.7.0\scss\_screen-reader.scss" />
+    <Content Include="Restaurant\Login\fonts\font-awesome-4.7.0\scss\_stacked.scss" />
+    <Content Include="Restaurant\Login\fonts\font-awesome-4.7.0\scss\_variables.scss" />
+    <Content Include="Restaurant\Login\fonts\font-awesome-4.7.0\scss\font-awesome.scss" />
+    <Content Include="Restaurant\Login\fonts\montserrat\Montserrat-Black.ttf" />
+    <Content Include="Restaurant\Login\fonts\montserrat\Montserrat-BlackItalic.ttf" />
+    <Content Include="Restaurant\Login\fonts\montserrat\Montserrat-Bold.ttf" />
+    <Content Include="Restaurant\Login\fonts\montserrat\Montserrat-BoldItalic.ttf" />
+    <Content Include="Restaurant\Login\fonts\montserrat\Montserrat-ExtraBold.ttf" />
+    <Content Include="Restaurant\Login\fonts\montserrat\Montserrat-ExtraBoldItalic.ttf" />
+    <Content Include="Restaurant\Login\fonts\montserrat\Montserrat-ExtraLight.ttf" />
+    <Content Include="Restaurant\Login\fonts\montserrat\Montserrat-ExtraLightItalic.ttf" />
+    <Content Include="Restaurant\Login\fonts\montserrat\Montserrat-Italic.ttf" />
+    <Content Include="Restaurant\Login\fonts\montserrat\Montserrat-Light.ttf" />
+    <Content Include="Restaurant\Login\fonts\montserrat\Montserrat-LightItalic.ttf" />
+    <Content Include="Restaurant\Login\fonts\montserrat\Montserrat-Medium.ttf" />
+    <Content Include="Restaurant\Login\fonts\montserrat\Montserrat-MediumItalic.ttf" />
+    <Content Include="Restaurant\Login\fonts\montserrat\Montserrat-Regular.ttf" />
+    <Content Include="Restaurant\Login\fonts\montserrat\Montserrat-SemiBold.ttf" />
+    <Content Include="Restaurant\Login\fonts\montserrat\Montserrat-SemiBoldItalic.ttf" />
+    <Content Include="Restaurant\Login\fonts\montserrat\Montserrat-Thin.ttf" />
+    <Content Include="Restaurant\Login\fonts\montserrat\Montserrat-ThinItalic.ttf" />
+    <Content Include="Restaurant\Login\fonts\poppins\Poppins-Black.ttf" />
+    <Content Include="Restaurant\Login\fonts\poppins\Poppins-BlackItalic.ttf" />
+    <Content Include="Restaurant\Login\fonts\poppins\Poppins-Bold.ttf" />
+    <Content Include="Restaurant\Login\fonts\poppins\Poppins-BoldItalic.ttf" />
+    <Content Include="Restaurant\Login\fonts\poppins\Poppins-ExtraBold.ttf" />
+    <Content Include="Restaurant\Login\fonts\poppins\Poppins-ExtraBoldItalic.ttf" />
+    <Content Include="Restaurant\Login\fonts\poppins\Poppins-ExtraLight.ttf" />
+    <Content Include="Restaurant\Login\fonts\poppins\Poppins-ExtraLightItalic.ttf" />
+    <Content Include="Restaurant\Login\fonts\poppins\Poppins-Italic.ttf" />
+    <Content Include="Restaurant\Login\fonts\poppins\Poppins-Light.ttf" />
+    <Content Include="Restaurant\Login\fonts\poppins\Poppins-LightItalic.ttf" />
+    <Content Include="Restaurant\Login\fonts\poppins\Poppins-Medium.ttf" />
+    <Content Include="Restaurant\Login\fonts\poppins\Poppins-MediumItalic.ttf" />
+    <Content Include="Restaurant\Login\fonts\poppins\Poppins-Regular.ttf" />
+    <Content Include="Restaurant\Login\fonts\poppins\Poppins-SemiBold.ttf" />
+    <Content Include="Restaurant\Login\fonts\poppins\Poppins-SemiBoldItalic.ttf" />
+    <Content Include="Restaurant\Login\fonts\poppins\Poppins-Thin.ttf" />
+    <Content Include="Restaurant\Login\fonts\poppins\Poppins-ThinItalic.ttf" />
+    <Content Include="Restaurant\Login\vendor\bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="Restaurant\Login\vendor\bootstrap\css\bootstrap-grid.min.css.map" />
+    <Content Include="Restaurant\Login\vendor\bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Include="Restaurant\Login\vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
+    <Content Include="Restaurant\Login\vendor\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Restaurant\Login\vendor\bootstrap\css\bootstrap.min.css.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -760,6 +1255,8 @@
   <ItemGroup>
     <Folder Include="admin\dishes\" />
     <Folder Include="admin\Res_img\dishes\" />
+    <Folder Include="Restaurant\dishes\" />
+    <Folder Include="Restaurant\Res_img\dishes\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
