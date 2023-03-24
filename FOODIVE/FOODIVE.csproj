@@ -138,6 +138,11 @@
     <Content Include="admin\css\spinners.css" />
     <Content Include="admin\css\style.css" />
     <Content Include="admin\dashboard.aspx" />
+    <Content Include="admin\delete_category.aspx" />
+    <Content Include="admin\delete_menu.aspx" />
+    <Content Include="admin\delete_orders.aspx" />
+    <Content Include="admin\delete_restaurant.aspx" />
+    <Content Include="admin\delete_users.aspx" />
     <Content Include="admin\icons\font-awesome\css\font-awesome.min.css" />
     <Content Include="admin\icons\font-awesome\fonts\fontawesome-webfont3e6e.svg" />
     <Content Include="admin\icons\material-design-iconic-font\css\materialdesignicons.min.css" />
@@ -216,7 +221,11 @@
     <Content Include="admin\Login\vendor\select2\select2.min.js" />
     <Content Include="admin\Login\vendor\tilt\tilt.jquery.min.js" />
     <Content Include="admin\logout.aspx" />
+    <Content Include="admin\order_update.aspx" />
     <Content Include="admin\restaurant_request.aspx" />
+    <Content Include="admin\update_category.aspx" />
+    <Content Include="admin\update_menu.aspx" />
+    <Content Include="admin\update_restaurant.aspx" />
     <Content Include="assets\css\animate.css" />
     <Content Include="assets\css\bootstrap.min.css" />
     <Content Include="assets\css\chosen-sprite%402x.png" />
@@ -819,6 +828,41 @@
     <Compile Include="admin\dashboard.aspx.designer.cs">
       <DependentUpon>dashboard.aspx</DependentUpon>
     </Compile>
+    <Compile Include="admin\delete_category.aspx.cs">
+      <DependentUpon>delete_category.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\delete_category.aspx.designer.cs">
+      <DependentUpon>delete_category.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\delete_menu.aspx.cs">
+      <DependentUpon>delete_menu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\delete_menu.aspx.designer.cs">
+      <DependentUpon>delete_menu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\delete_orders.aspx.cs">
+      <DependentUpon>delete_orders.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\delete_orders.aspx.designer.cs">
+      <DependentUpon>delete_orders.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\delete_restaurant.aspx.cs">
+      <DependentUpon>delete_restaurant.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\delete_restaurant.aspx.designer.cs">
+      <DependentUpon>delete_restaurant.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\delete_users.aspx.cs">
+      <DependentUpon>delete_users.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\delete_users.aspx.designer.cs">
+      <DependentUpon>delete_users.aspx</DependentUpon>
+    </Compile>
     <Compile Include="admin\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -833,12 +877,40 @@
     <Compile Include="admin\logout.aspx.designer.cs">
       <DependentUpon>logout.aspx</DependentUpon>
     </Compile>
+    <Compile Include="admin\order_update.aspx.cs">
+      <DependentUpon>order_update.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\order_update.aspx.designer.cs">
+      <DependentUpon>order_update.aspx</DependentUpon>
+    </Compile>
     <Compile Include="admin\restaurant_request.aspx.cs">
       <DependentUpon>restaurant_request.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="admin\restaurant_request.aspx.designer.cs">
       <DependentUpon>restaurant_request.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\update_category.aspx.cs">
+      <DependentUpon>update_category.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\update_category.aspx.designer.cs">
+      <DependentUpon>update_category.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\update_menu.aspx.cs">
+      <DependentUpon>update_menu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\update_menu.aspx.designer.cs">
+      <DependentUpon>update_menu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\update_restaurant.aspx.cs">
+      <DependentUpon>update_restaurant.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\update_restaurant.aspx.designer.cs">
+      <DependentUpon>update_restaurant.aspx</DependentUpon>
     </Compile>
     <Compile Include="Customer\AddToCart.aspx.cs">
       <DependentUpon>AddToCart.aspx</DependentUpon>
@@ -1545,6 +1617,7 @@
     <Folder Include="admin\Res_img\dishes\" />
     <Folder Include="Restaurant\dishes\" />
     <Folder Include="Restaurant\Res_img\dishes\" />
+    <Folder Include="Restaurant\Res_img\Restro manager adharcard\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

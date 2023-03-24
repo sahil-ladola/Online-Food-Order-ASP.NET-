@@ -91,30 +91,61 @@
                                     <table id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
                                         <thead class="thead-dark">
                                             <tr>
-                                                <th>Name</th>
-                                                <th>Email</th>
-                                                <th>Phone</th>
-                                                <th>Address</th>
-                                                <th>Image</th>
+                                                <th>Manager name</th>
+                                                <th>Manager phone number</th>
+                                                <th>Manager email</th>
+                                                <th>Manager adhaar card image</th>
+                                                <th>Manager address</th>
+                                                <th>Manager city</th>
+                                                <th>Manager pincode</th>
+                                                <th>Restaurant name</th>
+                                                <th>Restaurant phone number</th>
+                                                <th>Restaurant email</th>
+                                                <th>Restaurant image</th>
+                                                <th>Restaurant sub-brach status</th>
+                                                <th>Restaurant address</th>
+                                                <th>Restaurant city</th>
+                                                <th>Restaurant pincode</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <td colspan="9">
-                                                <center>Restaurant Requests</center>
-                                            </td>
-                                            <%--<tr><td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td>
-                                                        <div class="col-md-3 col-lg-8 m-b-10">
-                                                        <center</center></div>
-                                                    </td>
-                                                    <td>
-                                                    </td></tr>--%>
+                                             <% if (req_id.Count == 0)
+                                                {
+                                            %>
+                                            <tr>
+                                                <td colspan="16">
+                                                    <center>No Restaurant Requests</center>
+                                                </td>
+                                            </tr>
+                                            <% }
+                                                else
+                                                {
+                                                    for (int i = 0; i <= req_id.Count - 1; i++)
+                                                    {
+                                            %>
+                                            <tr>
+                                                <td><% Response.Write(mng_name[i]);%></td>
+                                                <td><% Response.Write(mng_phone_num[i]);%></td>
+                                                <td><% Response.Write(mng_email[i]);%></td>
+                                                <td>
+                                                    <% Response.Write("<div class='col-md-3 col-lg-8 m-b-10'><center><asp:Image ID='Image1' class='img-responsive radius'  style='min-width:150px;min-height:100px;' ImageUrl='"+ mng_adharcard[i] +"'  runat='server' /></center></div>");%></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <%
+                                                    }
+                                                }%>
                                         </tbody>
                                     </table>
                                 </div>

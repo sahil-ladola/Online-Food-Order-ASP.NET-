@@ -49,29 +49,29 @@
                     <ul id="sidebarnav">
                         <li class="nav-devider"></li>
                         <li class="nav-label">Home</li>
-                        <li><a href=" dashboard.aspx"><i class="fa fa-tachometer active"></i><span>Dashboard</span></a>
+                        <li><a href="../Admin/dashboard.aspx"><i class="fa fa-tachometer"></i><span>Dashboard</span></a>
                         </li>
                         <li class="nav-label">Log</li>
-                        <%--<li><a href=" all_users.aspx"><span><i class="fa fa-user f-s-20 "></i></span><span>Users</span></a></li>--%>
+                        <li><a href="../Admin/all_users.aspx"><span><i class="fa fa-user f-s-20 "></i></span><span>Users</span></a></li>
                         <li><a class="has-arrow" href="#" aria-expanded="false"><i class="fa fa-archive f-s-20 color-warning"></i><span class="hide-menu">Restaurant</span></a>
                             <ul aria-expanded="false" class="collapse">
-                                <li><a href=" all_restaurant.aspx">All Restaurant</a></li>
-                                <li><a href="restaurant_request.aspx">Add Sub-branch Restaurant</a></li>
+                                <li><a href="../Admin/all_restaurant.aspx">All Restaurant</a></li>
+                                <li><a href="restaurant_request.aspx">Restaurant Request</a></li>
                             </ul>
                         </li>
-                        <%--<li><a class="has-arrow" href="#" aria-expanded="false"><i class="fa fa-delicious f-s-20 color-warning"></i><span class="hide-menu">Categories</span></a>
+                        <li><a class="has-arrow" href="#" aria-expanded="false"><i class="fa fa-delicious f-s-20 color-warning"></i><span class="hide-menu">Categories</span></a>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="all_category.aspx">All Categories</a></li>
                                 <li><a href="add_category.aspx">Add Categories</a></li>
                             </ul>
-                        </li>--%>
+                        </li>
                         <li><a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-cutlery" aria-hidden="true"></i><span class="hide-menu">Menu</span></a>
                             <ul aria-expanded="false" class="collapse">
-                                <li><a href=" all_menu.aspx">All Menues</a></li>
-                                <li><a href=" add_menu.aspx">Add Menu</a></li>
+                                <li><a href="../Admin/all_menu.aspx">All Menues</a></li>
+                                <li><a href="../Admin/add_menu.aspx">Add Menu</a></li>
                             </ul>
                         </li>
-                        <li><a href=" all_orders.aspx"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span>Orders</span></a></li>
+                        <li><a href="../Admin/all_orders.aspx"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span>Orders</span></a></li>
                     </ul>
                 </nav>
             </div>
@@ -92,14 +92,14 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label class="control-label">Dish Name</label>
-                                                <input type="text" name="d_name" pattern="[A-Z a-z0-9]*" class="form-control">
+                                                <asp:TextBox ID="txtd_name" class="form-control" pattern="[A-Z a-z0-9]*" runat="server"></asp:TextBox>
                                             </div>
                                         </div>
 
                                         <div class="col-md-6">
                                             <div class="form-group has-danger">
                                                 <label class="control-label">Description</label>
-                                                <input type="text" name="about" pattern="[A-Z a-z0-9]*" class="form-control form-control-danger">
+                                                <asp:TextBox ID="txtabout" pattern="[A-Z a-z0-9]*" class="form-control form-control-danger" runat="server"></asp:TextBox>
                                             </div>
                                         </div>
                                     </div>
@@ -108,28 +108,28 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label class="control-label">Price </label>
-                                                <input type="text" name="price" pattern="[0-9]*" class="form-control" placeholder="00.00/-">
+                                                <asp:TextBox ID="txtprice" runat="server" pattern="[0-9]*" class="form-control" placeholder="00.00/-"></asp:TextBox>
                                             </div>
                                         </div>
 
                                         <div class="col-md-6">
                                             <div class="form-group has-danger">
                                                 <label class="control-label">Image</label>
-                                                <input type="file" name="file" id="lastName" class="form-control form-control-danger" placeholder="12n">
+                                                <asp:FileUpload ID="file" class="form-control form-control-danger" placeholder="12n" runat="server" />
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="row">
-                                        <%--<div class="col-md-6">
+                                        <div class="col-md-6">
                                             <div class="form-group">
                                                 <label class="control-label">Select Restaurant</label>
                                                 <select name="res_name" class="form-control custom-select" data-placeholder="Choose a Category" tabindex="1">
                                                     <option>-- Select Restaurant --</option>
                                                 </select>
                                             </div>
-                                        </div>--%>
-                                        <div class="col-md-12">
+                                        </div>
+                                        <div class="col-md-6">
                                             <div class="form-group">
                                                 <label class="control-label">Select Category</label>
                                                 <select name="res_name" class="form-control custom-select" data-placeholder="Choose a Category" tabindex="1">
@@ -139,7 +139,7 @@
                                         </div>
                                     </div>
                                     <div class="form-actions">
-                                        <input type="submit" name="submit" class="btn btn-primary" value="Save">
+                                        <asp:Button ID="btnsubmit" class="btn btn-primary" runat="server" Text="Save" OnClick="btnsubmit_Click" />
                                         <a href="add_menu.aspx" class="btn btn-inverse">Cancel</a>
                                     </div>
                                 </div>

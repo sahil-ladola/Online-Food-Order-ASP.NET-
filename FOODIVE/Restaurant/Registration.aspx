@@ -13,91 +13,86 @@
     <link rel="stylesheet" href="Registration/css/style.css">
 </head>
 <body>
+
     <div class="main">
         <div class="container">
             <div class="signup-content">
                 <div class="signup-img">
                     <img src="../Image/Img/restro_mng.jpg" alt="" style="height: 100%">
-                    <%--<div class="signup-img-content">
-                        <h2>Register now </h2>
-                        <p>while seats are available !</p>
-                    </div>--%>
                 </div>
                 <div class="signup-form">
-                    <form method="POST" class="register-form" id="register-form">
+                    <form method="POST" runat="server" class="register-form">
                         <div class="form-row">
                             <div class="form-group">
                                 <div class="form-select">
                                     <div class="label-flex">
                                         <h3>RESTAURANT MANAGER DETAILS</h3>
-                                        <%--<a href="#" class="form-link">Lunch detail</a>--%>
                                     </div>
                                     <div class="form-input">
                                         <label for="name">Full Name</label>
-                                        <input type="text" name="name" id="name" />
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ValidationGroup="validate" runat="server" ControlToValidate="txtname" ErrorMessage="All field must be filled" Display="Dynamic" ForeColor="Red" Font-Bold="True" Font-Size="Small"></asp:RequiredFieldValidator>
+                                        <asp:RegularExpressionValidator ID="validationfirstname" ValidationGroup="validate" runat="server" ControlToValidate="txtname" ErrorMessage="Invalid Full name" ValidationExpression="[a-zA-Z][ a-zA-Z]{2,}" Display="Dynamic" ForeColor="Red" Font-Bold="True" Font-Size="Small"></asp:RegularExpressionValidator>
+                                        <asp:TextBox ID="txtname" runat="server"></asp:TextBox>
                                     </div>
                                 </div>
                                 <div class="form-input">
                                     <label for="phone_number">Phone number</label>
-                                    <input type="text" name="phone_number" id="phone_number" />
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ValidationGroup="validate" ControlToValidate="txtphone_number" ErrorMessage="All field must be filled" Display="Dynamic" ForeColor="Red" Font-Bold="True" Font-Size="Small"></asp:RequiredFieldValidator>
+                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ValidationGroup="validate" ControlToValidate="txtphone_number" ErrorMessage="Invalid Phone number" Display="Dynamic" ValidationExpression="[6789][0-9]{9}" ForeColor="Red" Font-Bold="True" Font-Size="Small"></asp:RegularExpressionValidator>
+                                    <asp:TextBox ID="txtphone_number" runat="server" MaxLength="10"></asp:TextBox>
                                 </div>
                                 <div class="form-input">
                                     <label for="email">Email</label>
-                                    <input type="email" name="email" id="email" />
+                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator3" ValidationGroup="validate" runat="server" ControlToValidate="txtemail" ErrorMessage="Invalid Email" ValidationExpression="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" Display="Dynamic" ForeColor="Red" Font-Bold="True" Font-Size="Small"></asp:RegularExpressionValidator>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator6" ValidationGroup="validate" runat="server" ControlToValidate="txtemail" ErrorMessage="All field must be filled" Display="Dynamic" ForeColor="Red" Font-Bold="True" Font-Size="Small"></asp:RequiredFieldValidator>
+                                    <asp:TextBox ID="txtemail" TextMode="Email" runat="server"></asp:TextBox>
                                 </div>
                                 <div class="form-input">
                                     <label for="password">Password</label>
-                                    <input type="password" name="password" id="password" />
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ValidationGroup="validate" ControlToValidate="txtpassword" ErrorMessage="All field must be filled" Display="Dynamic" ForeColor="Red" Font-Bold="True" Font-Size="Small"></asp:RequiredFieldValidator>
+                                    <asp:RegularExpressionValidator ID="RegularExpressionValidatorpassword" ValidationGroup="validate" runat="server" ControlToValidate="txtpassword" ErrorMessage="Password must contain: Minimum 8 characters atleast 1 UpperCase Alphabet, 1 LowerCase Alphabet, 1 Number and 1 Special Character" ForeColor="Red" Display="Dynamic" ValidationExpression="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,}" Font-Bold="True" Font-Size="Small"></asp:RegularExpressionValidator>
+                                    <asp:TextBox ID="txtpassword" TextMode="Password" runat="server"></asp:TextBox>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="form-select">
                                     <div class="label-flex">
                                         <h3>ID PROOF</h3>
-                                        <%--<a href="#" class="form-link">Lunch detail</a>--%>
                                     </div>
                                     <div class="form-input">
                                         <label for="Aadhaar">Aadhaar card photo</label>
-                                        <input type="file" name="Aadhaar" id="Aadhaar" />
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" ValidationGroup="validate" runat="server" ControlToValidate="FileAadhaar" ErrorMessage="All field must be filled" Display="Dynamic" ForeColor="Red" Font-Bold="True" Font-Size="Small"></asp:RequiredFieldValidator>
+                                        <asp:FileUpload ID="FileAadhaar" runat="server" />
                                     </div>
-                                    <%--<div class="select-list">
-                                        <select name="meal_preference" id="meal_preference">
-                                            <option value="Vegetarian">Vegetarian</option>
-                                            <option value="Kosher">Kosher</option>
-                                            <option value="Asian Vegetarian">Asian Vegetarian</option>
-                                        </select>
-                                    </div>--%>
+
                                 </div>
                                 <div class="form-select">
                                     <div class="label-flex">
                                         <h3 for="payment">RESIDENTIAL INFORMATION</h3>
-                                        <%--<a href="#" class="form-link">Payment Detail</a>--%>
                                     </div>
                                     <div class="form-input">
                                         <label for="address">Address</label>
-                                        <input type="text" name="address" id="address" />
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" ValidationGroup="validate"  runat="server" ControlToValidate="txtaddress" ErrorMessage="All field must be filled" Display="Dynamic" ForeColor="Red" Font-Bold="True" Font-Size="Small"></asp:RequiredFieldValidator>
+                                        <asp:TextBox ID="txtaddress" runat="server"></asp:TextBox>
                                     </div>
                                 </div>
                                 <div class="form-input">
                                     <label for="city">City</label>
-                                    <input type="text" name="city" id="city" />
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ValidationGroup="validate" ControlToValidate="txtcity" ErrorMessage="All field must be filled" Display="Dynamic" ForeColor="Red" Font-Bold="True" Font-Size="Small"></asp:RequiredFieldValidator>
+                                    <asp:RegularExpressionValidator ID="validationcity" runat="server" ValidationGroup="validate" ControlToValidate="txtcity" ErrorMessage="Invalid City" ValidationExpression="[a-zA-Z][a-zA-Z]{2,}" Display="Dynamic" ForeColor="Red" Font-Bold="True" Font-Size="Small"></asp:RegularExpressionValidator>
+                                    <asp:TextBox ID="txtcity" runat="server"></asp:TextBox>
                                 </div>
                                 <div class="form-input">
                                     <label for="pincode">Pincode</label>
-                                    <input type="text" name="pincode" id="pincode" />
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ValidationGroup="validate" ControlToValidate="txtpincode" ErrorMessage="All field must be filled" Display="Dynamic" ForeColor="Red" Font-Bold="True" Font-Size="Small"></asp:RequiredFieldValidator>
+                                    <asp:RegularExpressionValidator ID="validationPincode" runat="server" ValidationGroup="validate" ControlToValidate="txtpincode" ErrorMessage="Invalid Pincode" ValidationExpression="[0-9]{6}" Display="Dynamic" ForeColor="Red" Font-Bold="True" Font-Size="Small"></asp:RegularExpressionValidator>
+                                    <asp:TextBox MaxLength="6" ID="txtpincode" runat="server"></asp:TextBox>
                                 </div>
                             </div>
                         </div>
-                        <%--<div class="donate-us">
-                            <label>Donate us</label>
-                            <div class="price_slider ui-slider ui-slider-horizontal">
-                                <div id="slider-margin"></div>
-                                <span class="donate-value" id="value-lower"></span>
-                            </div>
-                        </div>--%>
                         <div class="form-submit">
-                            <input type="submit" value="Next" class="submit" id="submit" name="submit" />
-                            <input type="reset" value="Reset" class="submit" id="reset" name="reset" />
+                            <asp:Button ID="submit" class="submit" name="submit" runat="server" ValidationGroup="validate" Text="Next" OnClick="submit_Click" />
+                            <asp:Button ID="reset" class="submit" name="reset" runat="server" Text="Back" OnClick="reset_Click" />
                         </div>
                     </form>
                 </div>

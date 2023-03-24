@@ -78,28 +78,27 @@
         </div>
         <div class="page-wrapper">
             <div class="container-fluid">
-
                 <div class="col-lg-12">
                     <div class="card card-outline-primary">
                         <div class="card-header">
                             <h4 class="m-b-0 text-white">Add Menu</h4>
                         </div>
                         <div class="card-body">
-                            <form action='' method='post' enctype="multipart/form-data">
+                            <form runat="server" method='post' enctype="multipart/form-data">
                                 <div class="form-body">
                                     <hr>
                                     <div class="row p-t-20">
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label class="control-label">Dish Name</label>
-                                                <input type="text" name="d_name" pattern="[A-Z a-z0-9]*" class="form-control">
+                                                <asp:TextBox ID="txtd_name" class="form-control" pattern="[A-Z a-z0-9]*" runat="server"></asp:TextBox>
                                             </div>
                                         </div>
 
                                         <div class="col-md-6">
                                             <div class="form-group has-danger">
                                                 <label class="control-label">Description</label>
-                                                <input type="text" name="about" pattern="[A-Z a-z0-9]*" class="form-control form-control-danger">
+                                                <asp:TextBox ID="txtabout" pattern="[A-Z a-z0-9]*" class="form-control form-control-danger" runat="server"></asp:TextBox>
                                             </div>
                                         </div>
                                     </div>
@@ -108,14 +107,14 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label class="control-label">Price </label>
-                                                <input type="text" name="price" pattern="[0-9]*" class="form-control" placeholder="00.00/-">
+                                                <asp:TextBox ID="txtprice" runat="server" pattern="[0-9]*" class="form-control" placeholder="00.00/-"></asp:TextBox>
                                             </div>
                                         </div>
 
                                         <div class="col-md-6">
                                             <div class="form-group has-danger">
                                                 <label class="control-label">Image</label>
-                                                <input type="file" name="file" id="lastName" class="form-control form-control-danger" placeholder="12n">
+                                                <asp:FileUpload ID="file" class="form-control form-control-danger" placeholder="12n" runat="server" />
                                             </div>
                                         </div>
                                     </div>
@@ -139,7 +138,7 @@
                                         </div>
                                     </div>
                                     <div class="form-actions">
-                                        <input type="submit" name="submit" class="btn btn-primary" value="Save">
+                                        <asp:Button ID="btnsubmit" class="btn btn-primary" runat="server" Text="Save" />
                                         <a href="add_menu.aspx" class="btn btn-inverse">Cancel</a>
                                     </div>
                                 </div>

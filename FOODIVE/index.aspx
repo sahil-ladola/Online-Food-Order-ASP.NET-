@@ -34,14 +34,17 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
+                    <%--<li class="nav-item">
                         <asp:HyperLink class="nav-link" runat="server" NavigateUrl="~/index.aspx">Home</asp:HyperLink>
-                    </li>
+                    </li>--%>
                     <li class="nav-item">
                         <asp:HyperLink class="nav-link" runat="server" NavigateUrl="Customer/Login.aspx">Login</asp:HyperLink>
                     </li>
                     <li class="nav-item">
                         <asp:HyperLink class="nav-link" runat="server" NavigateUrl="Customer/Registration.aspx">Sign Up</asp:HyperLink>
+                    </li>
+                    <li class="nav-item">
+                        <asp:HyperLink class="nav-link" runat="server" NavigateUrl="~/Restaurant/Registration.aspx">Register Restaurant</asp:HyperLink>
                     </li>
                 </ul>
             </div>

@@ -86,19 +86,19 @@
                                 <div class="card-header">
                                     <h4 class="m-b-0 text-white">Add Restaurant Category</h4>
                                 </div>
-                                <form method='post'>
+                                <form method='post' runat="server">
                                     <div class="form-body">
                                         <hr>
                                         <div class="row p-t-20">
                                             <div class="col-md-12">
                                                 <div class="form-group">
                                                     <label class="control-label">Category name</label>
-                                                    <input type="text" name="c_name" class="form-control">
+                                                    <asp:TextBox ID="txtc_name" runat="server" name="c_name" class="form-control"></asp:TextBox>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="form-actions">
-                                            <input type="submit" name="submit" class="btn btn-primary" value="Save">
+                                            <asp:Button ID="btnSave" runat="server" class="btn btn-primary" name="submit" Text="Save" OnClick="btnSave_Click" />
                                             <a href="add_category.aspx" class="btn btn-inverse">Cancel</a>
                                         </div>
                                     </div>

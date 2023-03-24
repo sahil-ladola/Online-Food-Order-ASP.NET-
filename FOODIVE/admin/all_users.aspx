@@ -96,19 +96,42 @@
                                                 <th>Email</th>
                                                 <th>Phone</th>
                                                 <th>Address</th>
+                                                <th>City</th>
+                                                <th>Pincode</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <td colspan="6">
+                                            <form runat="server">
+                                            <% if (rid.Count == 0)
+                                                {
+                                            %>
+                                            <td colspan="8">
                                                 <center>No Users</center>
                                             </td>
-                                            <%--<tr><td><td>
-                                                    <td><td>
-                                                    <td><td>
-                                                    <td><td>
-                                                    <td><td>
-                                                    <td></td></tr>--%>
+                                            <%
+                                                }
+                                                else
+                                                {
+                                                    for (int i = 0; i <= fname.Count - 1; i++)
+                                                    {
+                                            %>
+                                            <tr>
+                                                <td><% Response.Write(fname[i]);%></td>
+                                                <td><% Response.Write(lname[i]);%></td>
+                                                <td><% Response.Write(email[i]);%></td>
+                                                <td><% Response.Write(mobile_num[i]);%></td>
+                                                <td><% Response.Write(address[i]);%></td>
+                                                <td><% Response.Write(city[i]);%></td>
+                                                <td><% Response.Write(pincode[i]);%></td>
+                                                <td>
+                                                    <% Response.Write("<a href='delete_users.aspx?user_del=" + rid[i] + "' class='btn btn-danger btn-flat btn-addon btn-xs m-b-10'><i class='fa fa-trash-o' style='font-size:16px'></i></a>");%>
+                                                </td>
+                                            </tr>
+                                            <%
+                                                    }
+                                                }%>
+                                            </form>
                                         </tbody>
                                     </table>
                                 </div>

@@ -25,21 +25,21 @@
                     <img src="../Image/Img/restro_login.jpg" alt="IMG" class="shadow-lg rounded">
                 </div>
 
-                <form class="login100-form validate-form">
+                <form runat="server" class="login100-form validate-form">
                     <span class="login100-form-title p-t-100">
                         Restaurant Login
                     </span>
 
-                    <div class="wrap-input100 validate-input" data-validate="Email is required">
-                        <input class="input100" type="text" name="email" placeholder="Email">
+                    <div class="wrap-input100 validate-input" data-validate="Username is required">
+                        <asp:TextBox ID="txtUsername" placeholder="Username" class="input100" runat="server"></asp:TextBox>
                         <span class="focus-input100"></span>
                         <span class="symbol-input100">
-                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                            <i class="fa fa-user" aria-hidden="true"></i>
                         </span>
                     </div>
 
                     <div class="wrap-input100 validate-input" data-validate="Password is required">
-                        <input class="input100" type="password" name="pass" placeholder="Password">
+                        <asp:TextBox ID="txtpass" class="input100"  placeholder="Password" TextMode="Password" runat="server"></asp:TextBox>
                         <span class="focus-input100"></span>
                         <span class="symbol-input100">
                             <i class="fa fa-lock" aria-hidden="true"></i>
@@ -47,33 +47,12 @@
                     </div>
 
                     <div class="container-login100-form-btn">
-                        <button class="login100-form-btn">
-                            Login
-                        </button>
-                    </div>
-
-                    <%--<div class="text-center p-t-12">
-                        <span class="txt1">
-                            Forgot
-                        </span>
-                        <a class="txt2" href="#">
-                            Username / Password?
-                        </a>
-                    </div>--%>
-
-                    <div class="text-center p-t-10">
-                        <a class="txt2" href="#">
-                            Create your Account
-                            <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
-                        </a>
+                        <asp:Button ID="btnLogin" class="login100-form-btn" runat="server" Text="Login" OnClick="btnLogin_Click" />
                     </div>
                 </form>
             </div>
         </div>
     </div>
-
-
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     
     <script src="Login/vendor/jquery/jquery-3.2.1.min.js"></script>    

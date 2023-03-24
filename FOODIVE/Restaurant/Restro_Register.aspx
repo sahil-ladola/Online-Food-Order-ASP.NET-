@@ -17,87 +17,89 @@
         <div class="container">
             <div class="signup-content">
                 <div class="signup-img">
-                    <img src="../Image/Img/restro_mng.jpg" alt="" style="height: 100%">
-                    <%--<div class="signup-img-content">
-                        <h2>Register now </h2>
-                        <p>while seats are available !</p>
-                    </div>--%>
+                    <img src="../Image/Img/restro_reg.jpg" alt="" style="height: 100%">
                 </div>
                 <div class="signup-form">
-                    <form method="POST" class="register-form" id="register-form">
+                    <form method="POST" runat="server" class="register-form">
                         <div class="form-row">
                             <div class="form-group">
                                 <div class="form-select">
                                     <div class="label-flex">
                                         <h3>RESTAURANT DETAILS</h3>
-                                        <%--<a href="#" class="form-link">Lunch detail</a>--%>
                                     </div>
                                     <div class="form-input">
-                                        <label for="restro_name">Restaurant name</label>
-                                        <input type="text" name="restro_name" id="restro_name" />
+                                        <label for="txtrestro_name">Restaurant name</label>
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ValidationGroup="validate" ControlToValidate="txtrestro_name" ErrorMessage="All field must be filled" Display="Dynamic" ForeColor="Red" Font-Bold="True" Font-Size="Small"></asp:RequiredFieldValidator>
+                                        <asp:RegularExpressionValidator ID="validationfirstname" runat="server" ValidationGroup="validate" ControlToValidate="txtrestro_name" ErrorMessage="Invalid Restaurant name" ValidationExpression="[a-zA-Z0-9][ a-zA-Z0-9]{2,}" Display="Dynamic" ForeColor="Red" Font-Bold="True" Font-Size="Small"></asp:RegularExpressionValidator>
+                                        <asp:TextBox ID="txtrestro_name" runat="server"></asp:TextBox>
                                     </div>
                                 </div>
                                 <div class="form-input">
-                                    <label for="restro_phone_number">Phone number</label>
-                                    <input type="text" name="restro_phone_number" id="restro_phone_number" />
+                                    <label for="txtrestro_phone_number">Phone number</label>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator7" ValidationGroup="validate" runat="server" ControlToValidate="txtrestro_phone_number" ErrorMessage="All field must be filled" Display="Dynamic" ForeColor="Red" Font-Bold="True" Font-Size="Small"></asp:RequiredFieldValidator>
+                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator2" ValidationGroup="validate" runat="server" ControlToValidate="txtrestro_phone_number" ErrorMessage="Invalid Phone number" Display="Dynamic" ValidationExpression="[6789][0-9]{9}" ForeColor="Red" Font-Bold="True" Font-Size="Small"></asp:RegularExpressionValidator>
+                                    <asp:TextBox MaxLength="10" ID="txtrestro_phone_number"  runat="server"></asp:TextBox>
                                 </div>
                                 <div class="form-input">
-                                    <label for="restro_email">Email</label>
-                                    <input type="email" name="restro_email" id="restro_email" />
+                                    <label for="txtrestro_email">Email</label>
+                                    <asp:RegularExpressionValidator ValidationGroup="validate" ID="RegularExpressionValidator3" runat="server" ControlToValidate="txtrestro_email" ErrorMessage="Invalid Email" ValidationExpression="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" Display="Dynamic" ForeColor="Red" Font-Bold="True" Font-Size="Small"></asp:RegularExpressionValidator>
+                                    <asp:RequiredFieldValidator ValidationGroup="validate" ID="RequiredFieldValidator6" runat="server" ControlToValidate="txtrestro_email" ErrorMessage="All field must be filled" Display="Dynamic" ForeColor="Red" Font-Bold="True" Font-Size="Small"></asp:RequiredFieldValidator>
+                                    <asp:TextBox ID="txtrestro_email" TextMode="Email" runat="server"></asp:TextBox>
                                 </div>
                                 <div class="form-input">
-                                    <label for="restro_img">Restaurant image</label>
-                                    <input type="file" name="restro_img" id="restro_img" />
+                                    <label for="Filerestro_img">Restaurant image</label>
+                                    <asp:RequiredFieldValidator ValidationGroup="validate" ID="RequiredFieldValidator2" runat="server" ControlToValidate="Filerestro_img" ErrorMessage="All field must be filled" Display="Dynamic" ForeColor="Red" Font-Bold="True" Font-Size="Small"></asp:RequiredFieldValidator>
+                                    <asp:FileUpload ID="Filerestro_img" runat="server" />
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="form-select">
-                                    <div class="label-flex">
-                                        <h3>ID PROOF</h3>
-                                        <%--<a href="#" class="form-link">Lunch detail</a>--%>
+                                    <div class="form-radio">
+                                        <div class="label-flex">
+                                            <h3>SUB-BRANCH INFORMATION</h3>
+                                        </div>
+                                            <label>Is your restaurant have sub-branches ?</label>
+                                        <div class="form-radio-group">
+                                            <div class="form-radio-item">
+                                                <input type="radio" name="payment" id="No" runat="server" checked>
+                                                <label for="No">No</label>
+                                                <span class="check"></span>
+                                            </div>
+                                            <div class="form-radio-item">
+                                                <input type="radio" name="payment" id="Yes" runat="server">
+                                                <label for="Yes">Yes</label>
+                                                <span class="check"></span>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="form-input">
-                                        <label for="Aadhaar">Aadhaar card photo</label>
-                                        <input type="file" name="Aadhaar" id="Aadhaar" />
-                                    </div>
-                                    <%--<div class="select-list">
-                                        <select name="meal_preference" id="meal_preference">
-                                            <option value="Vegetarian">Vegetarian</option>
-                                            <option value="Kosher">Kosher</option>
-                                            <option value="Asian Vegetarian">Asian Vegetarian</option>
-                                        </select>
-                                    </div>--%>
                                 </div>
                                 <div class="form-select">
                                     <div class="label-flex">
-                                        <h3 for="payment">RESIDENTIAL INFORMATION</h3>
-                                        <%--<a href="#" class="form-link">Payment Detail</a>--%>
+                                        <h3 for="payment">RESTAURANT ADDRESS</h3>
                                     </div>
                                     <div class="form-input">
-                                        <label for="address">Address</label>
-                                        <input type="text" name="address" id="address" />
+                                        <label for="txtaddress">Address</label>
+                                        <asp:RequiredFieldValidator ValidationGroup="validate" ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtaddress" ErrorMessage="All field must be filled" Display="Dynamic" ForeColor="Red" Font-Bold="True" Font-Size="Small"></asp:RequiredFieldValidator>
+                                        <asp:TextBox ID="txtaddress" runat="server"></asp:TextBox>
                                     </div>
                                 </div>
                                 <div class="form-input">
-                                    <label for="city">City</label>
-                                    <input type="text" name="city" id="city" />
+                                    <label for="txtcity">City</label>
+                                    <asp:RequiredFieldValidator ValidationGroup="validate" ID="RequiredFieldValidator4" runat="server" ControlToValidate="txtcity" ErrorMessage="All field must be filled" Display="Dynamic" ForeColor="Red" Font-Bold="True" Font-Size="Small"></asp:RequiredFieldValidator>
+                                    <asp:RegularExpressionValidator ValidationGroup="validate" ID="validationcity" runat="server" ControlToValidate="txtcity" ErrorMessage="Invalid City" ValidationExpression="[a-zA-Z][a-zA-Z]{2,}" Display="Dynamic" ForeColor="Red" Font-Bold="True" Font-Size="Small"></asp:RegularExpressionValidator>
+                                    <asp:TextBox ID="txtcity" runat="server"></asp:TextBox>
                                 </div>
                                 <div class="form-input">
-                                    <label for="pincode">Pincode</label>
-                                    <input type="text" name="pincode" id="pincode" />
+                                    <label for="txtpincode">Pincode</label>
+                                    <asp:RequiredFieldValidator ValidationGroup="validate" ID="RequiredFieldValidator5" runat="server" ControlToValidate="txtpincode" ErrorMessage="All field must be filled" Display="Dynamic" ForeColor="Red" Font-Bold="True" Font-Size="Small"></asp:RequiredFieldValidator>
+                                    <asp:RegularExpressionValidator ValidationGroup="validate" ID="validationPincode" runat="server" ControlToValidate="txtpincode" ErrorMessage="Invalid Pincode" ValidationExpression="[0-9]{6}" Display="Dynamic" ForeColor="Red" Font-Bold="True" Font-Size="Small"></asp:RegularExpressionValidator>
+                                    <asp:TextBox MaxLength="6" ID="txtpincode" runat="server"></asp:TextBox>
                                 </div>
                             </div>
                         </div>
-                        <%--<div class="donate-us">
-                            <label>Donate us</label>
-                            <div class="price_slider ui-slider ui-slider-horizontal">
-                                <div id="slider-margin"></div>
-                                <span class="donate-value" id="value-lower"></span>
-                            </div>
-                        </div>--%>
                         <div class="form-submit">
-                            <input type="submit" value="Submit" class="submit" id="submit" name="submit" />
-                            <input type="reset" value="Reset" class="submit" id="reset" name="reset" />
+                            <asp:Button ID="submit" class="submit" name="submit" ValidationGroup="validate" runat="server" Text="Submit" OnClick="btnsubmit_Click" />
+                            <asp:Button ID="reset" class="submit" name="reset" runat="server" Text="Back" OnClick="reset_Click" />
                         </div>
                     </form>
                 </div>

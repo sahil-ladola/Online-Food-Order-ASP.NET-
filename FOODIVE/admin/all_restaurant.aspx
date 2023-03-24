@@ -99,9 +99,11 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <td colspan="9">
-                                                <center>No Restaurants</center>
-                                            </td>
+                                            <tr>
+                                                <td colspan="9">
+                                                    <center>No Restaurants</center>
+                                                </td>
+                                            </tr>
                                             <%--<tr><td></td>
                                                     <td></td>
                                                     <td></td>
