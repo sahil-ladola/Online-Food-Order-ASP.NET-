@@ -15,7 +15,7 @@ namespace FOODIVE.admin
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["dbconnection"].ConnectionString);
         protected void Page_Load(object sender, EventArgs e)
         {
-            String query = "DELETE FROM register WHERE r_id = " + Request.QueryString["user_del"];
+            string query = "DELETE FROM register WHERE r_id = " + Request.QueryString["user_del"];
             con.Open();
             SqlCommand cmd = new SqlCommand(query, con);
             if (cmd.ExecuteNonQuery() != 0)

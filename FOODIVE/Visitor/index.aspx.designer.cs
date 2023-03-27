@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FOODIVE.Foodive
+namespace FOODIVE.Visitor
 {
 
 
-    public partial class OTP
+    public partial class index
     {
     }
 }

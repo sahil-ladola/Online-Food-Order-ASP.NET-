@@ -8,18 +8,14 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
 
-namespace FOODIVE
+namespace FOODIVE.Foodive
 {
     public partial class index : System.Web.UI.Page
     {
         //SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-3HU71PQ\SQLEXPRESS;Initial Catalog=demo;Integrated Security=True");
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(Session["requestmade"] != null)
-            {
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "script", "<script>alert('Request made successfully')</script>");
-                Session.Remove("requestmade");
-            }
+            
         }
     }
 }

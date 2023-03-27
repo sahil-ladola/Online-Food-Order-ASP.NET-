@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Forgot password.aspx.cs" Inherits="FOODIVE.Foodive.Forgot_password" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Forgotpassword.aspx.cs" Inherits="FOODIVE.Visitor.Forgotpassword" %>
 
 <!DOCTYPE html>
 
@@ -13,7 +13,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: whitesmoke;">
         <div class="container">
-            <asp:HyperLink ID="HyperLink1" class="navbar-brand" runat="server" NavigateUrl="~/index.aspx">
+            <asp:HyperLink ID="HyperLink1" class="navbar-brand" runat="server" NavigateUrl="~/Visitor/index.aspx">
                 <img src="../Image/LOGO/foodive-logos_black.png" alt="FOODIVE" height="40" width="40">
             </asp:HyperLink>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,7 +22,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <asp:HyperLink ID="HyperLink2" class="nav-link" runat="server" NavigateUrl="~/index.aspx">Home</asp:HyperLink>
+                        <asp:HyperLink ID="HyperLink2" class="nav-link" runat="server" NavigateUrl="~/Visitor/index.aspx">Home</asp:HyperLink>
                     </li>
                     <li class="nav-item">
                         <asp:HyperLink ID="HyperLink3" class="nav-link" runat="server" NavigateUrl="~/Customer/Login.aspx">Login</asp:HyperLink>

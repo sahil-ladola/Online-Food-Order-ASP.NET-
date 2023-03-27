@@ -128,20 +128,26 @@
                                                 <td><% Response.Write(mng_name[i]);%></td>
                                                 <td><% Response.Write(mng_phone_num[i]);%></td>
                                                 <td><% Response.Write(mng_email[i]);%></td>
-                                                <td>
-                                                    <% Response.Write("<div class='col-md-3 col-lg-8 m-b-10'><center><asp:Image ID='Image1' class='img-responsive radius'  style='min-width:150px;min-height:100px;' ImageUrl='"+ mng_adharcard[i] +"'  runat='server' /></center></div>");%></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
+                                                <td><% Response.Write("<div class='col-md-3 col-lg-8 m-b-10'><center><img class='img-responsive radius'  style='min-width:150px;min-height:100px;' src='"+ mng_adharcard[i] +"'></center></div>");%></td>
+                                                <td><% Response.Write(mng_address[i]);%></td>
+                                                <td><% Response.Write(mng_city[i]);%></td>
+                                                <td><% Response.Write(mng_pincode[i]);%></td>
+                                                <td><% Response.Write(res_name[i]);%></td>
+                                                <td><% Response.Write(res_phone_number[i]);%></td>
+                                                <td><% Response.Write(res_email[i]);%></td>
+                                                <td><% Response.Write("<div class='col-md-3 col-lg-8 m-b-10'><center><img class='img-responsive radius'  style='min-width:150px;min-height:100px;' src='"+ res_image[i] +"'></center></div>");%></td>
+                                                <td><% if (res_sub_status[i] == "1")
+                                                        {
+                                                            Response.Write("Yes");
+                                                        }
+                                                        else
+                                                        {
+                                                            Response.Write("No");
+                                                        }%></td>
+                                                <td><% Response.Write(res_address[i]);%></td>
+                                                <td><% Response.Write(res_city[i]);%></td>
+                                                <td><% Response.Write(res_pincode[i]);%></td>
+                                                <td><% Response.Write("<a href='delete_request.aspx?res_req_del=" + req_id[i] + "' class='btn btn-danger btn-flat btn-addon btn-xs m-b-10'><i class='fa fa-trash-o' style='font-size:16px'></i></a><a href='accept_request.aspx?res_req_acc=" + req_id[i] + "' class='btn btn-info btn-flat btn-addon btn-sm m-b-10 m-l-5'><i class='fa fa-check'></i></a>"); %></td>
                                             </tr>
                                             <%
                                                     }

@@ -11,12 +11,24 @@ namespace FOODIVE.admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["err"] != null)
+            {
+                Response.Write("sahil");
+                Session.Remove("err");
+            }
         }
 
         protected void btnLogin_Click(object sender, EventArgs e)
         {
-            Response.Redirect("dashboard.aspx");
+            if (txtUsername.Text.Equals("ADMIN") && txtpass.Text.Equals("adminFOODIVE"))
+            {
+                Session["admin"] = "admin";
+                Response.Redirect("dashboard.aspx");
+            }
+            else
+            {
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "script", "<script>alert('Invalid Credential!!!!')</script>");
+            }
         }
     }
 }

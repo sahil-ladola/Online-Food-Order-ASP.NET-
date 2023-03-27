@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FOODIVE.Foodive
+namespace FOODIVE.Visitor
 {
 
 
-    public partial class Forgot_password
+    public partial class Forgotpassword
     {
 
         /// <summary>

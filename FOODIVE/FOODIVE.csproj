@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="admin\accept_request.aspx" />
     <Content Include="admin\add_category.aspx" />
     <Content Include="admin\add_menu.aspx" />
     <Content Include="admin\all_category.aspx" />
@@ -141,6 +142,7 @@
     <Content Include="admin\delete_category.aspx" />
     <Content Include="admin\delete_menu.aspx" />
     <Content Include="admin\delete_orders.aspx" />
+    <Content Include="admin\delete_request.aspx" />
     <Content Include="admin\delete_restaurant.aspx" />
     <Content Include="admin\delete_users.aspx" />
     <Content Include="admin\icons\font-awesome\css\font-awesome.min.css" />
@@ -396,7 +398,6 @@
     <Content Include="Customer\order.aspx" />
     <Content Include="Customer\profile.aspx" />
     <Content Include="Customer\update profile.aspx" />
-    <Content Include="Forgot password.aspx" />
     <Content Include="Image\Favicon\Favicon.png" />
     <Content Include="Image\Icon\1star.png" />
     <Content Include="Image\Icon\2star.png" />
@@ -460,12 +461,9 @@
     <Content Include="Image\Img\restro_login.jpg" />
     <Content Include="Image\Img\restro_reg.jpg" />
     <Content Include="Image\Img\restro_mng.jpg" />
-    <Content Include="index.aspx" />
     <Content Include="Customer\Login.aspx" />
     <Content Include="Customer\Registration.aspx" />
     <Content Include="Customer\Logout.aspx" />
-    <Content Include="OTP.aspx" />
-    <Content Include="Reset Password.aspx" />
     <Content Include="Restaurant\add_menu.aspx" />
     <Content Include="Restaurant\add_restaurant.aspx" />
     <Content Include="Restaurant\all_menu.aspx" />
@@ -768,10 +766,21 @@
     <Content Include="Restaurant\Registration\vendor\nouislider\nouislider.min.js" />
     <Content Include="Restaurant\Registration\vendor\wnumb\wNumb.js" />
     <Content Include="Restaurant\Restro_Register.aspx" />
-    <Content Include="Verify OTP.aspx" />
+    <Content Include="Visitor\Forgotpassword.aspx" />
+    <Content Include="Visitor\index.aspx" />
+    <Content Include="Visitor\OTP.aspx" />
+    <Content Include="Visitor\ResetPassword.aspx" />
+    <Content Include="Visitor\VerifyOTP.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="admin\accept_request.aspx.cs">
+      <DependentUpon>accept_request.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\accept_request.aspx.designer.cs">
+      <DependentUpon>accept_request.aspx</DependentUpon>
+    </Compile>
     <Compile Include="admin\add_category.aspx.cs">
       <DependentUpon>add_category.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -848,6 +857,13 @@
     </Compile>
     <Compile Include="admin\delete_orders.aspx.designer.cs">
       <DependentUpon>delete_orders.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\delete_request.aspx.cs">
+      <DependentUpon>delete_request.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\delete_request.aspx.designer.cs">
+      <DependentUpon>delete_request.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\delete_restaurant.aspx.cs">
       <DependentUpon>delete_restaurant.aspx</DependentUpon>
@@ -961,20 +977,6 @@
     <Compile Include="Customer\update profile.aspx.designer.cs">
       <DependentUpon>update profile.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Forgot password.aspx.cs">
-      <DependentUpon>Forgot password.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Forgot password.aspx.designer.cs">
-      <DependentUpon>Forgot password.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="index.aspx.cs">
-      <DependentUpon>index.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="index.aspx.designer.cs">
-      <DependentUpon>index.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Customer\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -989,13 +991,6 @@
     <Compile Include="Customer\Logout.aspx.designer.cs">
       <DependentUpon>Logout.aspx</DependentUpon>
     </Compile>
-    <Compile Include="OTP.aspx.cs">
-      <DependentUpon>OTP.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="OTP.aspx.designer.cs">
-      <DependentUpon>OTP.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Customer\Registration.aspx.cs">
       <DependentUpon>Registration.aspx</DependentUpon>
@@ -1003,13 +998,6 @@
     </Compile>
     <Compile Include="Customer\Registration.aspx.designer.cs">
       <DependentUpon>Registration.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Reset Password.aspx.cs">
-      <DependentUpon>Reset Password.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Reset Password.aspx.designer.cs">
-      <DependentUpon>Reset Password.aspx</DependentUpon>
     </Compile>
     <Compile Include="Restaurant\add_menu.aspx.cs">
       <DependentUpon>add_menu.aspx</DependentUpon>
@@ -1081,12 +1069,40 @@
     <Compile Include="Restaurant\Restro_Register.aspx.designer.cs">
       <DependentUpon>Restro_Register.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Verify OTP.aspx.cs">
-      <DependentUpon>Verify OTP.aspx</DependentUpon>
+    <Compile Include="Visitor\Forgotpassword.aspx.cs">
+      <DependentUpon>Forgotpassword.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Verify OTP.aspx.designer.cs">
-      <DependentUpon>Verify OTP.aspx</DependentUpon>
+    <Compile Include="Visitor\Forgotpassword.aspx.designer.cs">
+      <DependentUpon>Forgotpassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Visitor\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Visitor\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Visitor\OTP.aspx.cs">
+      <DependentUpon>OTP.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Visitor\OTP.aspx.designer.cs">
+      <DependentUpon>OTP.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Visitor\ResetPassword.aspx.cs">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Visitor\ResetPassword.aspx.designer.cs">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Visitor\VerifyOTP.aspx.cs">
+      <DependentUpon>VerifyOTP.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Visitor\VerifyOTP.aspx.designer.cs">
+      <DependentUpon>VerifyOTP.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

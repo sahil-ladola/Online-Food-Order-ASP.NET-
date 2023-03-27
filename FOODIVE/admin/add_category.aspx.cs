@@ -20,7 +20,7 @@ namespace FOODIVE.admin
 
         protected void btnSave_Click(object sender, EventArgs e)
         {
-            String query = "Insert into category (cate_name) values('" + txtc_name.Text + "')";
+            string query = "Insert into category (cate_name) values('" + txtc_name.Text + "')";
             con.Open();
             SqlCommand cmd = new SqlCommand(query,con);
             if (cmd.ExecuteNonQuery() != 0)

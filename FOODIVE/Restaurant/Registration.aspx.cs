@@ -46,7 +46,7 @@ namespace FOODIVE.Restaurant
                     else
                     {
                         FileAadhaar.SaveAs(Request.PhysicalApplicationPath + "Restaurant/Res_img/Restro manager adharcard/" + FileAadhaar.FileName.ToString());
-                        string path = "~/Restaurant/Res_img/Restro manager adharcard/" + FileAadhaar.FileName.ToString();
+                        string path = "../Restaurant/Res_img/Restro manager adharcard/" + FileAadhaar.FileName.ToString();
                         Session["mng_name"] = txtname.Text;
                         Session["mng_phone_num"] = txtphone_number.Text;
                         Session["mng_email"] = txtemail.Text;

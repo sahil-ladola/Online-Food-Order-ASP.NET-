@@ -93,13 +93,15 @@
                                             <div class="col-md-12">
                                                 <div class="form-group">
                                                     <label class="control-label">Category name</label>
+                                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtc_name" ErrorMessage="All field must be filled" Display="Dynamic" ForeColor="Red" Font-Bold="True" Font-Size="Small"></asp:RequiredFieldValidator>
+                                                        <asp:RegularExpressionValidator ID="validationfirstname" runat="server" ControlToValidate="txtc_name" ErrorMessage="Invalid Category name" ValidationExpression="[a-zA-Z][ a-zA-Z]{2,}" Display="Dynamic" ForeColor="Red" Font-Bold="True" Font-Size="Small"></asp:RegularExpressionValidator>
                                                     <asp:TextBox ID="txtc_name" runat="server" name="c_name" class="form-control"></asp:TextBox>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="form-actions">
                                             <asp:Button ID="btnSave" runat="server" class="btn btn-primary" name="submit" Text="Save" OnClick="btnSave_Click" />
-                                            <a href="add_category.aspx" class="btn btn-inverse">Cancel</a>
+                                            <%--<a href="add_category.aspx" class="btn btn-inverse">Cancel</a>--%>
                                         </div>
                                     </div>
                                 </form>

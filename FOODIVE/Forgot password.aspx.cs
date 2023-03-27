@@ -9,7 +9,7 @@ using System.Configuration;
 using System.Net;
 using System.Net.Mail;
 
-namespace FOODIVE
+namespace FOODIVE.Foodive
 {
     public partial class Forgot_password : System.Web.UI.Page
     {
@@ -29,40 +29,7 @@ namespace FOODIVE
 
         protected void btnsendOTP_Click(object sender, EventArgs e)
         {
-            ViewState["txtEmail"] = txtCustomerEmail.Text;
-            string select = "select * from register where email='" + txtCustomerEmail.Text + "'";
-            SqlCommand result = new SqlCommand(select, con);
-            SqlDataReader dr = result.ExecuteReader();
-            if (dr.Read() == true)
-            {
-                Random random = new Random();
-                sendOtp = random.Next(100000, 999999);
-                String toEmail = txtCustomerEmail.Text;
-                String username = dr["fname"].ToString() + " " + dr["lname"].ToString();
-                String emailbody = "Dear <b>" + username + "!,</b><br> To continue process of forgot password , Here is the One Time password : <strong> <u>" + sendOtp + "</u></strong>.";
-                MailMessage mm = new MailMessage("foodiveonline@gmail.com", toEmail);
-                mm.Body = emailbody;
-                mm.IsBodyHtml = true;
-                mm.Subject = "OTP for FORGOT PASSWORD!";
-                mm.Priority = MailPriority.High;
-                SmtpClient SMTP = new SmtpClient("smtp.gmail.com", 587);
-                SMTP.DeliveryMethod = SmtpDeliveryMethod.Network;
-                SMTP.UseDefaultCredentials = false;
-                SMTP.Credentials = new NetworkCredential()
-                {
-                    UserName = "foodiveonline@gmail.com",
-                    Password = "nzgmwdaufznbhgbi"
-                };
-                SMTP.EnableSsl = true;
-                Session["verOTP"] = sendOtp;
-                Session["txtCustEmail"] = txtCustomerEmail.Text;
-                SMTP.Send(mm);
-                Response.Redirect("Verify OTP.aspx");
-            }
-            else
-            {
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "script", "<script>alert('Email not found!!!')</script>");
-            }
+            
         }
     }
 }

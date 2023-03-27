@@ -92,7 +92,7 @@
                                             <span><i class="fa fa-home f-s-40 "></i></span>
                                         </div>
                                         <div class="media-body media-text-right">
-                                            <h2></h2>
+                                                <asp:Label ID="lblrestro" style="font-size : 2rem" CssClass="text-secondary" runat="server" Text="Label"></asp:Label>
                                             <p class="m-b-0">Restaurants</p>
                                         </div>
                                     </div>
@@ -106,7 +106,7 @@
                                             <span><i class="fa fa-cutlery f-s-40" aria-hidden="true"></i></span>
                                         </div>
                                         <div class="media-body media-text-right">
-                                            <h2></h2>
+                                            <asp:Label ID="lbldishes" style="font-size : 2rem" CssClass="text-secondary" runat="server" Text="0"></asp:Label>
                                             <p class="m-b-0">Dishes</p>
                                         </div>
                                     </div>
@@ -120,7 +120,7 @@
                                             <span><i class="fa fa-users f-s-40"></i></span>
                                         </div>
                                         <div class="media-body media-text-right">
-                                            <h2></h2>
+                                            <asp:Label ID="lblusers" style="font-size : 2rem" CssClass="text-secondary" runat="server" Text="0"></asp:Label>
                                             <p class="m-b-0">Users</p>
                                         </div>
                                     </div>
@@ -135,7 +135,7 @@
                                             <span><i class="fa fa-th-large f-s-40" aria-hidden="true"></i></span>
                                         </div>
                                         <div class="media-body media-text-right">
-                                            <h2></h2>
+                                            <asp:Label ID="lblcategory" style="font-size : 2rem" CssClass="text-secondary" runat="server" Text="0"></asp:Label>
                                             <p class="m-b-0">Categories</p>
                                         </div>
                                     </div>
@@ -148,7 +148,7 @@
                                             <span><i class="fa fa-spinner f-s-40" aria-hidden="true"></i></span>
                                         </div>
                                         <div class="media-body media-text-right">
-                                            <h2></h2>
+                                            <asp:Label ID="lblprocess" style="font-size : 2rem" CssClass="text-secondary" runat="server" Text="0"></asp:Label>
                                             <p class="m-b-0">Processing Orders</p>
                                         </div>
                                     </div>
@@ -162,7 +162,7 @@
                                             <span><i class="fa fa-check f-s-40" aria-hidden="true"></i></span>
                                         </div>
                                         <div class="media-body media-text-right">
-                                            <h2></h2>
+                                            <asp:Label ID="lbldeliver" style="font-size : 2rem" CssClass="text-secondary" runat="server" Text="0"></asp:Label>
                                             <p class="m-b-0">Delivered Orders</p>
                                         </div>
                                     </div>
@@ -178,7 +178,7 @@
                                             <span><i class="fa fa-times f-s-40" aria-hidden="true"></i></span>
                                         </div>
                                         <div class="media-body media-text-right">
-                                            <h2></h2>
+                                            <asp:Label ID="lblcancel" style="font-size : 2rem" CssClass="text-secondary" runat="server" Text="0"></asp:Label>
                                             <p class="m-b-0">Cancelled Orders</p>
                                         </div>
                                     </div>
@@ -191,7 +191,7 @@
                                             <span><i class="fa fa-shopping-cart f-s-40" aria-hidden="true"></i></span>
                                         </div>
                                         <div class="media-body media-text-right">
-                                            <h2></h2>
+                                            <asp:Label ID="lbltotal" style="font-size : 2rem" CssClass="text-secondary" runat="server" Text="0"></asp:Label>
                                             <p class="m-b-0">Total Orders</p>
                                         </div>
                                     </div>
@@ -208,7 +208,7 @@
                                             <span><i class="fa fa-usd f-s-40" aria-hidden="true"></i></span>
                                         </div>
                                         <div class="media-body media-text-right">
-                                            <h2></h2>
+                                            <asp:Label ID="lblearn" style="font-size : 2rem" CssClass="text-secondary" runat="server" Text="0"></asp:Label>
                                             <p class="m-b-0">Total Earnings</p>
                                         </div>
                                     </div>

@@ -47,7 +47,7 @@ namespace FOODIVE.Restaurant
                     else
                     {
                         Filerestro_img.SaveAs(Request.PhysicalApplicationPath + "Restaurant/Res_img/" + Filerestro_img.FileName.ToString());
-                        string path = "~/Restaurant/Res_img/" + Filerestro_img.FileName.ToString();
+                        string path = "../Restaurant/Res_img/" + Filerestro_img.FileName.ToString();
                         string substatus = string.Empty;
                         if (Yes.Checked)
                         {
@@ -58,11 +58,18 @@ namespace FOODIVE.Restaurant
                             substatus = "0";
                         }
                         string query1 = "insert into restro_register_request values('" + Session["mng_name"].ToString() + "','" + Session["mng_phone_num"].ToString() + "','" + Session["mng_email"].ToString() + "','" + Session["mng_password"].ToString() + "','" + Session["mng_adharcard"].ToString() + "','" + Session["mng_address"].ToString() + "','" + Session["mng_city"].ToString() + "','" + Session["mng_pincode"].ToString() + "','" + txtrestro_name.Text + "','" + txtrestro_phone_number.Text + "','" + txtrestro_email.Text + "','" + path.ToString() + "','" + substatus.ToString() + "','" + txtaddress.Text + "','" + txtcity.Text + "','" + txtpincode.Text + "')";
-                        
                         SqlCommand ins = new SqlCommand(query1, con);
                         if (ins.ExecuteNonQuery() != 0)
                         {
                             con.Close();
+                            Session.Remove("mng_name");
+                            Session.Remove("mng_email");
+                            Session.Remove("mng_phone_num");
+                            Session.Remove("mng_password");
+                            Session.Remove("mng_adharcard");
+                            Session.Remove("mng_address");
+                            Session.Remove("mng_city");
+                            Session.Remove("mng_pincode");
                             Session["requestmade"] = "request";
                             Response.Redirect("~/index.aspx");
                         }

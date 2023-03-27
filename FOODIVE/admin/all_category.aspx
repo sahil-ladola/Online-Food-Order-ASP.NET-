@@ -112,7 +112,7 @@
                                             <tr>
                                                 <td><% Response.Write(cate_name[i]);%></td>
                                                 <td>
-                                                    <% Response.Write("<a href='delete_category.php?cat_del=" + cate_id[i] + "' class='btn btn-danger btn-flat btn-addon btn-xs m-b-10'><i class='fa fa-trash-o' style='font-size:16px'></i></a><a href='update_category.aspx?cat_upd=" + cate_id[i] + "'' class='btn btn-info btn-flat btn-addon btn-sm m-b-10 m-l-5'><i class='fa fa-edit'></i></a>"); %>
+                                                    <% Response.Write("<a href='delete_category.aspx?cat_del=" + cate_id[i] + "' class='btn btn-danger btn-flat btn-addon btn-xs m-b-10'><i class='fa fa-trash-o' style='font-size:16px'></i></a><a href='update_category.aspx?cat_upd=" + cate_id[i] + "'' class='btn btn-info btn-flat btn-addon btn-sm m-b-10 m-l-5'><i class='fa fa-edit'></i></a>"); %>
                                                 </td>
                                                 </tr>
                                             <%
