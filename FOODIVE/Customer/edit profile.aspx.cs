@@ -14,79 +14,128 @@ namespace FOODIVE.Customer
     public partial class edit_profile : System.Web.UI.Page
     {
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["dbconnection"].ConnectionString);
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            lbluser.Text = Session["username"].ToString();
-            con.Open();
-            string select = "select * from register where email = '" + Session["email"].ToString() + "'";
-            SqlCommand result = new SqlCommand(select, con);
-            SqlDataReader dr = result.ExecuteReader();
-            if (dr.Read() == true)
+            try
             {
-                Username.Text = Session["username"].ToString();
-                txtFirstName.Text = dr["fname"].ToString();
-                txtLastName.Text = dr["lname"].ToString();
-                txtMobileNumber.Text = dr["mobile_num"].ToString();
-                txtAddress.Text = dr["address"].ToString();
-                txtEmail.Text = dr["email"].ToString();
-                txtCity.Text = dr["city"].ToString();
-                txtPincode.Text = dr["pincode"].ToString();
+                lbluser.Text = Session["username"].ToString();
+                con.Open();
+                string select = "select * from register where email = @email";
+                SqlCommand result = new SqlCommand(select, con);
+                result.Parameters.AddWithValue("@email", Session["email"]);
+                SqlDataReader dr = result.ExecuteReader();
+                if (dr.Read())
+                {
+                    Username.Text = Session["username"].ToString();
+                    txtFirstName.Text = dr["fname"].ToString();
+                    txtLastName.Text = dr["lname"].ToString();
+                    txtMobileNumber.Text = dr["mobile_num"].ToString();
+                    txtAddress.Text = dr["address"].ToString();
+                    txtEmail.Text = dr["email"].ToString();
+                    txtCity.Text = dr["city"].ToString();
+                    txtPincode.Text = dr["pincode"].ToString();
+                }
             }
-            con.Close();
+            catch (Exception ex)
+            {
+                Response.Write("Error: " + ex.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
         }
 
         protected void SaveProfile_Click(object sender, EventArgs e)
         {
-            Page.Validate("SaveProfile");
-            con.Open();
-            string update = "update register set fname = '"+txtFirstName.Text+"' , lname = '"+txtLastName.Text+ "' , mobile_num='" + txtMobileNumber.Text + "' , address='" + txtAddress.Text + "' , email='" + txtEmail.Text + "' , city='" + txtCity.Text + "' , pincode='" + txtPincode.Text + "' where r_id='" + Session["rid"] + "'";
-            SqlCommand com = new SqlCommand(update, con);
-            if (com.ExecuteNonQuery() != 0)
+            try
             {
-                Response.Write(txtFirstName.Text);
-                Response.Write(txtLastName.Text);
-                Response.Write(txtMobileNumber.Text);
-                Response.Write(txtAddress.Text);
-                Response.Write(txtEmail.Text);
-                Response.Write(txtCity.Text);
-                Response.Write(txtPincode.Text);
-                //Page.ClientScript.RegisterStartupScript(this.GetType(), "script", "<script>alert('Profile Updated Successfully !!!')</script>");
+                Page.Validate("SaveProfile");
+                con.Open();
+                string update = "update register set fname = @fname, lname = @lname, mobile_num = @mobile_num, address = @address, email = @email, city = @city, pincode = @pincode where r_id = @r_id";
+                SqlCommand com = new SqlCommand(update, con);
+                com.Parameters.AddWithValue("@fname", txtFirstName.Text);
+                com.Parameters.AddWithValue("@lname", txtLastName.Text);
+                com.Parameters.AddWithValue("@mobile_num", txtMobileNumber.Text);
+                com.Parameters.AddWithValue("@address", txtAddress.Text);
+                com.Parameters.AddWithValue("@email", txtEmail.Text);
+                com.Parameters.AddWithValue("@city", txtCity.Text);
+                com.Parameters.AddWithValue("@pincode", txtPincode.Text);
+                com.Parameters.AddWithValue("@r_id", Session["rid"]);
+                if (com.ExecuteNonQuery() != 0)
+                {
+                    Page.ClientScript.RegisterStartupScript(this.GetType(), "script", "<script>alert('Profile Updated Successfully !!!')</script>");
+                }
+                else
+                {
+                    Page.ClientScript.RegisterStartupScript(this.GetType(), "script", "<script>alert('Failed to update profile.')</script>");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                Response.Write("can't update ");
+                Response.Write("Error: " + ex.Message);
             }
-            con.Close();
+            finally
+            {
+                con.Close();
+            }
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            Page.Validate("ChangePassword");
-            con.Open();
-            string select = "select * from register where email = '" + Session["email"] + "'";
-            SqlCommand result = new SqlCommand(select, con);
-            SqlDataReader reader = result.ExecuteReader();
-            if (reader.Read() == true)
+            try
             {
-                if (txtOldPassword.Text == reader.GetString(8))
+                Page.Validate("ChangePassword");
+                con.Open();
+                string select = "select * from register where email = @email";
+                SqlCommand result = new SqlCommand(select, con);
+                result.Parameters.AddWithValue("@email", Session["email"]);
+                SqlDataReader reader = result.ExecuteReader();
+                if (reader.Read())
                 {
-
-                    string pass = "update register set password ='" + txtNewPassword.Text + "' where email = '" + Session["email"] + "'";
-                    SqlCommand com = new SqlCommand(pass, con);
-                    if (com.ExecuteNonQuery() != 0)
+                    if (txtOldPassword.Text == reader["password"].ToString())
                     {
-                        //Page.ClientScript.RegisterStartupScript(this.GetType(), "script", "<script>alert('Password update successfully!');</script>");
-                        Response.Redirect("Login.aspx");
+                        string pass = "update register set password = @newPassword where email = @email";
+                        SqlCommand com = new SqlCommand(pass, con);
+                        com.Parameters.AddWithValue("@newPassword", txtNewPassword.Text);
+                        com.Parameters.AddWithValue("@email", Session["email"]);
+
+                        try
+                        {
+                            if (com.ExecuteNonQuery() != 0)
+                            {
+                                Response.Redirect("Login.aspx");
+                            }
+                        }
+                        catch (SqlException ex)
+                        {
+                            if (ex.Number == 2627)
+                            {
+                                Page.ClientScript.RegisterStartupScript(this.GetType(), "script", "<script>alert('The email is already taken. Please choose a different email.')</script>");
+                            }
+                            else
+                            {
+                                Page.ClientScript.RegisterStartupScript(this.GetType(), "script", "<script>alert('An error occurred while updating your password. Please try again later.')</script>");
+                            }
+                        }
+                    }
+                    else
+                    {
+                        Page.ClientScript.RegisterStartupScript(this.GetType(), "script", "<script>alert('Invalid Old password!')</script>");
                     }
                 }
-                else
-                {
-                    Page.ClientScript.RegisterStartupScript(this.GetType(), "script", "<script>alert('Invalid Old password!')</script>");
-                }
-
-
             }
-            con.Close();
+            catch (Exception ex)
+            {
+                Response.Write("Error: " + ex.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
         }
     }
 }
+
+           

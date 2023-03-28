@@ -7,14 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace FOODIVE.admin
 {
-    public partial class order_update : System.Web.UI.Page
+    public partial class subbranchdetails : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["admin"] == null)
-            {
-                Response.Redirect("Login.aspx");
-            }
+
         }
     }
 }

@@ -23,6 +23,10 @@ namespace FOODIVE.admin
                 getcate_id();
                 getcate_name();
             }
+            if (Session["admin"] == null)
+            {
+                Response.Redirect("Login.aspx");
+            }
         }
         public void getcate_id()
         {

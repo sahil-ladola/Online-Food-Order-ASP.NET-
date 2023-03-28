@@ -7,6 +7,8 @@ using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.Net;
+using System.Net.Mail;
 
 namespace FOODIVE.Restaurant
 {
@@ -46,8 +48,8 @@ namespace FOODIVE.Restaurant
                     }
                     else
                     {
-                        Filerestro_img.SaveAs(Request.PhysicalApplicationPath + "Restaurant/Res_img/" + Filerestro_img.FileName.ToString());
-                        string path = "../Restaurant/Res_img/" + Filerestro_img.FileName.ToString();
+                        Filerestro_img.SaveAs(Request.PhysicalApplicationPath + "Image/Img/Restro/" + Filerestro_img.FileName.ToString());
+                        string path = "/Image/Img/Restro/" + Filerestro_img.FileName.ToString();
                         string substatus = string.Empty;
                         if (Yes.Checked)
                         {
@@ -62,6 +64,24 @@ namespace FOODIVE.Restaurant
                         if (ins.ExecuteNonQuery() != 0)
                         {
                             con.Close();
+                            String toEmail = Session["mng_email"].ToString();
+                            String username = Session["mng_name"].ToString();
+                            String emailbody = "Dear <b>" + username + "!,</b><br> Your restaurant registration request has been initialized , we'll let you know when your give details verified.";
+                            MailMessage mm = new MailMessage("foodiveonline@gmail.com", toEmail);
+                            mm.Body = emailbody;
+                            mm.IsBodyHtml = true;
+                            mm.Subject = "Restaurant Registration Request Initialized!!!";
+                            mm.Priority = MailPriority.High;
+                            SmtpClient SMTP = new SmtpClient("smtp.gmail.com", 587);
+                            SMTP.DeliveryMethod = SmtpDeliveryMethod.Network;
+                            SMTP.UseDefaultCredentials = false;
+                            SMTP.Credentials = new NetworkCredential()
+                            {
+                                UserName = "foodiveonline@gmail.com",
+                                Password = "nzgmwdaufznbhgbi"
+                            };
+                            SMTP.EnableSsl = true;
+                            SMTP.Send(mm);
                             Session.Remove("mng_name");
                             Session.Remove("mng_email");
                             Session.Remove("mng_phone_num");
@@ -71,7 +91,8 @@ namespace FOODIVE.Restaurant
                             Session.Remove("mng_city");
                             Session.Remove("mng_pincode");
                             Session["requestmade"] = "request";
-                            Response.Redirect("~/index.aspx");
+                            Response.Write("<script>alert(Request has been initialized)</script>");
+                            Response.Redirect("~/Visitor/index.aspx");
                         }
                     }
                 }

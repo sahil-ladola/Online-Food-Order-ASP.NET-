@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="update_menu.aspx.cs" Inherits="FOODIVE.admin.update_menu" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="update_manager.aspx.cs" Inherits="FOODIVE.admin.update_manager" %>
 
 <!DOCTYPE html>
 
@@ -10,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
-    <title>FOODIVE | Update Menu</title>
+    <title>FOODIVE | Update Manager Details</title>
     <link rel="shortcut icon" href="/Project_demo/Image/Favicon/Favicon.png" type="image/x-icon">
     <link href="css/lib/bootstrap/bootstrap.min.css" rel="stylesheet">
     <link href="css/helper.css" rel="stylesheet">
@@ -84,70 +84,72 @@
                 <div class="col-lg-12">
                     <div class="card card-outline-primary">
                         <div class="card-header">
-                            <h4 class="m-b-0 text-white">Update Menu</h4>
+                            <h4 class="m-b-0 text-white">Update Manager Details</h4>
                         </div>
                         <div class="card-body">
                             <form runat="server" method='post' enctype="multipart/form-data">
                                 <div class="form-body">
                                     <hr>
                                     <div class="row p-t-20">
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                             <div class="form-group">
-                                                <label class="control-label">Dish Name </label>
-                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtd_name" ErrorMessage="All field must be filled" Display="Dynamic" ForeColor="Red" Font-Bold="True" Font-Size="Small"></asp:RequiredFieldValidator>
-                                                        <asp:RegularExpressionValidator ID="validationfirstname" runat="server" ControlToValidate="txtd_name" ErrorMessage="Invalid Dish name" ValidationExpression="[a-zA-Z][ a-zA-Z]{2,}" Display="Dynamic" ForeColor="Red" Font-Bold="True" Font-Size="Small"></asp:RegularExpressionValidator>
-                                                <asp:TextBox ID="txtd_name" class="form-control" runat="server"></asp:TextBox>
+                                                <label class="control-label">Full Name </label>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtname" ErrorMessage="All field must be filled" Display="Dynamic" ForeColor="Red" Font-Bold="True" Font-Size="Small"></asp:RequiredFieldValidator>
+                                                <asp:RegularExpressionValidator ID="validationfirstname" runat="server" ControlToValidate="txtname" ErrorMessage="Invalid Full name" ValidationExpression="[a-zA-Z][ a-zA-Z]{2,}" Display="Dynamic" ForeColor="Red" Font-Bold="True" Font-Size="Small"></asp:RegularExpressionValidator>
+                                                <asp:TextBox ID="txtname" class="form-control" runat="server"></asp:TextBox>
                                             </div>
                                         </div>
 
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                             <div class="form-group has-danger">
-                                                <label class="control-label">Description </label>
-                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtabout" ErrorMessage="All field must be filled" Display="Dynamic" ForeColor="Red" Font-Bold="True" Font-Size="Small"></asp:RequiredFieldValidator>
-                                                <asp:TextBox ID="txtabout" class="form-control form-control-danger" runat="server"></asp:TextBox>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="row p-t-20">
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label class="control-label">Price </label>
-                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="txtprice" ErrorMessage="All field must be filled" Display="Dynamic" ForeColor="Red" Font-Bold="True" Font-Size="Small"></asp:RequiredFieldValidator>
-                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="txtprice" ErrorMessage="Invalid Price" Display="Dynamic" ValidationExpression="^\d{0,8}(\.\d{1,4})?$" ForeColor="Red" Font-Bold="True" Font-Size="Small"></asp:RegularExpressionValidator>
-                                                <asp:TextBox ID="txtprice" runat="server" class="form-control" placeholder="00.00/-"></asp:TextBox>
+                                                <label class="control-label">Phone number</label>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtphone_number" ErrorMessage="All field must be filled" Display="Dynamic" ForeColor="Red" Font-Bold="True" Font-Size="Small"></asp:RequiredFieldValidator>
+                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="txtphone_number" ErrorMessage="Invalid Phone number" Display="Dynamic" ValidationExpression="[6789][0-9]{9}" ForeColor="Red" Font-Bold="True" Font-Size="Small"></asp:RegularExpressionValidator>
+                                                <asp:TextBox ID="txtphone_number" class="form-control" runat="server" MaxLength="10"></asp:TextBox>
                                             </div>
                                         </div>
 
-                                        <div class="col-md-6">
-                                            <div class="form-group has-danger">
-                                                <label class="control-label">Image </label>
-                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="file" ErrorMessage="All field must be filled" Display="Dynamic" ForeColor="Red" Font-Bold="True" Font-Size="Small"></asp:RequiredFieldValidator>
-                                                <asp:FileUpload ID="file" class="form-control form-control-danger" placeholder="12n" runat="server" />
-                                            </div>
-                                        </div>
-                                    </div>
 
-                                    <div class="row">
-                                        <div class="col-md-6">
+
+                                        <div class="col-md-4">
                                             <div class="form-group">
-                                                <label class="control-label">Select Restaurant</label>
-                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="DropDownList2" InitialValue="-1" ErrorMessage="Option must be selected" Display="Dynamic" ForeColor="Red" Font-Bold="True" Font-Size="Small"></asp:RequiredFieldValidator>
-                                                <asp:DropDownList ID="DropDownList2" class="form-control" runat="server"></asp:DropDownList>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label class="control-label">Select Category</label>
-                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="DropDownList1" InitialValue="-1" ErrorMessage="Option must be selected" Display="Dynamic" ForeColor="Red" Font-Bold="True" Font-Size="Small"></asp:RequiredFieldValidator>
-                                                <asp:DropDownList ID="DropDownList1" class="form-control" runat="server"></asp:DropDownList>
+                                                <label class="control-label">Email </label>
+                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ControlToValidate="txtemail" ErrorMessage="Invalid Email" ValidationExpression="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" Display="Dynamic" ForeColor="Red" Font-Bold="True" Font-Size="Small"></asp:RegularExpressionValidator>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="txtemail" ErrorMessage="All field must be filled" Display="Dynamic" ForeColor="Red" Font-Bold="True" Font-Size="Small"></asp:RequiredFieldValidator>
+                                                <asp:TextBox ID="txtemail" class="form-control" TextMode="Email" runat="server"></asp:TextBox>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="form-actions">
-                                        <asp:Button ID="btnsubmit" class="btn btn-primary" runat="server" Text="Update" OnClick="btnsubmit_Click" />
-                                        <a href="all_menu.aspx" class="btn btn-inverse">Cancel</a>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label">Address </label>
+                                            <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtaddress" ErrorMessage="All field must be filled" Display="Dynamic" ForeColor="Red" Font-Bold="True" Font-Size="Small"></asp:RequiredFieldValidator>
+                                            <asp:TextBox ID="txtaddress" class="form-control" runat="server"></asp:TextBox>
+                                        </div>
                                     </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label">City </label>
+                                            <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="txtcity" ErrorMessage="All field must be filled" Display="Dynamic" ForeColor="Red" Font-Bold="True" Font-Size="Small"></asp:RequiredFieldValidator>
+                                            <asp:RegularExpressionValidator ID="validationcity" runat="server" ControlToValidate="txtcity" ErrorMessage="Invalid City" ValidationExpression="[a-zA-Z][a-zA-Z]{2,}" Display="Dynamic" ForeColor="Red" Font-Bold="True" Font-Size="Small"></asp:RegularExpressionValidator>
+                                            <asp:TextBox ID="txtcity" class="form-control" runat="server"></asp:TextBox>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label">Pincode </label>
+                                            <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="txtpincode" ErrorMessage="All field must be filled" Display="Dynamic" ForeColor="Red" Font-Bold="True" Font-Size="Small"></asp:RequiredFieldValidator>
+                                            <asp:RegularExpressionValidator ID="validationPincode" runat="server" ControlToValidate="txtpincode" ErrorMessage="Invalid Pincode" ValidationExpression="[0-9]{6}" Display="Dynamic" ForeColor="Red" Font-Bold="True" Font-Size="Small"></asp:RegularExpressionValidator>
+                                            <asp:TextBox MaxLength="6" class="form-control" ID="txtpincode" runat="server"></asp:TextBox>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-actions">
+                                    <asp:Button ID="btnsubmit" class="btn btn-primary" runat="server" Text="Update" OnClick="btnsubmit_Click" />
+                                    <a href="managerdetails.aspx" class="btn btn-inverse">Cancel</a>
                                 </div>
                             </form>
                         </div>

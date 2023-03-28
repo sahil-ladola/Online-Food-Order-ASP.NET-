@@ -11,7 +11,7 @@ namespace FOODIVE.admin
 {
 
 
-    public partial class update_restaurant
+    public partial class update_manager
     {
 
         /// <summary>
@@ -33,13 +33,13 @@ namespace FOODIVE.admin
         protected global::System.Web.UI.WebControls.RegularExpressionValidator validationfirstname;
 
         /// <summary>
-        /// txtRestroName control.
+        /// txtname control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtRestroName;
+        protected global::System.Web.UI.WebControls.TextBox txtname;
 
         /// <summary>
         /// RequiredFieldValidator2 control.
@@ -51,22 +51,22 @@ namespace FOODIVE.admin
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
 
         /// <summary>
-        /// RegularExpressionValidator1 control.
+        /// RegularExpressionValidator2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator1;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator2;
 
         /// <summary>
-        /// txtrestro_phone_number control.
+        /// txtphone_number control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtrestro_phone_number;
+        protected global::System.Web.UI.WebControls.TextBox txtphone_number;
 
         /// <summary>
         /// RegularExpressionValidator3 control.
@@ -87,13 +87,13 @@ namespace FOODIVE.admin
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator6;
 
         /// <summary>
-        /// txtrestro_email control.
+        /// txtemail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtrestro_email;
+        protected global::System.Web.UI.WebControls.TextBox txtemail;
 
         /// <summary>
         /// RequiredFieldValidator3 control.
@@ -105,24 +105,6 @@ namespace FOODIVE.admin
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator3;
 
         /// <summary>
-        /// Filerestro_img control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload Filerestro_img;
-
-        /// <summary>
-        /// RequiredFieldValidator4 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator4;
-
-        /// <summary>
         /// txtaddress control.
         /// </summary>
         /// <remarks>
@@ -132,13 +114,13 @@ namespace FOODIVE.admin
         protected global::System.Web.UI.WebControls.TextBox txtaddress;
 
         /// <summary>
-        /// RequiredFieldValidator7 control.
+        /// RequiredFieldValidator4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator7;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator4;
 
         /// <summary>
         /// validationcity control.

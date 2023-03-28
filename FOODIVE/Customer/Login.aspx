@@ -13,7 +13,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: whitesmoke;">
         <div class="container">
-            <asp:HyperLink class="navbar-brand" runat="server" NavigateUrl="~/index.aspx">
+            <asp:HyperLink class="navbar-brand" runat="server" NavigateUrl="~/Visitor/index.aspx">
                 <img src="../Image/LOGO/foodive-logos_black.png" alt="FOODIVE" height="40" width="40">
             </asp:HyperLink>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,7 +22,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <asp:HyperLink class="nav-link" runat="server" NavigateUrl="~/index.aspx">Home</asp:HyperLink>
+                        <asp:HyperLink class="nav-link" runat="server" NavigateUrl="~/Visitor/index.aspx">Home</asp:HyperLink>
                     </li>
                     <li class="nav-item">
                         <asp:HyperLink class="nav-link" runat="server" NavigateUrl="~/Customer/Registration.aspx">Sign up</asp:HyperLink>
@@ -74,7 +74,7 @@
                                             </div>
                                         </div>
 
-                                        <asp:HyperLink ID="HyperLink1" class="small text-muted text-decoration-none" runat="server" NavigateUrl="~/Forgot password.aspx">Forgot password?</asp:HyperLink>
+                                        <asp:HyperLink ID="HyperLink1" class="small text-muted text-decoration-none" runat="server" NavigateUrl="~/Visitor/Forgot password.aspx">Forgot password?</asp:HyperLink>
                                         <p class="mb-5 pb-lg-2 text-muted">
                                             Don't have an account?<asp:HyperLink ID="HyperLink2" class="text-decoration-none" runat="server" NavigateUrl="~/Customer/Registration.aspx"><strong> Register here</strong></asp:HyperLink>
                                     </form>

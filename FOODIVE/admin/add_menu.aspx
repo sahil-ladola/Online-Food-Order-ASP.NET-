@@ -129,15 +129,15 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label class="control-label">Select Restaurant</label>
-                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="restaurant" InitialValue="0" ErrorMessage="Option must be selected" Display="Dynamic" ForeColor="Red" Font-Bold="True" Font-Size="Small"></asp:RequiredFieldValidator>
-                                                <asp:DropDownList ID="restaurant" class="form-control" runat="server"></asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="DropDownList2" InitialValue="-1" ErrorMessage="Option must be selected" Display="Dynamic" ForeColor="Red" Font-Bold="True" Font-Size="Small"></asp:RequiredFieldValidator>
+                                                <asp:DropDownList ID="DropDownList2" class="form-control" runat="server"></asp:DropDownList>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label class="control-label">Select Category</label>
-                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="category" InitialValue="0" ErrorMessage="Option must be selected" Display="Dynamic" ForeColor="Red" Font-Bold="True" Font-Size="Small"></asp:RequiredFieldValidator>
-                                                <asp:DropDownList ID="category" class="form-control" runat="server"></asp:DropDownList>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="DropDownList1" InitialValue="-1" ErrorMessage="Option must be selected" Display="Dynamic" ForeColor="Red" Font-Bold="True" Font-Size="Small"></asp:RequiredFieldValidator>
+                                                <asp:DropDownList ID="DropDownList1" class="form-control" runat="server"></asp:DropDownList>
                                             </div>
                                         </div>
                                     </div>

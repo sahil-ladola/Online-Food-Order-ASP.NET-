@@ -45,8 +45,8 @@ namespace FOODIVE.Restaurant
                     }
                     else
                     {
-                        FileAadhaar.SaveAs(Request.PhysicalApplicationPath + "Restaurant/Res_img/Restro manager adharcard/" + FileAadhaar.FileName.ToString());
-                        string path = "../Restaurant/Res_img/Restro manager adharcard/" + FileAadhaar.FileName.ToString();
+                        FileAadhaar.SaveAs(Request.PhysicalApplicationPath + "Image/Img/RestroMngProof/" + FileAadhaar.FileName.ToString());
+                        string path = "/Image/Img/RestroMngProof/" + FileAadhaar.FileName.ToString();
                         Session["mng_name"] = txtname.Text;
                         Session["mng_phone_num"] = txtphone_number.Text;
                         Session["mng_email"] = txtemail.Text;
@@ -77,7 +77,7 @@ namespace FOODIVE.Restaurant
 
         protected void reset_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/index.aspx");
+            Response.Redirect("~/Visitor/index.aspx");
         }
     }
 }

@@ -10,13 +10,10 @@ using System.Configuration;
 
 namespace FOODIVE.admin
 {
-    public partial class all_users : System.Web.UI.Page
+    public partial class managerdetails : System.Web.UI.Page
     {
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["dbconnection"].ConnectionString);
-
-        public List<string> rid = new List<string>();
-        public List<string> fname = new List<string>();
-        public List<string> lname = new List<string>();
+        public List<string> name = new List<string>();
         public List<string> email = new List<string>();
         public List<string> mobile_num = new List<string>();
         public List<string> address = new List<string>();
@@ -24,60 +21,28 @@ namespace FOODIVE.admin
         public List<string> pincode = new List<string>();
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            if(Request.QueryString["mng_id"] == null)
             {
-                getrid();
-                getfname();
-                getlname();
-                getemail();
-                getmobile_num();
-                getaddress();
-                getcity();
-                getpincode();
+                Response.Redirect("all_restaurant.aspx");
             }
-            if (Session["admin"] == null)
-            {
-                Response.Redirect("Login.aspx");
-            }
+            Session["mng_id"] = Request.QueryString["mng_id"].ToString();
+            getaddress();
+            getcity();
+            getemail();
+            getmobile_num();
+            getname();
+            getpincode();
         }
-        public void getrid()
+        public void getname()
         {
             con.Open();
-            string query = "select r_id from register";
+            string query = "select name from restro_manager where resmng_id='" + Request.QueryString["mng_id"].ToString() + "'";
             SqlCommand cmd = new SqlCommand(query, con);
             SqlDataReader dr;
             dr = cmd.ExecuteReader();
-            while (dr.Read())
+            if (dr.Read())
             {
-                rid.Add((dr["r_id"]).ToString());
-            }
-            dr.Close();
-            con.Close();
-        }
-        public void getfname()
-        {
-            con.Open();
-            string query = "select fname from register";
-            SqlCommand cmd = new SqlCommand(query, con);
-            SqlDataReader dr;
-            dr = cmd.ExecuteReader();
-            while (dr.Read())
-            {
-                fname.Add((dr["fname"]).ToString());
-            }
-            dr.Close();
-            con.Close();
-        }
-        public void getlname()
-        {
-            con.Open();
-            string query = "select lname from register";
-            SqlCommand cmd = new SqlCommand(query, con);
-            SqlDataReader dr;
-            dr = cmd.ExecuteReader();
-            while (dr.Read())
-            {
-                lname.Add((dr["lname"]).ToString());
+                name.Add(dr["name"].ToString());
             }
             dr.Close();
             con.Close();
@@ -85,13 +50,13 @@ namespace FOODIVE.admin
         public void getemail()
         {
             con.Open();
-            string query = "select email from register";
+            string query = "select email from restro_manager where resmng_id='" + Request.QueryString["mng_id"].ToString() + "'";
             SqlCommand cmd = new SqlCommand(query, con);
             SqlDataReader dr;
             dr = cmd.ExecuteReader();
-            while (dr.Read())
+            if (dr.Read())
             {
-                email.Add((dr["email"]).ToString());
+                email.Add(dr["email"].ToString());
             }
             dr.Close();
             con.Close();
@@ -99,13 +64,13 @@ namespace FOODIVE.admin
         public void getmobile_num()
         {
             con.Open();
-            string query = "select mobile_num from register";
+            string query = "select mobile_num from restro_manager where resmng_id='" + Request.QueryString["mng_id"].ToString() + "'";
             SqlCommand cmd = new SqlCommand(query, con);
             SqlDataReader dr;
             dr = cmd.ExecuteReader();
-            while (dr.Read())
+            if (dr.Read())
             {
-                mobile_num.Add((dr["mobile_num"]).ToString());
+                mobile_num.Add(dr["mobile_num"].ToString());
             }
             dr.Close();
             con.Close();
@@ -113,13 +78,13 @@ namespace FOODIVE.admin
         public void getaddress()
         {
             con.Open();
-            string query = "select address from register";
+            string query = "select address from restro_manager where resmng_id='" + Request.QueryString["mng_id"].ToString() + "'";
             SqlCommand cmd = new SqlCommand(query, con);
             SqlDataReader dr;
             dr = cmd.ExecuteReader();
-            while (dr.Read())
+            if (dr.Read())
             {
-                address.Add((dr["address"]).ToString());
+                address.Add(dr["address"].ToString());
             }
             dr.Close();
             con.Close();
@@ -127,13 +92,13 @@ namespace FOODIVE.admin
         public void getcity()
         {
             con.Open();
-            string query = "select city from register";
+            string query = "select city from restro_manager where resmng_id='" + Request.QueryString["mng_id"].ToString() + "'";
             SqlCommand cmd = new SqlCommand(query, con);
             SqlDataReader dr;
             dr = cmd.ExecuteReader();
-            while (dr.Read())
+            if (dr.Read())
             {
-                city.Add((dr["city"]).ToString());
+                city.Add(dr["city"].ToString());
             }
             dr.Close();
             con.Close();
@@ -141,13 +106,13 @@ namespace FOODIVE.admin
         public void getpincode()
         {
             con.Open();
-            string query = "select pincode from register";
+            string query = "select pincode from restro_manager where resmng_id='" + Request.QueryString["mng_id"].ToString() + "'";
             SqlCommand cmd = new SqlCommand(query, con);
             SqlDataReader dr;
             dr = cmd.ExecuteReader();
-            while (dr.Read())
+            if (dr.Read())
             {
-                pincode.Add((dr["pincode"]).ToString());
+                pincode.Add(dr["pincode"].ToString());
             }
             dr.Close();
             con.Close();

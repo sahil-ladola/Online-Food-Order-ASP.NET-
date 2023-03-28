@@ -107,7 +107,7 @@
                     <div class="col-4">
                         <div class="card shadow" style="width: 22rem;">
                             <asp:HyperLink runat="server" class="text-decoration-none text-body">
-                                <asp:Image class="card-img-top" alt="FOODIES" height="280" width="350" runat="server" ImageUrl="~/admin/Res_img/632e9058ec62a.jpg" />
+                                <asp:Image class="card-img-top" alt="FOODIES" height="280" width="350" runat="server" ImageUrl=""/>
                                 <div class="card-body">
                                     <h5 class="card-title">FOODIES</h5>
                                     <p class="text-muted mb-0">UTU</p>
@@ -118,7 +118,7 @@
                 <div class="col-4">
                         <div class="card shadow" style="width: 22rem;">
                             <asp:HyperLink runat="server" class="text-decoration-none text-body">
-                                <asp:Image class="card-img-top" alt="LEAF" height="280" width="350" runat="server" ImageUrl="~/admin/Res_img/632e914a15bf1.jpg" />
+                                <asp:Image class="card-img-top" alt="LEAF" height="280" width="350" runat="server" ImageUrl="" />
                                 <div class="card-body">
                                     <h5 class="card-title">LEAF CAFE</h5>
                                     <p class="text-muted mb-0">CITYLIGHT</p>
@@ -129,7 +129,7 @@
                 <div class="col-4">
                         <div class="card shadow" style="width: 22rem;">
                             <asp:HyperLink runat="server" class="text-decoration-none text-body">
-                                <asp:Image class="card-img-top" alt="" height="280" width="350" runat="server" ImageUrl="~/admin/Res_img/dishes638f38229dcb1.jpg" />
+                                <asp:Image class="card-img-top" alt="" height="280" width="350" runat="server" ImageUrl="" />
                                 <div class="card-body">
                                     <h5 class="card-title">GATE TO GOA CAFE</h5>
                                     <p class="text-muted mb-0">VESU</p>

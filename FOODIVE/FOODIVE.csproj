@@ -223,9 +223,12 @@
     <Content Include="admin\Login\vendor\select2\select2.min.js" />
     <Content Include="admin\Login\vendor\tilt\tilt.jquery.min.js" />
     <Content Include="admin\logout.aspx" />
+    <Content Include="admin\managerdetails.aspx" />
     <Content Include="admin\order_update.aspx" />
     <Content Include="admin\restaurant_request.aspx" />
+    <Content Include="admin\subbranchdetails.aspx" />
     <Content Include="admin\update_category.aspx" />
+    <Content Include="admin\update_manager.aspx" />
     <Content Include="admin\update_menu.aspx" />
     <Content Include="admin\update_restaurant.aspx" />
     <Content Include="assets\css\animate.css" />
@@ -893,6 +896,13 @@
     <Compile Include="admin\logout.aspx.designer.cs">
       <DependentUpon>logout.aspx</DependentUpon>
     </Compile>
+    <Compile Include="admin\managerdetails.aspx.cs">
+      <DependentUpon>managerdetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\managerdetails.aspx.designer.cs">
+      <DependentUpon>managerdetails.aspx</DependentUpon>
+    </Compile>
     <Compile Include="admin\order_update.aspx.cs">
       <DependentUpon>order_update.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -907,12 +917,26 @@
     <Compile Include="admin\restaurant_request.aspx.designer.cs">
       <DependentUpon>restaurant_request.aspx</DependentUpon>
     </Compile>
+    <Compile Include="admin\subbranchdetails.aspx.cs">
+      <DependentUpon>subbranchdetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\subbranchdetails.aspx.designer.cs">
+      <DependentUpon>subbranchdetails.aspx</DependentUpon>
+    </Compile>
     <Compile Include="admin\update_category.aspx.cs">
       <DependentUpon>update_category.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="admin\update_category.aspx.designer.cs">
       <DependentUpon>update_category.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\update_manager.aspx.cs">
+      <DependentUpon>update_manager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\update_manager.aspx.designer.cs">
+      <DependentUpon>update_manager.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\update_menu.aspx.cs">
       <DependentUpon>update_menu.aspx</DependentUpon>
@@ -1631,6 +1655,9 @@
   <ItemGroup>
     <Folder Include="admin\dishes\" />
     <Folder Include="admin\Res_img\dishes\" />
+    <Folder Include="Image\Img\dishes\" />
+    <Folder Include="Image\Img\RestroMngProof\" />
+    <Folder Include="Image\Img\Restro\" />
     <Folder Include="Restaurant\dishes\" />
     <Folder Include="Restaurant\Res_img\dishes\" />
     <Folder Include="Restaurant\Res_img\Restro manager adharcard\" />

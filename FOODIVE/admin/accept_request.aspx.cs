@@ -17,6 +17,14 @@ namespace FOODIVE.admin
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["dbconnection"].ConnectionString);
         protected void Page_Load(object sender, EventArgs e)
         {
+            if(Request.QueryString["res_req_acc"] == null)
+            {
+                Response.Redirect("restaurant_request.aspx");
+            }
+            if (Session["admin"] == null)
+            {
+                Response.Redirect("Login.aspx");
+            }
             string mng_email = string.Empty;
             string mng_name = string.Empty;
             string querymng = "select mng_name , mng_phone_num , mng_email , mng_password , mng_adharcard , mng_address , mng_city , mng_pincode from restro_register_request where req_id = " + Request.QueryString["res_req_acc"];

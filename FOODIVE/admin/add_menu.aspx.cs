@@ -15,53 +15,53 @@ namespace FOODIVE.admin
     {
 
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["dbconnection"].ConnectionString);
-        public List<string> rest_id = new List<string>();
-        public List<string> res_name = new List<string>();
-        public List<string> cate_name = new List<string>();
-        public List<string> cate_id = new List<string>();
+        
         protected void Page_Load(object sender, EventArgs e)
         {
-            bind();
-            bindcate();
-        }
-        protected void bind()
-        {
-            using (SqlCommand cmd = new SqlCommand("select rest_id , title from restro", con))
+            if (!IsPostBack)
             {
-                con.Open();
-                using (SqlDataReader dr = cmd.ExecuteReader())
-                {
-                    if (dr.HasRows)
-                    {
-                        restaurant.DataSource = dr;
-                        restaurant.DataTextField = "title";
-                        restaurant.DataValueField = "rest_id";
-                        restaurant.DataBind();
-                        restaurant.Items.Insert(0, new ListItem("-- Select Restaurant --", "0"));
-                    }
-                }
-                con.Close();
+                bindcate();
+                bindres();
+            }
+            if (Session["admin"] == null)
+            {
+                Response.Redirect("Login.aspx");
             }
         }
-        protected void bindcate()
+        void bindcate()
         {
-            using (SqlCommand cmd = new SqlCommand("select * from category", con))
-            {
-                con.Open();
-                using (SqlDataReader dr = cmd.ExecuteReader())
-                {
-                    if (dr.HasRows)
-                    {
-                        category.DataSource = dr;
-                        category.DataTextField = "cate_name";
-                        category.DataValueField = "cate_id";
-                        category.DataBind();
-                        category.Items.Insert(0, new ListItem("-- Select Category --", "0"));
-                    }
-                }
-                con.Close();
-            }
+            string query = "select * from category";
+            SqlDataAdapter sda = new SqlDataAdapter(query,con);
+            DataTable data = new DataTable();
+            sda.Fill(data);
+            DropDownList1.DataSource = data;
+            DropDownList1.DataTextField = "cate_name";
+            DropDownList1.DataValueField = "cate_id";
+            DropDownList1.DataBind();
+
+            ListItem SelectItem = new ListItem("-- Select Category --" , "-1");
+            SelectItem.Selected = true;
+            DropDownList1.Items.Insert(0, SelectItem);
+
         }
+
+        void bindres()
+        {
+            string query = "select rest_id , title from restro union select subrest_id , title from sub_restro";
+            SqlDataAdapter sda = new SqlDataAdapter(query, con);
+            DataTable data = new DataTable();
+            sda.Fill(data);
+            DropDownList2.DataSource = data;
+            DropDownList2.DataTextField = "title";
+            DropDownList2.DataValueField = "rest_id";
+            DropDownList2.DataBind();
+
+            ListItem SelectItem = new ListItem("-- Select Restaurant --", "-1");
+            SelectItem.Selected = true;
+            DropDownList2.Items.Insert(0, SelectItem);
+
+        }
+
         private bool IsValidExtension(string filePath)
         {
             bool isValid = false;
@@ -92,12 +92,32 @@ namespace FOODIVE.admin
                 }
                 else
                 {
-                    file.SaveAs(Request.PhysicalApplicationPath + "Restaurant/Res_img/dishes" + file.FileName.ToString());
-                    string path = "../Restaurant/Res_img/dishes" + file.FileName.ToString();
-                    string query = "insert into dishes values('" + restaurant.SelectedValue.ToString() + "','" + Session["mng_phone_num"].ToString() + "','" + Session["mng_email"].ToString() + "','" + Session["mng_password"].ToString() + "','" + Session["mng_adharcard"].ToString() + "','" + Session["mng_address"].ToString() + "','" + Session["mng_city"].ToString() + "','" + Session["mng_pincode"].ToString() + "')";
+                    string sub_restro_id = "0";
+                    string restro_id = "0";
+                    file.SaveAs(Request.PhysicalApplicationPath + "Image/Img/dishes/" + file.FileName.ToString());
+                    string path = "/Image/Img/dishes/" + file.FileName.ToString();
+                    con.Open();
+                    string selectq = "select * from restro where title = '" + DropDownList2.SelectedItem.Text + "';";
+                    SqlCommand cmd = new SqlCommand(selectq, con);
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    if (dr.Read())
+                    {
+                        sub_restro_id = "0";
+                        restro_id = dr["rest_id"].ToString();
+                    }
+                    string selectq2 = "select * from sub_restro where title = '" + DropDownList2.SelectedItem.Text + "';";
+                    SqlCommand cmd2 = new SqlCommand(selectq2, con);
+                    SqlDataReader dr2 = cmd2.ExecuteReader();
+                    if (dr.Read())
+                    {
+                        sub_restro_id = dr2["subrest_id"].ToString();
+                        restro_id = dr2["rest_id"].ToString();
+                    }
+                    string query = "insert into dishes values('" + restro_id.ToString() + "','" + sub_restro_id.ToString() + "','" + DropDownList1.SelectedValue.ToString() + "','" + txtd_name.Text.ToString() + "','" + txtabout.Text.ToString() + "','" + txtprice.Text.ToString() + "','" + path.ToString() + "')";
                     SqlCommand ins = new SqlCommand(query, con);
                     if (ins.ExecuteNonQuery() != 0)
                     {
+                        Response.Redirect("all_menu.aspx");
                     }
                 }
             }

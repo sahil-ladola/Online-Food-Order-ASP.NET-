@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="all_menu.aspx.cs" Inherits="FOODIVE.admin.all_menu" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="managerdetails.aspx.cs" Inherits="FOODIVE.admin.managerdetails" %>
 
 <!DOCTYPE html>
 
@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>FOODIVE | All Menu</title>
+    <title>FOODIVE | Manager Details</title>
     <link rel="shortcut icon" href="../Image/Favicon/Favicon.png" type="image/x-icon">
     <link href="css/lib/bootstrap/bootstrap.min.css" rel="stylesheet">
     <link href="css/helper.css" rel="stylesheet">
@@ -84,46 +84,45 @@
                         <div class="col-lg-12">
                             <div class="card card-outline-primary">
                                 <div class="card-header">
-                                    <h4 class="m-b-0 text-white">All Menu</h4>
+                                    <h4 class="m-b-0 text-white">Restaurant Manager</h4>
                                 </div>
                                 <div class="table-responsive m-t-40">
                                     <table id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
                                         <thead class="thead-dark">
                                             <tr>
-                                                <th>Restaurant</th>
-                                                <th>Dish</th>
-                                                <th>Category</th>
-                                                <th>Description</th>
-                                                <th>Price</th>
-                                                <th>Image</th>
+                                                <th>Name</th>
+                                                <th>Email</th>
+                                                <th>Phone</th>
+                                                <th>Address</th>
+                                                <th>City</th>
+                                                <th>Pincode</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <% if (d_id.Count == 0)
-                                                { %>
+                                            <% if (name.Count == 0)
+                                                {%>
                                             <tr>
-                                                <td colspan="7">
-                                                    <center>No Menu</center>
+                                                <td colspan="10">
+                                                    <center>No Restaurants</center>
                                                 </td>
                                             </tr>
-                                            <% }
+                                            <%}
                                                 else
                                                 {
-                                                    for (int i = 0; i <= d_id.Count - 1; i++)
-                                                    {
-                                                    %>
-                                            <tr>
-                                                <td><% Response.Write(restro_name[i]); %></td>
-                                                <td><% Response.Write(dishname[i]); %></td>
-                                                <td><% Response.Write(category[i]); %></td>
-                                                <td><% Response.Write(desc[i]); %></td>
-                                                <td><% Response.Write(price[i]); %></td>
-                                                <td><% Response.Write("<div class='col-md-3 col-lg-8 m-b-10'><center><img src='" + image[i] + "' class='img-responsive  radius' style='max-height:100px;max-width:150px;'/></center></div>"); %></td>
-                                                <td><% Response.Write("<a href='delete_menu.aspx?menu_del=" + d_id[i] + "' class='btn btn-danger btn-flat btn-addon btn-xs m-b-10'><i class='fa fa-trash-o' style='font-size:16px'></i></a><a href='update_menu.aspx?menu_upd=" + d_id[i] + "' class='btn btn-info btn-flat btn-addon btn-sm m-b-10 m-l-5'><i class='fa fa-edit'></i></a>");%></td>
+                                                    for (int i = 0; i <= name.Count - 1; i++)
+                                                    {%>
+                                            <tr>    
+                                                <td><% Response.Write(name[i]); %></td>
+                                                <td><% Response.Write(email[i]); %></td>
+                                                <td><% Response.Write(mobile_num[i]); %></td>
+                                                <td><% Response.Write(address[i]); %></td>
+                                                <td><% Response.Write(city[i]); %></td>
+                                                <td><% Response.Write(pincode[i]); %></td>
+                                                <td><% Response.Write("<a href='update_manager.aspx' class='btn btn-info btn-flat btn-addon btn-sm m-b-10 m-l-5'><i class='fa fa-edit'></i></a>"); %></td>
                                             </tr>
-                                            <% }
-                                                } %>
+                                            <%}
+                                                }%>
                                         </tbody>
                                     </table>
                                 </div>
@@ -133,6 +132,7 @@
                 </div>
             </div>
         </div>
+
         <script src="js/lib/jquery/jquery.min.js"></script>
         <script src="js/lib/bootstrap/js/popper.min.js"></script>
         <script src="js/lib/bootstrap/js/bootstrap.min.js"></script>

@@ -15,12 +15,19 @@ namespace FOODIVE.admin
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["dbconnection"].ConnectionString);
         protected void Page_Load(object sender, EventArgs e)
         {
-            string query = "DELETE FROM category WHERE cate_id = " + Request.QueryString["cat_del"];
-            con.Open();
-            SqlCommand cmd = new SqlCommand(query, con);
-            if (cmd.ExecuteNonQuery() != 0)
+            if (Request.QueryString["cat_del"] != null)
+            {
+                string query = "DELETE FROM category WHERE cate_id = " + Request.QueryString["cat_del"];
+                con.Open();
+                SqlCommand cmd = new SqlCommand(query, con);
+                if (cmd.ExecuteNonQuery() != 0)
+                    Response.Redirect("all_category.aspx");
+                con.Close();
+            }
+            else
+            {
                 Response.Redirect("all_category.aspx");
-            con.Close();
+            }
         }
     }
 }

@@ -17,6 +17,10 @@ namespace FOODIVE.admin
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["dbconnection"].ConnectionString);
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Request.QueryString["res_req_del"] == null)
+            {
+                Response.Redirect("restaurant_request.aspx");
+            }
             con.Open();
             string mng_email = string.Empty;
             string mng_name = string.Empty;

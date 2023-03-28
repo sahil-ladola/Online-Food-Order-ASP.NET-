@@ -21,6 +21,10 @@ namespace FOODIVE.admin
             {
                 getcate_name();
             }
+            if(Request.QueryString["cat_upd"] == null)
+            {
+                Response.Redirect("all_category.aspx");
+            }
         }
         public void getcate_name()
         {

@@ -71,7 +71,7 @@
                         <asp:HyperLink ID="HyperLink3" class="nav-link text-decoration-none text-muted" runat="server" NavigateUrl="~/Customer/order.aspx">My Orders</asp:HyperLink>
                     </li>
                     <li class="nav-item">
-                        <asp:HyperLink ID="HyperLink4" class="nav-link text-decoration-none text-muted" runat="server" NavigateUrl="~/Logout.aspx">Logout</asp:HyperLink>
+                        <asp:HyperLink ID="HyperLink4" class="nav-link text-decoration-none text-muted" runat="server" NavigateUrl="~/Customer/Logout.aspx">Logout</asp:HyperLink>
                     </li>
                 </ul>
                 <div class="text-end">
