@@ -16,6 +16,14 @@ namespace FOODIVE.Customer
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["dbconnection"].ConnectionString);
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["login"] == null)
+            {
+                Response.Redirect("Login.aspx");
+            }
+            con.Open();
+            SqlCommand quan = new SqlCommand("SELECT COUNT(*) FROM [add_to_cart] where r_id = " + Session["rid"].ToString(), con);
+            quanatc.Text = quan.ExecuteScalar().ToString();
+            con.Close();
             con.Open();
             lbluser.Text = Session["username"].ToString();
             string select = "select * from register where email = '" + Session["email"].ToString() + "'";
@@ -24,13 +32,9 @@ namespace FOODIVE.Customer
             if (dr.Read() == true)
             {
                 Address.Text = dr["address"].ToString();
-                //City.Text = dr["city"].ToString();
                 Email.Text = dr["email"].ToString();
-                //txtFname.Text = dr["fname"].ToString();
-                //txtLname.Text = dr["lname"].ToString();
                 Username.Text = dr["fname"] + " " + dr["lname"];
                 ContactNumber.Text = dr["mobile_num"].ToString();
-                //Pincode.Text = dr["pincode"].ToString();
             }
         }
     }

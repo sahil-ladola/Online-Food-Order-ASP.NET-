@@ -50,7 +50,7 @@
                     <ul id="sidebarnav">
                         <li class="nav-devider"></li>
                         <li class="nav-label">Home</li>
-                        <li><a href=" dashboard.aspx"><i class="fa fa-tachometer active"></i><span>Dashboard</span></a>
+                        <li><a href=" dashboard.aspx"><i class="fa fa-tachometer"></i><span>Dashboard</span></a>
                         </li>
                         <li class="nav-label">Log</li>
                         <%--<li><a href=" all_users.aspx"><span><i class="fa fa-user f-s-20 "></i></span><span>Users</span></a></li>--%>

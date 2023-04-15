@@ -20,7 +20,7 @@
         <div class="header">
             <nav class="navbar top-navbar navbar-expand-md navbar-light">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="../Admin/dashboard.aspx">
+                    <a class="navbar-brand" href=" dashboard.aspx">
                         <span>
                             <img src="../Image/LOGO/foodive-logos_black.png" width="50px" alt="LOGO" class="dark-logo" /></span>
                     </a>
@@ -35,7 +35,7 @@
                                 <img src="images/bookingSystem/user-icn.png" alt="user" class="profile-pic" /></a>
                             <div class="dropdown-menu dropdown-menu-right animated zoomIn">
                                 <ul class="dropdown-user">
-                                    <li><a href="../Admin/logout.aspx"><i class="fa fa-power-off"></i>Logout</a></li>
+                                    <li><a href=" logout.aspx"><i class="fa fa-power-off"></i>Logout</a></li>
                                 </ul>
                             </div>
                         </li>
@@ -49,29 +49,29 @@
                     <ul id="sidebarnav">
                         <li class="nav-devider"></li>
                         <li class="nav-label">Home</li>
-                        <li><a href="../Admin/dashboard.aspx"><i class="fa fa-tachometer"></i><span>Dashboard</span></a>
+                        <li><a href=" dashboard.aspx"><i class="fa fa-tachometer"></i><span>Dashboard</span></a>
                         </li>
                         <li class="nav-label">Log</li>
-                        <li><a href="../Admin/all_users.aspx"><span><i class="fa fa-user f-s-20 "></i></span><span>Users</span></a></li>
+                        <%--<li><a href=" all_users.aspx"><span><i class="fa fa-user f-s-20 "></i></span><span>Users</span></a></li>--%>
                         <li><a class="has-arrow" href="#" aria-expanded="false"><i class="fa fa-archive f-s-20 color-warning"></i><span class="hide-menu">Restaurant</span></a>
                             <ul aria-expanded="false" class="collapse">
-                                <li><a href="../Admin/all_restaurant.aspx">All Restaurant</a></li>
-                                <li><a href="restaurant_request.aspx">Restaurant Request</a></li>
+                                <li><a href=" all_restaurant.aspx">All Restaurant</a></li>
+                                <li><a href="add_restaurant.aspx">Add Sub-branch Restaurant</a></li>
                             </ul>
                         </li>
-                        <li><a class="has-arrow" href="#" aria-expanded="false"><i class="fa fa-delicious f-s-20 color-warning"></i><span class="hide-menu">Categories</span></a>
+                        <%--<li><a class="has-arrow" href="#" aria-expanded="false"><i class="fa fa-delicious f-s-20 color-warning"></i><span class="hide-menu">Categories</span></a>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="all_category.aspx">All Categories</a></li>
                                 <li><a href="add_category.aspx">Add Categories</a></li>
                             </ul>
-                        </li>
+                        </li>--%>
                         <li><a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-cutlery" aria-hidden="true"></i><span class="hide-menu">Menu</span></a>
                             <ul aria-expanded="false" class="collapse">
-                                <li><a href="../Admin/all_menu.aspx">All Menues</a></li>
-                                <li><a href="../Admin/add_menu.aspx">Add Menu</a></li>
+                                <li><a href=" all_menu.aspx">All Menues</a></li>
+                                <li><a href=" add_menu.aspx">Add Menu</a></li>
                             </ul>
                         </li>
-                        <li><a href="../Admin/all_orders.aspx"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span>Orders</span></a></li>
+                        <li><a href=" all_orders.aspx"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span>Orders</span></a></li>
                     </ul>
                 </nav>
             </div>
@@ -85,7 +85,7 @@
                             <h4 class="m-b-0 text-white">Add Menu</h4>
                         </div>
                         <div class="card-body">
-                            <form action='' method='post' enctype="multipart/form-data">
+                            <form action='' runat="server" method='post' enctype="multipart/form-data">
                                 <div class="form-body">
                                     <hr>
                                     <div class="row p-t-20">

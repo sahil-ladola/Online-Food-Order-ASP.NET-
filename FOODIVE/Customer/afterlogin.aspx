@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>FOODIVE | Home</title>
-    <link rel="shortcut icon" href="/Project_demo/Image/Favicon/Favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../Image/Favicon/Favicon.png" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <style>
         .hero::before {
@@ -24,7 +24,7 @@
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light" style="background-color:whitesmoke;">
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: whitesmoke;">
         <div class="container">
             <asp:HyperLink ID="HyperLink1" class="navbar-brand" runat="server" NavigateUrl="~/Customer/afterlogin.aspx">
                 <img src="../Image/LOGO/foodive-logos_black.png" alt="FOODIVE" height="40" width="40">
@@ -47,7 +47,7 @@
                 <div class="text-end">
                     <div class="dropdown text-end">
                         <asp:HyperLink ID="HyperLink5" class="text-decoration-none mx-2 text-info" runat="server" NavigateUrl="~/Customer/AddToCart.aspx">
-                            <img src="../Image/Icon/Cart.png" alt="cart" height="20" width="20"> ( 0 )
+                            <img src="../Image/Icon/Cart.png" alt="cart" height="20" width="20"> ( <asp:Label ID="quanatc" runat="server"></asp:Label> )
                         </asp:HyperLink>
                         <asp:HyperLink ID="HyperLink6" class="text-decoration-none" runat="server" NavigateUrl="~/Customer/profile.aspx">
                             <asp:Label ID="lblusername" class="px-2 text-secondary" runat="server" Text="Label"></asp:Label>
@@ -66,21 +66,21 @@
         </div>
         <div class="carousel-inner hero">
             <div class="carousel-item active" data-bs-interval="3000">
-                <asp:Image class="d-block w-100" alt="Slide 1" style="height:70vh; opacity:0.9;" runat="server" ImageUrl="~/Image/Img/Index-Slide2.jpg" />
+                <asp:Image class="d-block w-100" alt="Slide 1" Style="height: 70vh; opacity: 0.9;" runat="server" ImageUrl="~/Image/Img/Index-Slide2.jpg" />
                 <div class="carousel-caption d-none d-md-block v-center mb-5">
                     <h5 class="mb-5 display-3 fw-bolder text-dark">Eat healthy</h5>
                     <p class="mb-5 text-dark" style="font-size: 30px;">Stay healthy</p>
                 </div>
             </div>
             <div class="carousel-item" data-bs-interval="3000">
-                <asp:Image class="d-block w-100" alt="Slide 2" style="height:70vh; opacity:0.9;" runat="server" ImageUrl="~/Image/Img/Index-Slide1.jpg" />
+                <asp:Image class="d-block w-100" alt="Slide 2" Style="height: 70vh; opacity: 0.9;" runat="server" ImageUrl="~/Image/Img/Index-Slide1.jpg" />
                 <div class="carousel-caption d-none d-md-block v-center mb-5">
                     <h5 class="mb-5 pb-5 display-3 fw-bolder text-dark">Fresh Ingredients</h5>
                     <p class="mb-5 text-dark" style="font-size: 30px;"></p>
                 </div>
             </div>
             <div class="carousel-item " data-bs-interval="3000">
-                <asp:Image class="d-block w-100" alt="Slide 3" style="height:70vh; opacity:0.9;" runat="server" ImageUrl="~/Image/Img/Index-Slide3.jpg" />
+                <asp:Image class="d-block w-100" alt="Slide 3" Style="height: 70vh; opacity: 0.9;" runat="server" ImageUrl="~/Image/Img/Index-Slide3.jpg" />
                 <div class="carousel-caption d-none d-md-block v-center mb-5">
                     <h5 class="mb-5 display-3 fw-bolder text-dark">Better world with</h5>
                     <p class="mb-5 text-dark" style="font-size: 30px;">Better food.</p>
@@ -103,46 +103,46 @@
             <div class="col-lg-6 mx-auto mb-5 text-center">
                 <p class="lead text-muted">Our restaurants at different locations.</p>
             </div>
+            <% 
+                if (rest_id.Count == 0)
+                {
+                                            %>
             <div class="row g-4">
-                    <div class="col-4">
-                        <div class="card shadow" style="width: 22rem;">
-                            <asp:HyperLink runat="server" class="text-decoration-none text-body">
-                                <asp:Image class="card-img-top" alt="FOODIES" height="280" width="350" runat="server" ImageUrl=""/>
-                                <div class="card-body">
-                                    <h5 class="card-title">FOODIES</h5>
-                                    <p class="text-muted mb-0">UTU</p>
-                                </div>
-                            </asp:HyperLink>
-                        </div>
+                <div class="col-12 text-center">
+                    <div class="card shadow" style="width: 22rem;">
+                        <h1>No Restaurant Available!!!Right Now...</h1>
                     </div>
+                </div>
+                </div>
+                <%
+                }
+                else
+                {
+                        %>
+            <div class="row g-4">
+                <%
+                    for (int i = 0; i <= rest_id.Count - 1; i++)
+                    {
+                        %>
                 <div class="col-4">
-                        <div class="card shadow" style="width: 22rem;">
-                            <asp:HyperLink runat="server" class="text-decoration-none text-body">
-                                <asp:Image class="card-img-top" alt="LEAF" height="280" width="350" runat="server" ImageUrl="" />
+                    <div class="card shadow" style="width: 22rem;">
+                        <% Response.Write("<a href='../Customer/menu.aspx?rest_id="+ rest_id[i].ToString() +"' class='text-decoration-none text-body'>"); %>
+                        <% Response.Write("<img src='"+ image[i] +"' class='card-img-top' alt='"+ title[i] +" image' height='280' width='350' />"); %>
                                 <div class="card-body">
-                                    <h5 class="card-title">LEAF CAFE</h5>
-                                    <p class="text-muted mb-0">CITYLIGHT</p>
+                                    <h5 class="card-title"><% Response.Write(title[i]); %></h5>
+                                    <p class="text-muted mb-0"><% Response.Write(address[i] + " , " + city[i] + " , " + pincode[i]); %></p>
                                 </div>
-                            </asp:HyperLink>
-                        </div>
+                        <% Response.Write("</a>"); %>
                     </div>
-                <div class="col-4">
-                        <div class="card shadow" style="width: 22rem;">
-                            <asp:HyperLink runat="server" class="text-decoration-none text-body">
-                                <asp:Image class="card-img-top" alt="" height="280" width="350" runat="server" ImageUrl="" />
-                                <div class="card-body">
-                                    <h5 class="card-title">GATE TO GOA CAFE</h5>
-                                    <p class="text-muted mb-0">VESU</p>
-                                </div>
-                            </asp:HyperLink>
-                        </div>
-                    </div>
+                </div><%
+                              }
+                          }%>
                 <div class="container px-4 py-5 text-center " id="Works">
                     <h1 class="display-5 fw-bold my-5">How FOODIVE works?</h1>
                     <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
                         <div class="col d-flex align-items-start">
                             <div class="icon-square rounded text-dark flex-shrink-0 me-3">
-                                <asp:Image height="80" width="80" class="bi" alt="Restro-icon" runat="server" ImageUrl="~/Image/Icon/Cart.png" />
+                                <asp:Image Height="80" Width="80" class="bi" alt="Restro-icon" runat="server" ImageUrl="~/Image/Icon/Cart.png" />
                             </div>
                             <div class="mb-4">
                                 <h2>Step 1</h2>
@@ -152,7 +152,7 @@
                         </div>
                         <div class="col d-flex align-items-start">
                             <div class="icon-square rounded text-dark flex-shrink-0 me-3">
-                                <asp:Image height="80" width="80" class="bi" alt="Payment-icon" runat="server" ImageUrl="~/Image/Icon/Payment.png" />
+                                <asp:Image Height="80" Width="80" class="bi" alt="Payment-icon" runat="server" ImageUrl="~/Image/Icon/Payment.png" />
                             </div>
                             <div class="mb-4">
                                 <h2>Step 2</h2>
@@ -162,7 +162,7 @@
                         </div>
                         <div class="col d-flex align-items-start">
                             <div class="icon-square rounded text-dark flex-shrink-0 me-3">
-                                <asp:Image height="80" width="80" class="bi" alt="Delivery-icon" runat="server" ImageUrl="~/Image/Icon/restaurant.png" />
+                                <asp:Image Height="80" Width="80" class="bi" alt="Delivery-icon" runat="server" ImageUrl="~/Image/Icon/restaurant.png" />
                             </div>
                             <div class="mb-4">
                                 <h2>Step 3</h2>
@@ -172,9 +172,16 @@
                         </div>
                     </div>
                 </div>
-            </div> 
+            </div>
         </div>
     </div>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <footer class="container footer d-flex flex-wrap justify-content-between align-items-center py-3 mt-2 border-top">
+        <p class="col-md-4 mb-0 text-muted">© 2023, Created by SAHIL LADOLA</p>
+        <asp:HyperLink class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none" runat="server" NavigateUrl="~/Visitor/index.aspx">
+        <img src="../Image/LOGO/foodive-logos_black.png" alt="LOGO" height="80" width="80">
+        </asp:HyperLink>
+        <ul class="nav col-md-4 justify-content-end"></ul>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>

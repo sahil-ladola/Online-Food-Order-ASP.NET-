@@ -122,7 +122,7 @@
 
                     <div class="dropdown text-end">
                         <asp:HyperLink ID="HyperLink5" class="text-decoration-none mx-2 text-info" runat="server" NavigateUrl="~/Customer/AddToCart.aspx">
-                            <img src="../Image/Icon/Cart.png" alt="cart" height="20" width="20">
+                            <img src="../Image/Icon/Cart.png" alt="cart" height="20" width="20"> ( <asp:Label ID="quanatc" runat="server"></asp:Label> )
                         </asp:HyperLink>
                         <asp:HyperLink ID="HyperLink6" class="text-decoration-none" runat="server" NavigateUrl="~/Customer/profile.aspx">
                             <asp:Label ID="lbluser" class="px-2 text-secondary" runat="server" Text="Label"></asp:Label>

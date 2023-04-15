@@ -51,6 +51,15 @@ namespace FOODIVE.Customer
         protected global::System.Web.UI.WebControls.HyperLink HyperLink5;
 
         /// <summary>
+        /// quanatc control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label quanatc;
+
+        /// <summary>
         /// HyperLink6 control.
         /// </summary>
         /// <remarks>

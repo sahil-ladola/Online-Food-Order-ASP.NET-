@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>FOODIVE | Add Sub_branch Restaurant</title>
+    <title>FOODIVE | Add Sub-branch Restaurant</title>
     <link rel="shortcut icon" href="../Image/Favicon/Favicon.png" type="image/x-icon">
     <link href="css/lib/bootstrap/bootstrap.min.css" rel="stylesheet">
     <link href="css/helper.css" rel="stylesheet">

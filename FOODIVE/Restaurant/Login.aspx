@@ -31,15 +31,15 @@
                     </span>
 
                     <div class="wrap-input100 validate-input" data-validate="Username is required">
-                        <asp:TextBox ID="txtUsername" placeholder="Username" class="input100" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtUsername" placeholder="Email" class="input100" runat="server"></asp:TextBox>
                         <span class="focus-input100"></span>
                         <span class="symbol-input100">
-                            <i class="fa fa-user" aria-hidden="true"></i>
+                            <i class="fa fa-envelope" aria-hidden="true"></i>
                         </span>
                     </div>
 
                     <div class="wrap-input100 validate-input" data-validate="Password is required">
-                        <asp:TextBox ID="txtpass" class="input100"  placeholder="Password" TextMode="Password" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtpass" class="input100" placeholder="Password" TextMode="Password" runat="server"></asp:TextBox>
                         <span class="focus-input100"></span>
                         <span class="symbol-input100">
                             <i class="fa fa-lock" aria-hidden="true"></i>

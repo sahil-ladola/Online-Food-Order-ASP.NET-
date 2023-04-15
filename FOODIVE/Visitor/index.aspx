@@ -34,9 +34,6 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <%--<li class="nav-item">
-                        <asp:HyperLink class="nav-link" runat="server" NavigateUrl="~/index.aspx">Home</asp:HyperLink>
-                    </li>--%>
                     <li class="nav-item">
                         <asp:HyperLink class="nav-link" runat="server" NavigateUrl="~/Customer/Login.aspx">Login</asp:HyperLink>
                     </li>
@@ -49,7 +46,7 @@
                 </ul>
             </div>
         </div>
-    </nav>  <!-- CAROUSEL -->
+    </nav>
     <div id="carouselExampleDark" class="carousel carousel-dark slide carousel-fade" data-bs-ride="carousel">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -96,43 +93,40 @@
             <div class="col-lg-6 mx-auto mb-5 text-center">
                 <p class="lead text-muted">Our restaurants at different locations.</p>
             </div>
+            <% 
+                if (rest_id.Count == 0)
+                {
+                                            %>
             <div class="row g-4">
-                <div class="col-4">
+                <div class="col-12">
                     <div class="card shadow" style="width: 22rem;">
-                        <asp:HyperLink runat="server" class="text-decoration-none text-body">
-                                <asp:Image class="card-img-top" alt="FOODIES" height="280" width="350" runat="server" ImageUrl="~/Image/Img/restro1.jpg" />
-                                <div class="card-body">
-                                    <h5 class="card-title">FOODIES</h5>
-                                    <p class="text-muted mb-0">UTU</p>
-                                </div>
-                        </asp:HyperLink>
+                        <h1>No Restaurant Available!!!Right Now...</h1>
                     </div>
                 </div>
+                </div>
+                <%
+                }
+                else
+                {
+                        %>
+            <div class="row g-4">
+                <%
+                    for (int i = 0; i <= rest_id.Count - 1; i++)
+                    {
+                        %>
                 <div class="col-4">
                     <div class="card shadow" style="width: 22rem;">
-                        <asp:HyperLink runat="server" class="text-decoration-none text-body">
-                                <asp:Image class="card-img-top" alt="LEAF" height="280" width="350" runat="server" ImageUrl="~/Image/Img/restro2.jpg" />
+                        <% Response.Write("<a href='../Customer/menu.aspx?rest_id="+ rest_id[i].ToString() +"' class='text-decoration-none text-body'>"); %>
+                        <% Response.Write("<img src='"+ image[i] +"' class='card-img-top' alt='"+ title[i] +" image' height='280' width='350' />"); %>
                                 <div class="card-body">
-                                    <h5 class="card-title">LEAF CAFE</h5>
-                                    <p class="text-muted mb-0">CITYLIGHT</p>
+                                    <h5 class="card-title"><% Response.Write(title[i]); %></h5>
+                                    <p class="text-muted mb-0"><% Response.Write(address[i] + " , " + city[i] + " , " + pincode[i]); %></p>
                                 </div>
-                        </asp:HyperLink>
+                        <% Response.Write("</a>"); %>
                     </div>
-                </div>
-                <div class="col-4">
-                    <div class="card shadow" style="width: 22rem;">
-                        <asp:HyperLink runat="server" class="text-decoration-none text-body">
-                                <asp:Image class="card-img-top" alt="" height="280" width="350" runat="server" ImageUrl="~/Image/Img/restro3.jpg" />
-                                <div class="card-body">
-                                    <h5 class="card-title">GATE TO GOA CAFE</h5>
-                                    <p class="text-muted mb-0">VESU</p>
-                                </div>
-                        </asp:HyperLink>
-                    </div>
-                </div>
-
-                <%--Works--%>
-
+                </div><%
+                              }
+                          }%>
                 <div class="container px-4 py-5 text-center " id="Works">
                     <h1 class="display-5 fw-bold my-5">How FOODIVE works?</h1>
                     <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">

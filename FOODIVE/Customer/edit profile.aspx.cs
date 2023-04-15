@@ -17,6 +17,14 @@ namespace FOODIVE.Customer
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["login"] == null)
+            {
+                Response.Redirect("Login.aspx");
+            }
+            con.Open();
+            SqlCommand quan = new SqlCommand("SELECT COUNT(*) FROM [add_to_cart] where r_id = " + Session["rid"].ToString(), con);
+            quanatc.Text = quan.ExecuteScalar().ToString();
+            con.Close();
             try
             {
                 lbluser.Text = Session["username"].ToString();

@@ -396,10 +396,17 @@
     <Content Include="css\update_profile.css" />
     <Content Include="Customer\AddToCart.aspx" />
     <Content Include="Customer\afterlogin.aspx" />
+    <Content Include="Customer\cart.aspx" />
     <Content Include="Customer\change password.aspx" />
+    <Content Include="Customer\checkout.aspx" />
+    <Content Include="Customer\deletecart.aspx" />
     <Content Include="Customer\edit profile.aspx" />
+    <Content Include="Customer\menu.aspx" />
+    <Content Include="Customer\modquan.aspx" />
     <Content Include="Customer\order.aspx" />
+    <Content Include="Customer\payment.aspx" />
     <Content Include="Customer\profile.aspx" />
+    <Content Include="Customer\Razorpay.aspx" />
     <Content Include="Customer\update profile.aspx" />
     <Content Include="Image\Favicon\Favicon.png" />
     <Content Include="Image\Icon\1star.png" />
@@ -966,12 +973,33 @@
     <Compile Include="Customer\afterlogin.aspx.designer.cs">
       <DependentUpon>afterlogin.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Customer\cart.aspx.cs">
+      <DependentUpon>cart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer\cart.aspx.designer.cs">
+      <DependentUpon>cart.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Customer\change password.aspx.cs">
       <DependentUpon>change password.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Customer\change password.aspx.designer.cs">
       <DependentUpon>change password.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\checkout.aspx.cs">
+      <DependentUpon>checkout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer\checkout.aspx.designer.cs">
+      <DependentUpon>checkout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\deletecart.aspx.cs">
+      <DependentUpon>deletecart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer\deletecart.aspx.designer.cs">
+      <DependentUpon>deletecart.aspx</DependentUpon>
     </Compile>
     <Compile Include="Customer\edit profile.aspx.cs">
       <DependentUpon>edit profile.aspx</DependentUpon>
@@ -980,6 +1008,20 @@
     <Compile Include="Customer\edit profile.aspx.designer.cs">
       <DependentUpon>edit profile.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Customer\menu.aspx.cs">
+      <DependentUpon>menu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer\menu.aspx.designer.cs">
+      <DependentUpon>menu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\modquan.aspx.cs">
+      <DependentUpon>modquan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer\modquan.aspx.designer.cs">
+      <DependentUpon>modquan.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Customer\order.aspx.cs">
       <DependentUpon>order.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -987,12 +1029,26 @@
     <Compile Include="Customer\order.aspx.designer.cs">
       <DependentUpon>order.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Customer\payment.aspx.cs">
+      <DependentUpon>payment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer\payment.aspx.designer.cs">
+      <DependentUpon>payment.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Customer\profile.aspx.cs">
       <DependentUpon>profile.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Customer\profile.aspx.designer.cs">
       <DependentUpon>profile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\Razorpay.aspx.cs">
+      <DependentUpon>Razorpay.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer\Razorpay.aspx.designer.cs">
+      <DependentUpon>Razorpay.aspx</DependentUpon>
     </Compile>
     <Compile Include="Customer\update profile.aspx.cs">
       <DependentUpon>update profile.aspx</DependentUpon>
