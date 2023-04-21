@@ -11,6 +11,11 @@
     <meta name="author" content="">
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
     <title>FOODIVE | Update Manager Details</title>
+    <style>
+        *{
+            font-family:'Open Sans', sans-serif;
+        }
+    </style>
     <link rel="shortcut icon" href="/Project_demo/Image/Favicon/Favicon.png" type="image/x-icon">
     <link href="css/lib/bootstrap/bootstrap.min.css" rel="stylesheet">
     <link href="css/helper.css" rel="stylesheet">

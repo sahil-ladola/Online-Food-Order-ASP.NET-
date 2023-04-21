@@ -8,7 +8,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>FOODIVE | Restaurant Registration</title>
     <link rel="shortcut icon" href="../Image/Favicon/Favicon.png" type="image/x-icon">
-    <link rel="stylesheet" href="Registration/fonts/material-icon/css/material-design-iconic-font.min.css">
+    <style>
+        *{
+            font-family:'Open Sans', sans-serif;
+        }
+    </style>
     <link rel="stylesheet" href="Registration/vendor/nouislider/nouislider.min.css">
     <link rel="stylesheet" href="Registration/css/style.css">
 </head>

@@ -1,34 +1,64 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Configuration;
-using System.Net;
-using System.Net.Mail;
 
 namespace FOODIVE.Visitor
 {
     public partial class OTP : System.Web.UI.Page
     {
-        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["dbconnection"].ConnectionString);
         protected void Page_Load(object sender, EventArgs e)
         {
-            con.Open();
-            email.Text = Session["txtEmail"].ToString();
+            if (Session["txtEmail"] == null)
+            {
+                Response.Redirect("~/Customer/Register.aspx");
+            }
+            else
+            {
+                email.Text = Session["txtEmail"].ToString();
+            }
         }
 
         protected void btnVerify_Click(object sender, EventArgs e)
         {
-            if (Convert.ToInt32(Session["RegOTP"]) == Convert.ToInt32(txtRegOtp.Text))
+            try
             {
-                string query = "insert into register (fname,lname,mobile_num,address,city,pincode,email,password) values ('" + Session["txtFname"] + "','" + Session["txtLname"] + "','" + Session["txtMobileNum"] + "','" + Session["txtAddress"] + "','" + Session["txtCity"] + "','" + Session["txtPincode"] + "','" + Session["txtEmail"] + "','" + Session["txtPassword"] + "')";
-                SqlCommand com = new SqlCommand(query, con);
-                com.ExecuteNonQuery();
-                con.Close();
-                Response.Redirect("~/Customer/Login.aspx");
+                int regOtp = Convert.ToInt32(Session["RegOTP"]);
+                int userOtp = Convert.ToInt32(txtRegOtp.Text);
+
+                if (userOtp == regOtp)
+                {
+                    string connectionString = ConfigurationManager.ConnectionStrings["dbconnection"].ConnectionString;
+
+                    using (SqlConnection connection = new SqlConnection(connectionString))
+                    {
+                        connection.Open();
+
+                        string query = "INSERT INTO register (fname, lname, mobile_num, address, city, pincode, email, password) VALUES (@fname, @lname, @mobile_num, @address, @city, @pincode, @email, @password)";
+                        using (SqlCommand command = new SqlCommand(query, connection))
+                        {
+                            command.Parameters.AddWithValue("@fname", Session["txtFname"]);
+                            command.Parameters.AddWithValue("@lname", Session["txtLname"]);
+                            command.Parameters.AddWithValue("@mobile_num", Session["txtMobileNum"]);
+                            command.Parameters.AddWithValue("@address", Session["txtAddress"]);
+                            command.Parameters.AddWithValue("@city", Session["txtCity"]);
+                            command.Parameters.AddWithValue("@pincode", Session["txtPincode"]);
+                            command.Parameters.AddWithValue("@email", Session["txtEmail"]);
+                            command.Parameters.AddWithValue("@password", "HashedPasswordGoesHere");
+
+                            command.ExecuteNonQuery();
+                        }
+                    }
+                    Response.Redirect("~/Customer/Login.aspx");
+                }
+                else
+                {
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "alert('Invalid OTP. Please try again.');", true);
+                }
+            }
+            catch (Exception ex)
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "alert('An error occurred while processing your request. Please try again later.');", true);
             }
         }
     }

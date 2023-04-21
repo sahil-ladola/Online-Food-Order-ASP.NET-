@@ -406,8 +406,6 @@
     <Content Include="Customer\order.aspx" />
     <Content Include="Customer\payment.aspx" />
     <Content Include="Customer\profile.aspx" />
-    <Content Include="Customer\Razorpay.aspx" />
-    <Content Include="Customer\update profile.aspx" />
     <Content Include="Image\Favicon\Favicon.png" />
     <Content Include="Image\Icon\1star.png" />
     <Content Include="Image\Icon\2star.png" />
@@ -1042,20 +1040,6 @@
     </Compile>
     <Compile Include="Customer\profile.aspx.designer.cs">
       <DependentUpon>profile.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Customer\Razorpay.aspx.cs">
-      <DependentUpon>Razorpay.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Customer\Razorpay.aspx.designer.cs">
-      <DependentUpon>Razorpay.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Customer\update profile.aspx.cs">
-      <DependentUpon>update profile.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Customer\update profile.aspx.designer.cs">
-      <DependentUpon>update profile.aspx</DependentUpon>
     </Compile>
     <Compile Include="Customer\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>

@@ -16,9 +16,11 @@ namespace FOODIVE.Customer
         protected void Page_Load(object sender, EventArgs e)
         {
             con.Open();
-            string mod = "update [add_to_cart] set [quantity]=" + Request.QueryString["modquantity"] + " where [atc_id] = " + Request.QueryString["atc_id"];
-            SqlCommand cmd = new SqlCommand(mod,con);
-            if (cmd.ExecuteNonQuery() !=0)
+            string mod = "update [add_to_cart] set [quantity]=@modquantity where [atc_id] = @atc_id";
+            SqlCommand cmd = new SqlCommand(mod, con);
+            cmd.Parameters.AddWithValue("@modquantity", Request.QueryString["modquantity"]);
+            cmd.Parameters.AddWithValue("@atc_id", Request.QueryString["atc_id"]);
+            if (cmd.ExecuteNonQuery() != 0)
             {
                 Response.Redirect("AddToCart.aspx");
             }

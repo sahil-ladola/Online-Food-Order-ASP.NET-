@@ -10,6 +10,11 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>FOODIVE | Add Category</title>
+    <style>
+        *{
+            font-family:'Open Sans', sans-serif;
+        }
+    </style>
     <link rel="shortcut icon" href="../Image/Favicon/Favicon.png" type="image/x-icon">
     <link href="css/lib/bootstrap/bootstrap.min.css" rel="stylesheet">
     <link href="css/helper.css" rel="stylesheet">

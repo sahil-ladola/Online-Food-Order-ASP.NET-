@@ -7,6 +7,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>FOODIVE</title>
+    <style>
+        *{
+            font-family: 'Open Sans', sans-serif;
+        }
+    </style>
     <link rel="shortcut icon" href="~/Image/Favicon/Favicon.png" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <style>
@@ -96,37 +101,38 @@
             <% 
                 if (rest_id.Count == 0)
                 {
-                                            %>
+            %>
             <div class="row g-4">
                 <div class="col-12">
                     <div class="card shadow" style="width: 22rem;">
                         <h1>No Restaurant Available!!!Right Now...</h1>
                     </div>
                 </div>
-                </div>
-                <%
+            </div>
+            <%
                 }
                 else
                 {
-                        %>
+            %>
             <div class="row g-4">
                 <%
                     for (int i = 0; i <= rest_id.Count - 1; i++)
                     {
-                        %>
+                %>
                 <div class="col-4">
                     <div class="card shadow" style="width: 22rem;">
-                        <% Response.Write("<a href='../Customer/menu.aspx?rest_id="+ rest_id[i].ToString() +"' class='text-decoration-none text-body'>"); %>
-                        <% Response.Write("<img src='"+ image[i] +"' class='card-img-top' alt='"+ title[i] +" image' height='280' width='350' />"); %>
-                                <div class="card-body">
-                                    <h5 class="card-title"><% Response.Write(title[i]); %></h5>
-                                    <p class="text-muted mb-0"><% Response.Write(address[i] + " , " + city[i] + " , " + pincode[i]); %></p>
-                                </div>
+                        <% Response.Write("<a href='../Customer/menu.aspx?rest_id=" + rest_id[i].ToString() + "' class='text-decoration-none text-body'>"); %>
+                        <% Response.Write("<img src='" + image[i] + "' class='card-img-top' alt='" + title[i] + " image' height='280' width='350' />"); %>
+                        <div class="card-body">
+                            <h5 class="card-title"><% Response.Write(title[i]); %></h5>
+                            <p class="text-muted mb-0"><% Response.Write(address[i] + " , " + city[i] + " , " + pincode[i]); %></p>
+                        </div>
                         <% Response.Write("</a>"); %>
                     </div>
-                </div><%
-                              }
-                          }%>
+                </div>
+                <%
+                        }
+                    }%>
                 <div class="container px-4 py-5 text-center " id="Works">
                     <h1 class="display-5 fw-bold my-5">How FOODIVE works?</h1>
                     <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">

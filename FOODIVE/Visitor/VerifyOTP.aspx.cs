@@ -4,10 +4,6 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Data.SqlClient;
-using System.Configuration;
-using System.Net;
-using System.Net.Mail;
 
 namespace FOODIVE.Visitor
 {
@@ -15,18 +11,43 @@ namespace FOODIVE.Visitor
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            email.Text = Session["txtCustEmail"].ToString();
+            if (!IsPostBack)
+            {
+                if (Session["txtCustEmail"] == null)
+                {
+                    Response.Redirect("~/Customer/Login.aspx");
+                }
+                else
+                {
+                    email.Text = Session["txtCustEmail"].ToString();
+                }
+            }
         }
 
         protected void btnVerify_Click(object sender, EventArgs e)
         {
-            if (Convert.ToInt32(Session["verOTP"]) == Convert.ToInt32(txtVerotp.Text))
+            if (string.IsNullOrEmpty(txtVerotp.Text))
             {
-                Response.Redirect("ResetPassword.aspx");
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "script", "<script>alert('Please enter the OTP.')</script>");
+                return;
             }
-            else
+
+            try
             {
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "script", "<script>alert('Invalid OTP!!!')</script>");
+                int enteredOTP = Convert.ToInt32(txtVerotp.Text);
+
+                if (enteredOTP == Convert.ToInt32(Session["verOTP"]))
+                {
+                    Response.Redirect("ResetPassword.aspx");
+                }
+                else
+                {
+                    Page.ClientScript.RegisterStartupScript(this.GetType(), "script", "<script>alert('Invalid OTP!!!')</script>");
+                }
+            }
+            catch (Exception ex)
+            {
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "script", "<script>alert('An error occurred while verifying the OTP. Please try again later.')</script>");
             }
         }
     }

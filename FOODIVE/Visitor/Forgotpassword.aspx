@@ -7,6 +7,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>FOODIVE | Forgot Password</title>
+    <style>
+        *{
+            font-family:'Open Sans', sans-serif;
+        }
+    </style>
     <link rel="shortcut icon" href="../Image/Favicon/Favicon.png" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
@@ -43,16 +48,15 @@
                             <div class="col-md-6 col-lg-7 d-flex align-items-center">
                                 <div class="card-body p-4 p-lg-5 text-black">
                                     <form runat="server" method="POST">
+                                        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
                                         <h3 class="fw-normal text-center">Forgot Password</h3>
                                         <p class="text-center text-muted small pb-3 mb-3">Enter your email we'll send you a OTP to get back into your account.</p>
-
                                         <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ControlToValidate="txtCustomerEmail" ErrorMessage="Invalid Email address" ValidationExpression="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" Display="Dynamic" ForeColor="Red" Font-Bold="True" Font-Size="Small"></asp:RegularExpressionValidator>
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="txtCustomerEmail" ErrorMessage="Field must be filled" Display="Dynamic" ForeColor="Red" Font-Bold="True" Font-Size="Small"></asp:RequiredFieldValidator>
                                         <div class="form-floating mb-4">
                                             <asp:TextBox ID="txtCustomerEmail" class="form-control" placeholder="Email Address" runat="server"></asp:TextBox>
                                             <label for="CustomerEmail">Email Address</label>
                                         </div>
-
                                         <div class="d-grid gap-2 mt-4">
                                             <asp:Button ID="btnsendOTP" runat="server" class="btn btn-primary" Text="Send One Time Password" OnClick="btnsendOTP_Click" />
                                         </div>

@@ -5,6 +5,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <style>
+        *{
+            font-family:'Open Sans', sans-serif;
+        }
         body {
             background: rgb(99, 39, 120)
         }

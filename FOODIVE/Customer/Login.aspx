@@ -7,6 +7,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>FOODIVE | Login</title>
+    <style>
+        *{
+            font-family:'Open Sans', sans-serif;
+        }
+    </style>
     <link rel="shortcut icon" href="~/Image/Favicon/Favicon.png" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
@@ -48,7 +53,7 @@
                                                 <img src="../Image/LOGO/foodive-logos_black.png" alt="LOGO" height="100" width="100">
                                             </span>
                                         </div>
-                                        <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign into your account</h5>
+                                        <h5 class="fw-normal mb-3 pb-3">Sign into your account</h5>
 
                                         <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ControlToValidate="txtEmail" ErrorMessage="Invalid Email address" ValidationExpression="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" Display="Dynamic" ForeColor="Red" Font-Bold="True" Font-Size="Small"></asp:RegularExpressionValidator>
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="txtEmail" ErrorMessage="All field must be filled" Display="Dynamic" ForeColor="Red" Font-Bold="True" Font-Size="Small"></asp:RequiredFieldValidator>
@@ -74,7 +79,7 @@
                                             </div>
                                         </div>
 
-                                        <asp:HyperLink ID="HyperLink1" class="small text-muted text-decoration-none" runat="server" NavigateUrl="~/Visitor/Forgot password.aspx">Forgot password?</asp:HyperLink>
+                                        <asp:HyperLink ID="HyperLink1" class="small text-muted text-decoration-none" runat="server" NavigateUrl="~/Visitor/Forgotpassword.aspx">Forgot password?</asp:HyperLink>
                                         <p class="mb-5 pb-lg-2 text-muted">
                                             Don't have an account?<asp:HyperLink ID="HyperLink2" class="text-decoration-none" runat="server" NavigateUrl="~/Customer/Registration.aspx"><strong> Register here</strong></asp:HyperLink>
                                     </form>

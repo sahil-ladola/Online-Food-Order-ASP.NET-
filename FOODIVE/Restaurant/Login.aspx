@@ -8,8 +8,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">    
     <link rel="shortcut icon" href="../Image/Favicon/Favicon.png" type="image/x-icon">    
-    <link rel="stylesheet" type="text/css" href="Login/vendor/bootstrap/css/bootstrap.min.css">    
-    <link rel="stylesheet" type="text/css" href="Login/fonts/font-awesome-4.7.0/css/font-awesome.min.css">    
+    <link rel="stylesheet" type="text/css" href="Login/vendor/bootstrap/css/bootstrap.min.css">
+    <style>
+        *{
+            font-family:'Open Sans', sans-serif;
+        }
+    </style>
     <link rel="stylesheet" type="text/css" href="Login/vendor/animate/animate.css">    
     <link rel="stylesheet" type="text/css" href="Login/vendor/css-hamburgers/hamburgers.min.css">    
     <link rel="stylesheet" type="text/css" href="Login/vendor/select2/select2.min.css">    
