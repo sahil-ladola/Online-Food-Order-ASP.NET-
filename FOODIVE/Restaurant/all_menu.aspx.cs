@@ -34,7 +34,7 @@ namespace FOODIVE.Restaurant
         public void getdata()
         {
             con.Open();
-            string query = "select * from dishes where rest_id='" + Session["rest_id"] + "'";
+            string query = "select * from dishes where rest_id='" + Session["rest_id"] + "' AND subrest_id='0'";
             SqlCommand cmd = new SqlCommand(query, con);
             SqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())

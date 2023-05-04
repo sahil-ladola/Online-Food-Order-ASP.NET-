@@ -118,11 +118,11 @@
                         %>
                 <div class="col-4">
                     <div class="card shadow" style="width: 22rem;">
-                        <% Response.Write("<a href='../Customer/menu.aspx?rest_id="+ rest_id[i].ToString() +"' class='text-decoration-none text-body'>"); %>
+                        <% Response.Write("<a href='../Customer/subrest.aspx?rest_id="+ rest_id[i].ToString() +"' class='text-decoration-none text-body'>"); %>
                         <% Response.Write("<img src='"+ image[i] +"' class='card-img-top' alt='"+ title[i] +" image' height='280' width='350' />"); %>
                                 <div class="card-body">
-                                    <h5 class="card-title"><% Response.Write(title[i]); %></h5>
-                                    <p class="text-muted mb-0"><% Response.Write(address[i] + " , " + city[i] + " , " + pincode[i]); %></p>
+                                    <h5 class="card-title"><center><% Response.Write(title[i]); %></center></h5>
+                                    <%--<p class="text-muted mb-0"><% Response.Write(address[i] + " , " + city[i] + " , " + pincode[i]); %></p>--%>
                                 </div>
                         <% Response.Write("</a>"); %>
                     </div>

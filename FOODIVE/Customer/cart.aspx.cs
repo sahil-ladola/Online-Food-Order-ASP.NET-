@@ -31,7 +31,7 @@ namespace FOODIVE.Customer
                     dr.Close();
                     Response.Redirect("menu.aspx?rest_id=" + Session["rest_id"]);
                 }
-                string add = "insert into add_to_cart ([d_id],[rest_id],[r_id],[quantity]) values ('" + Request.QueryString["d_id"].ToString() + "' , '" + Session["rest_id"].ToString() + "', '" + Session["rid"].ToString() + "' , 1 )";
+                string add = "insert into add_to_cart ([d_id],[rest_id],[subrest_id],[r_id],[quantity]) values ('" + Request.QueryString["d_id"].ToString() + "' , '" + Session["rest_id"].ToString() + "', '" + Session["subrest_id"].ToString() + "', '" + Session["rid"].ToString() + "' , 1 )";
                 SqlCommand cmd1 = new SqlCommand(add, con);
                 if (cmd1.ExecuteNonQuery() != 0)
                 {

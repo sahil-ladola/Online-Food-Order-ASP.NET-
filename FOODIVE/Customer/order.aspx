@@ -8,8 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>FOODIVE | My Orders</title>
     <style>
-        *{
-            font-family:'Open Sans', sans-serif;
+        * {
+            font-family: 'Open Sans', sans-serif;
         }
     </style>
     <link rel="shortcut icon" href="../Image/Favicon/Favicon.png" type="image/x-icon">
@@ -32,7 +32,8 @@
                 <div class="text-end">
                     <div class="dropdown text-end">
                         <a href="profile.aspx" class="text-decoration-none">
-                            <label for="User" class="px-2 text-secondary"><asp:Label ID="lblusername" class="px-2 text-secondary" runat="server" Text="Label"></asp:Label></label>
+                            <label for="User" class="px-2 text-secondary">
+                                <asp:Label ID="lblusername" class="px-2 text-secondary" runat="server" Text="Label"></asp:Label></label>
                             <img src="../Image/Icon/User.png" id="User" alt="User" width="32" height="32" class="rounded-circle">
                         </a>
                     </div>
@@ -51,62 +52,68 @@
                     <th scope="col">Quantity</th>
                     <th scope="col">Price</th>
                     <th scope="col">Status</th>
-                    <th scope="col">Date and Time</th>
                     <th scope="col">Action</th>
                 </tr>
             </thead>
             <tbody>
-                <%--<td colspan="6"><center>You have No orders Placed yet. </center></td>--%>
-                        <tr>
-                            <th scope="row">Margherita</th>
-                            <td>1</td>
-                            <td>210</td>
-                            <td>
-                                <%--<?php
-                                $status = $row['status'];
-                                //3=Cancelled
-                                //1=Delivered
-                                //2=processing
-                                //0=dispatched
-                            
-                                ?>--%>
-                                
-                                <%--<?php
-                            
-                                if ($status == 3) {
-                                ?>--%>
-                                  <%--  <p class="text-danger">Cancelled</p>
-                                <?php
-                                }
-                                if ($status == 1) {
-                                --%>
-                                    <%--<p class="text-success">Delivered</p>--%>
-                                <%--<?php
-                                }
-                                if ($status == 2) {
-                                ?>--%>
-                                    <p class="text-warning">Processing</p>
-                               <%-- <?php
-                                }
-                                ?>--%>
+                <%if (o_id.Count == 0)
+                    {%><td colspan="6">
+                        <center>You have No orders Placed yet. </center>
+                    </td>
+                <%}
+                    else
+                    {
+                        for (int i = 0; i <= o_id.Count - 1; i++)
+                        {%>
+                <tr>
+                    <th scope="row"><% Response.Write(dishname[i]); %></th>
+                    <td><% Response.Write(quantity[i]); %></td>
+                    <td><% Response.Write(Convert.ToInt32(price[i]) * Convert.ToInt32(quantity[i]) + "/-"); %></td>
+                    <td>
+                        <%
 
-                            </td>
-                            <td>28/03/2023</td>
-                            <td>
-                                <%--<?php
-                                if ($status == 2) {
-                                ?>--%>
-                                    <%--<a href="delete.aspx?order_del=<?php echo $row['O_id']; ?>" onclick="return confirm('Are you sure you want to cancel your order?');">--%>
-                                        <button class="btn btn-danger">
-                                            <img src="../Image/Icon/delete.png" alt="Del" height="20" width="20">
-                                        </button>
-                                    <%--</a>--%>
-                                    <%--<p class="text-success">Done</p>--%>
-                                <%--<?php
-                                }
-                                ?>--%>
-                            </td>
-                        </tr>
+                            if (status[i] == "3")
+                            {
+                        %>
+                        <p class="text-danger">Cancelled</p>
+                        <%
+                            }
+                            if (status[i] == "1")
+                            {
+                        %>
+                        <p class="text-success">Delivered</p>
+                        <%
+                            }
+                            if (status[i] == "2")
+                            {
+                        %>
+                        <p class="text-warning">Processing</p>
+                        <%
+                            }
+                        %>
+                    <td>
+                        <%
+                            if (status[i] == "2")
+                            {
+                        %>
+                        <% Response.Write("<a href='delete.aspx?order_del=" + o_id[i] +"'>");%>
+                        <button class="btn btn-danger">
+                            <img src="/Image/Icon/delete.png" alt="Del" height="20" width="20">
+                        </button>
+                        <% Response.Write("</a>"); %>
+                        <%
+                            }
+                            else
+                            {
+                        %>
+                        <p class="text-success">Done</p>
+                        <%
+                            }
+                        %>
+                    </td>
+                </tr>
+                <%}
+                    } %>
             </tbody>
         </table>
         <a href="../Customer/afterlogin.aspx" class="text-decoration-none">
@@ -116,18 +123,18 @@
         </a>
     </div>
     <footer class="container footer d-flex flex-wrap justify-content-between align-items-center py-3 mt-2 border-top">
-    <p class="col-md-4 mb-0 text-muted">© 2022 Company, Inc , Created by SAHIL LADOLA</p>
+        <p class="col-md-4 mb-0 text-muted">© 2022 Company, Inc , Created by SAHIL LADOLA</p>
 
-    <a href="#" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
-        <img src="../Image/LOGO/foodive-logos_black.png" alt="LOGO" height="80" width="80">
-    </a>
+        <a href="#" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+            <img src="../Image/LOGO/foodive-logos_black.png" alt="LOGO" height="80" width="80">
+        </a>
 
-    <ul class="nav col-md-4 justify-content-end">
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted"></a></li>
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted"></a></li>
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted"></a></li>
-    </ul>
-</footer>
+        <ul class="nav col-md-4 justify-content-end">
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted"></a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted"></a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted"></a></li>
+        </ul>
+    </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>

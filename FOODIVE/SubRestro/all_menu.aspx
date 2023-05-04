@@ -55,22 +55,10 @@
                     <ul id="sidebarnav">
                         <li class="nav-devider"></li>
                         <li class="nav-label">Home</li>
-                        <li><a href=" dashboard.aspx"><i class="fa fa-tachometer"></i><span>Dashboard</span></a>
+                        <li><a href=" dashboard.aspx"><i class="fa fa-tachometer active"></i><span>Dashboard</span></a>
                         </li>
                         <li class="nav-label">Log</li>
-                        <%--<li><a href=" all_users.aspx"><span><i class="fa fa-user f-s-20 "></i></span><span>Users</span></a></li>--%>
-                        <li><a class="has-arrow" href="#" aria-expanded="false"><i class="fa fa-archive f-s-20 color-warning"></i><span class="hide-menu">Restaurant</span></a>
-                            <ul aria-expanded="false" class="collapse">
-                                <li><a href=" all_restaurant.aspx">All Restaurant</a></li>
-                                <li><a href="add_restaurant.aspx">Add Sub-branch Restaurant</a></li>
-                            </ul>
-                        </li>
-                        <%--<li><a class="has-arrow" href="#" aria-expanded="false"><i class="fa fa-delicious f-s-20 color-warning"></i><span class="hide-menu">Categories</span></a>
-                            <ul aria-expanded="false" class="collapse">
-                                <li><a href="all_category.aspx">All Categories</a></li>
-                                <li><a href="add_category.aspx">Add Categories</a></li>
-                            </ul>
-                        </li>--%>
+                        
                         <li><a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-cutlery" aria-hidden="true"></i><span class="hide-menu">Menu</span></a>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href=" all_menu.aspx">All Menues</a></li>

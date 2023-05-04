@@ -150,8 +150,6 @@
             Session["EM"] = txtEmail.Text;
             Session["MN"] = txtMobileNum.Text;
             Session["ADD"] = txtAddress.Text;
-            Session["DATE"] = DateTime.Now.ToString("yyyy-MM-dd");
-
 
             %>
                     window.location.href = "<% Response.Write("checkout.aspx"); %>";

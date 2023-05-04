@@ -49,8 +49,8 @@ namespace FOODIVE.admin
             SqlDataReader dr = earn.ExecuteReader();
             while(dr.Read())
             {
-                int price = (int) dr["price"];
-                int quantity = (int)dr["quantity"];
+                int price = Convert.ToInt32( dr["price"]);
+                int quantity = Convert.ToInt32( dr["quantity"]);
                 total += (price * quantity );
             }
             lblearn.Text = total.ToString();

@@ -41,8 +41,8 @@ namespace FOODIVE.SubRestro
             SqlDataReader dr2 = earn.ExecuteReader();
             while (dr2.Read())
             {
-                int price = (int)dr2["price"];
-                int quantity = (int)dr2["quantity"];
+                int price = Convert.ToInt32(dr2["price"]);
+                int quantity = Convert.ToInt32(dr2["quantity"]);
                 total += (price * quantity);
             }
             lblearn.Text = total.ToString();

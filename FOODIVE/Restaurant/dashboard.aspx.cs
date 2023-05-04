@@ -23,28 +23,28 @@ namespace FOODIVE.Restaurant
             
             con.Open();
             
-            SqlCommand dishes = new SqlCommand("SELECT COUNT(*) FROM dishes where rest_id='"+ Session["rest_id"] + "'", con);
+            SqlCommand dishes = new SqlCommand("SELECT COUNT(*) FROM dishes where rest_id='"+ Session["rest_id"] + "' AND subrest_id='0'", con);
             lbldishes.Text = dishes.ExecuteScalar().ToString();
 
-            SqlCommand process = new SqlCommand("SELECT COUNT(*) FROM [order] WHERE status = '2' AND rest_id='" + Session["rest_id"] + "'", con);
+            SqlCommand process = new SqlCommand("SELECT COUNT(*) FROM [order] WHERE status = '2' AND rest_id='" + Session["rest_id"] + "' AND subrest_id='0'", con);
             lblprocess.Text = process.ExecuteScalar().ToString();
 
-            SqlCommand deliver = new SqlCommand("SELECT COUNT(*) FROM [order] WHERE status = '1' AND rest_id='" + Session["rest_id"] + "'", con);
+            SqlCommand deliver = new SqlCommand("SELECT COUNT(*) FROM [order] WHERE status = '1' AND rest_id='" + Session["rest_id"] + "' AND subrest_id='0'", con);
             lbldeliver.Text = deliver.ExecuteScalar().ToString();
 
-            SqlCommand cancel = new SqlCommand("SELECT COUNT(*) FROM [order] WHERE status = '3' AND rest_id='" + Session["rest_id"] + "'", con);
+            SqlCommand cancel = new SqlCommand("SELECT COUNT(*) FROM [order] WHERE status = '3' AND rest_id='" + Session["rest_id"] + "' AND subrest_id='0'", con);
             lblcancel.Text = cancel.ExecuteScalar().ToString();
 
-            SqlCommand order = new SqlCommand("SELECT COUNT(*) FROM [order] WHERE rest_id='" + Session["rest_id"] + "'", con);
+            SqlCommand order = new SqlCommand("SELECT COUNT(*) FROM [order] WHERE rest_id='" + Session["rest_id"] + "' AND subrest_id='0'", con);
             lbltotal.Text = order.ExecuteScalar().ToString();
 
             int total = 0;
-            SqlCommand earn = new SqlCommand("SELECT quantity, price FROM [order] WHERE status= '1' AND rest_id='" + Session["rest_id"] + "'", con);
+            SqlCommand earn = new SqlCommand("SELECT quantity, price FROM [order] WHERE status= '1' AND rest_id='" + Session["rest_id"] + "' AND subrest_id='0'", con);
             SqlDataReader dr2 = earn.ExecuteReader();
             while (dr2.Read())
             {
-                int price = (int)dr2["price"];
-                int quantity = (int)dr2["quantity"];
+                int price = Convert.ToInt32(dr2["price"]);
+                int quantity = Convert.ToInt32(dr2["quantity"]);
                 total += (price * quantity);
             }
             lblearn.Text = total.ToString();

@@ -21,6 +21,7 @@ namespace FOODIVE.Customer
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
+                lbluser.Text = Session["username"].ToString();
                 connection.Open();
 
                 SqlCommand countCommand = new SqlCommand("SELECT COUNT(*) FROM [add_to_cart] WHERE r_id = @RestaurantId", connection);

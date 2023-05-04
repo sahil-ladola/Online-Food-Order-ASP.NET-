@@ -43,24 +43,50 @@ namespace FOODIVE.Customer
                 Session.Remove("alert");
             }
             Session["rest_id"] = Request.QueryString["rest_id"];
+            if (Request.QueryString["subrest_id"] != null)
+                Session["subrest_id"] = Request.QueryString["subrest_id"];
+            else
+                Session["subrest_id"] = "0";
         }
         public void GetData()
         {
-            con.Open();
-            string query = "select image, d_id, dishname, description, price from [dishes] where rest_id = @rest_id";
-            SqlCommand cmd = new SqlCommand(query, con);
-            cmd.Parameters.AddWithValue("@rest_id", Request.QueryString["rest_id"]);
-            SqlDataReader dr = cmd.ExecuteReader();
-            while (dr.Read())
+            if (Request.QueryString["rest_id"] != null && Request.QueryString["subrest_id"] != null)
             {
-                image.Add((dr["image"]).ToString());
-                d_id.Add((dr["d_id"]).ToString());
-                dishname.Add((dr["dishname"]).ToString());
-                description.Add((dr["description"]).ToString());
-                price.Add((dr["price"]).ToString());
+                con.Open();
+                string query = "select image, d_id, dishname, description, price from [dishes] where rest_id = @rest_id AND subrest_id = @subrest_id";
+                SqlCommand cmd = new SqlCommand(query, con);
+                cmd.Parameters.AddWithValue("@rest_id", Request.QueryString["rest_id"]);
+                cmd.Parameters.AddWithValue("@subrest_id", Request.QueryString["subrest_id"]);
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    image.Add((dr["image"]).ToString());
+                    d_id.Add((dr["d_id"]).ToString());
+                    dishname.Add((dr["dishname"]).ToString());
+                    description.Add((dr["description"]).ToString());
+                    price.Add((dr["price"]).ToString());
+                }
+                dr.Close();
+                con.Close();
             }
-            dr.Close();
-            con.Close();
+            else
+            {
+                con.Open();
+                string query = "select image, d_id, dishname, description, price from [dishes] where rest_id = @rest_id AND subrest_id=0";
+                SqlCommand cmd = new SqlCommand(query, con);
+                cmd.Parameters.AddWithValue("@rest_id", Request.QueryString["rest_id"]);
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    image.Add((dr["image"]).ToString());
+                    d_id.Add((dr["d_id"]).ToString());
+                    dishname.Add((dr["dishname"]).ToString());
+                    description.Add((dr["description"]).ToString());
+                    price.Add((dr["price"]).ToString());
+                }
+                dr.Close();
+                con.Close();
+            }
         }
     }
 }

@@ -16,9 +16,6 @@ namespace FOODIVE.Customer
         public List<string> title = new List<string>();
         public List<string> rest_id = new List<string>();
         public List<string> image = new List<string>();
-        public List<string> address = new List<string>();
-        public List<string> city = new List<string>();
-        public List<string> pincode = new List<string>();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["login"] == null)
@@ -50,9 +47,6 @@ namespace FOODIVE.Customer
                 rest_id.Add(dr["rest_id"].ToString());
                 title.Add(dr["title"].ToString());
                 image.Add(dr["image"].ToString());
-                address.Add(dr["address"].ToString());
-                city.Add(dr["city"].ToString());
-                pincode.Add(dr["pincode"].ToString());
             }
             dr.Close();
             con.Close();

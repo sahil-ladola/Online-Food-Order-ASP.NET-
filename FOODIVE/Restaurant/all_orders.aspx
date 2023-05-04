@@ -105,24 +105,26 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            <%
+                                                if (order_id.Count == 0)
+                                                {
+                                            %>
                                             <td colspan="9">
                                                 <center>No Orders</center>
                                             </td>
-
-
-
-
-                                            <!-- 3= Cancelled
-                                                    // 1= Delivered
-                                                    // 2=processing -->
-                                            <%--<tr>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td>
-                                                        <table class='table table-hover'>
+                                            <%}
+                                                else
+                                                {
+                                                    for (int i = 0; i < order_id.Count; i++)
+                                                    {%>
+                                            <tr>
+                                                <td><% Response.Write(fname[i]); %></td>
+                                                <td><% Response.Write(lname[i]); %></td>
+                                                <td><% Response.Write(address[i]); %></td>
+                                                <td><% Response.Write(date[i]); %> </td>
+                                                <td><% Response.Write(amount[i]); %> </td>
+                                                <td>
+                                                    <table class='table table-hover'>
                                                         <thead>
                                                             <tr>
                                                                 <th scope='col'>dishname</th>
@@ -131,33 +133,43 @@
                                                                 <th scope='col'>Status</th>
                                                                 <th scope='col'>Action</th>
                                                             </tr>
-                                                        </thead>--%>
-                                            <%--<tbody>--%>
-
-                                            <%--<tr>
-                                                                <td></td>
-                                                                <td></td>
-                                                                <td></td>
-                                                        
-                                                            <td><button type="button" class="btn btn-warning"><span class="fa fa-cog fa-spin" aria-hidden="true"></span> Processing</button></td>
-                                                        
-                                                        
-                                                            <td> <button type="button" class="btn btn-primary"><span class="fa fa-check-circle" aria-hidden="true"></span> Delivered</button></td>
-                                                       
-                                                        
-                                                            <td> <button type="button" class="btn btn-danger"> <i class="fa fa-close"></i> Cancelled</button></td>
-                                                        
-                                                        <td>
-                                                            
-                                                        </td>
-                                                    
+                                                        </thead>
+                                                        <tbody>
+                                                            <% for (int j = 0; j < o_id.Count; j++)
+                                                                {
+                                                                    if (order_id[i] == or_id[j])
+                                                                    {%>
+                                                            <tr>
+                                                                <td><% Response.Write(dishname[j]); %></td>
+                                                                <td><% Response.Write(quantity[j]); %></td>
+                                                                <td><% Response.Write(price[j]); %></td>
+                                                                <% if (status[j] == "2")
+                                                                    {%>
+                                                                <td>
+                                                                    <button type="button" class="btn btn-warning"><span class="fa fa-cog fa-spin" aria-hidden="true"></span>Processing</button></td>
+                                                                <%} %>
+                                                                <% if (status[j] == "1")
+                                                                    {%>
+                                                                <td>
+                                                                    <button type="button" class="btn btn-primary"><span class="fa fa-check-circle" aria-hidden="true"></span>Delivered</button></td>
+                                                                <%} %>
+                                                                <% if (status[j] == "3")
+                                                                    {%>
+                                                                <td>
+                                                                    <button type="button" class="btn btn-danger"><i class="fa fa-close"></i>Cancelled</button></td>
+                                                                <%} %>
+                                                                <td>
+                                                                    <% Response.Write("<a href='delete_orders.aspx?order_del=" + o_id[j] + "&Order=" + or_id[j] + "' class='btn btn-danger btn-flat btn-addon btn-xs m-b-10'><i class='fa fa-trash-o' style='font-size:16px'></i></a><a href='order_update.aspx?user_upd=" + o_id[j] + "&Order=" + or_id[j] + "' class='btn btn-info btn-flat btn-addon btn-sm m-b-10 m-l-5'><i class='fa fa-edit'></i></a>");%>
+                                                                </td>
                                                             </tr>
-                                                   
+                                                            <%}
+                                                                } %>
                                                         </tbody>
-                                                        </table>
-                                                    </td>
-
-                                                    </tr>--%>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            <%}
+                                                }%>
                                         </tbody>
                                     </table>
                                 </div>
