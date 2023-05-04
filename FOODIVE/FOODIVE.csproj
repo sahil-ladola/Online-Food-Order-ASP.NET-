@@ -144,6 +144,7 @@
     <Content Include="admin\delete_orders.aspx" />
     <Content Include="admin\delete_request.aspx" />
     <Content Include="admin\delete_restaurant.aspx" />
+    <Content Include="admin\delete_subrestaurant.aspx" />
     <Content Include="admin\delete_users.aspx" />
     <Content Include="admin\icons\font-awesome\css\font-awesome.min.css" />
     <Content Include="admin\icons\font-awesome\fonts\fontawesome-webfont3e6e.svg" />
@@ -231,6 +232,7 @@
     <Content Include="admin\update_manager.aspx" />
     <Content Include="admin\update_menu.aspx" />
     <Content Include="admin\update_restaurant.aspx" />
+    <Content Include="admin\update_subrestaurant.aspx" />
     <Content Include="assets\css\animate.css" />
     <Content Include="assets\css\bootstrap.min.css" />
     <Content Include="assets\css\chosen-sprite%402x.png" />
@@ -541,6 +543,9 @@
     <Content Include="Restaurant\css\spinners.css" />
     <Content Include="Restaurant\css\style.css" />
     <Content Include="Restaurant\dashboard.aspx" />
+    <Content Include="Restaurant\delete_menu.aspx" />
+    <Content Include="Restaurant\delete_orders.aspx" />
+    <Content Include="Restaurant\delete_restaurant.aspx" />
     <Content Include="Restaurant\icons\font-awesome\css\font-awesome.min.css" />
     <Content Include="Restaurant\icons\font-awesome\fonts\fontawesome-webfont3e6e.svg" />
     <Content Include="Restaurant\icons\material-design-iconic-font\css\materialdesignicons.min.css" />
@@ -619,6 +624,8 @@
     <Content Include="Restaurant\Login\vendor\select2\select2.min.js" />
     <Content Include="Restaurant\Login\vendor\tilt\tilt.jquery.min.js" />
     <Content Include="Restaurant\logout.aspx" />
+    <Content Include="Restaurant\managerdetails.aspx" />
+    <Content Include="Restaurant\order_update.aspx" />
     <Content Include="Restaurant\Registration.aspx" />
     <Content Include="Restaurant\Registration\css\style.css" />
     <Content Include="Restaurant\Registration\fonts\material-icon\css\material-design-iconic-font.css" />
@@ -774,6 +781,127 @@
     <Content Include="Restaurant\Registration\vendor\nouislider\nouislider.min.js" />
     <Content Include="Restaurant\Registration\vendor\wnumb\wNumb.js" />
     <Content Include="Restaurant\Restro_Register.aspx" />
+    <Content Include="Restaurant\update_manager.aspx" />
+    <Content Include="Restaurant\update_menu.aspx" />
+    <Content Include="Restaurant\update_restaurant.aspx" />
+    <Content Include="SubRestro\add_menu.aspx" />
+    <Content Include="SubRestro\all_menu.aspx" />
+    <Content Include="SubRestro\all_orders.aspx" />
+    <Content Include="SubRestro\assets\css\bootstrap.css" />
+    <Content Include="SubRestro\assets\css\bootstrap.min.css" />
+    <Content Include="SubRestro\assets\css\font-awesome.min.css" />
+    <Content Include="SubRestro\assets\css\owl.carousel.min.css" />
+    <Content Include="SubRestro\assets\css\owl.theme.default.min.css" />
+    <Content Include="SubRestro\assets\css\style.css" />
+    <Content Include="SubRestro\assets\fonts\et-line.svg" />
+    <Content Include="SubRestro\assets\fonts\fontawesome-webfont.svg" />
+    <Content Include="SubRestro\assets\fonts\icomoon.svg" />
+    <Content Include="SubRestro\assets\fonts\roboto-bold-webfont.svg" />
+    <Content Include="SubRestro\assets\fonts\robotocondensed-regular-webfont.svg" />
+    <Content Include="SubRestro\assets\images\bg-01.jpg" />
+    <Content Include="SubRestro\assets\images\vector.png" />
+    <Content Include="SubRestro\assets\js\bootstrap.bundle.js" />
+    <Content Include="SubRestro\assets\js\bootstrap.bundle.min.js" />
+    <Content Include="SubRestro\assets\js\bootstrap.esm.js" />
+    <Content Include="SubRestro\assets\js\bootstrap.esm.min.js" />
+    <Content Include="SubRestro\assets\js\bootstrap.js" />
+    <Content Include="SubRestro\assets\js\bootstrap.min.js" />
+    <Content Include="SubRestro\assets\js\jquery.min.js" />
+    <Content Include="SubRestro\assets\js\owl.carousel.min.js" />
+    <Content Include="SubRestro\css\animate.css" />
+    <Content Include="SubRestro\css\helper.css" />
+    <Content Include="SubRestro\css\lib\amchart\export.css" />
+    <Content Include="SubRestro\css\lib\barRating\barRating.css" />
+    <Content Include="SubRestro\css\lib\bootstrap\bootstrap.min.css" />
+    <Content Include="SubRestro\css\lib\c3\c3.min.css" />
+    <Content Include="SubRestro\css\lib\calendar2\pignose.calendar.min.css" />
+    <Content Include="SubRestro\css\lib\calendar2\semantic.ui.min.css" />
+    <Content Include="SubRestro\css\lib\calendar\fullcalendar.css" />
+    <Content Include="SubRestro\css\lib\chartist\chartist.min.css" />
+    <Content Include="SubRestro\css\lib\data-table\buttons.bootstrap.min.css" />
+    <Content Include="SubRestro\css\lib\data-table\buttons.dataTables.min.css" />
+    <Content Include="SubRestro\css\lib\data-table\dataTables.bootstrap.min.css" />
+    <Content Include="SubRestro\css\lib\datepicker\bootstrap-datepicker3.min.css" />
+    <Content Include="SubRestro\css\lib\dropzone\dropzone.css" />
+    <Content Include="SubRestro\css\lib\html5-editor\bootstrap-wysihtml5.css" />
+    <Content Include="SubRestro\css\lib\jsgrid\jsgrid-theme.min.css" />
+    <Content Include="SubRestro\css\lib\jsgrid\jsgrid.min.css" />
+    <Content Include="SubRestro\css\lib\line-progress\jquery.lineProgressbar.css" />
+    <Content Include="SubRestro\css\lib\lobi-panel\lobipanel.min.css" />
+    <Content Include="SubRestro\css\lib\menubar\sidebar.css" />
+    <Content Include="SubRestro\css\lib\metismenu\menu.css" />
+    <Content Include="SubRestro\css\lib\nestable\nestable.css" />
+    <Content Include="SubRestro\css\lib\owl.carousel.min.css" />
+    <Content Include="SubRestro\css\lib\owl.theme.default.min.css" />
+    <Content Include="SubRestro\css\lib\preloader\pace.css" />
+    <Content Include="SubRestro\css\lib\rangSlider\ion.rangeSlider.css" />
+    <Content Include="SubRestro\css\lib\rangSlider\ion.rangeSlider.skinFlat.css" />
+    <Content Include="SubRestro\css\lib\rangSlider\ion.rangeSlider.skinHTML5.css" />
+    <Content Include="SubRestro\css\lib\rangSlider\ion.rangeSlider.skinModern.css" />
+    <Content Include="SubRestro\css\lib\rangSlider\ion.rangeSlider.skinNice.css" />
+    <Content Include="SubRestro\css\lib\rangSlider\ion.rangeSlider.skinSimple.css" />
+    <Content Include="SubRestro\css\lib\rangSlider\normalize.css" />
+    <Content Include="SubRestro\css\lib\rickshaw-chart\rickshaw.min.css" />
+    <Content Include="SubRestro\css\lib\scrollable\scrollable.min.css" />
+    <Content Include="SubRestro\css\lib\select2\select2.min.css" />
+    <Content Include="SubRestro\css\lib\sweetalert\sweetalert.css" />
+    <Content Include="SubRestro\css\lib\toastr\toastr.min.css" />
+    <Content Include="SubRestro\css\lib\vector-map\jqvmap.min.css" />
+    <Content Include="SubRestro\css\login.css" />
+    <Content Include="SubRestro\css\spinners.css" />
+    <Content Include="SubRestro\css\style.css" />
+    <Content Include="SubRestro\dashboard.aspx" />
+    <Content Include="SubRestro\delete_menu.aspx" />
+    <Content Include="SubRestro\delete_orders.aspx" />
+    <Content Include="SubRestro\icons\font-awesome\css\font-awesome.min.css" />
+    <Content Include="SubRestro\icons\font-awesome\fonts\fontawesome-webfont3e6e.svg" />
+    <Content Include="SubRestro\icons\material-design-iconic-font\css\materialdesignicons.min.css" />
+    <Content Include="SubRestro\icons\material-design-iconic-font\fonts\materialdesignicons-webfontdc99.svg" />
+    <Content Include="SubRestro\icons\themify-icons\fonts\themify9f24.svg" />
+    <Content Include="SubRestro\icons\themify-icons\themify-icons.css" />
+    <Content Include="SubRestro\images\bookingSystem\user-icn.png" />
+    <Content Include="SubRestro\js\custom.min.js" />
+    <Content Include="SubRestro\js\index.js" />
+    <Content Include="SubRestro\js\jquery.slimscroll.js" />
+    <Content Include="SubRestro\js\lib\01 LOGIN DETAILS &amp; PROJECT INFO.txt" />
+    <Content Include="SubRestro\js\lib\bootstrap\css\bootstrap.min.css" />
+    <Content Include="SubRestro\js\lib\bootstrap\js\bootstrap.min.js" />
+    <Content Include="SubRestro\js\lib\bootstrap\js\popper.min.js" />
+    <Content Include="SubRestro\js\lib\c3\c3-init.js" />
+    <Content Include="SubRestro\js\lib\c3\c3.min.js" />
+    <Content Include="SubRestro\js\lib\c3\d3.min.js" />
+    <Content Include="SubRestro\js\lib\calendar-2\moment.latest.min.js" />
+    <Content Include="SubRestro\js\lib\calendar-2\pignose.calendar.min.js" />
+    <Content Include="SubRestro\js\lib\calendar-2\pignose.init.js" />
+    <Content Include="SubRestro\js\lib\calendar-2\prism.min.js" />
+    <Content Include="SubRestro\js\lib\calendar-2\semantic.ui.min.js" />
+    <Content Include="SubRestro\js\lib\calendar\fullcalendar-init.js" />
+    <Content Include="SubRestro\js\lib\calendar\fullcalendar.min.js" />
+    <Content Include="SubRestro\js\lib\datatables\cdn.datatables.net\buttons\1.2.2\js\buttons.flash.min.js" />
+    <Content Include="SubRestro\js\lib\datatables\cdn.datatables.net\buttons\1.2.2\js\buttons.html5.min.js" />
+    <Content Include="SubRestro\js\lib\datatables\cdn.datatables.net\buttons\1.2.2\js\buttons.print.min.js" />
+    <Content Include="SubRestro\js\lib\datatables\cdn.datatables.net\buttons\1.2.2\js\dataTables.buttons.min.js" />
+    <Content Include="SubRestro\js\lib\datatables\cdn.rawgit.com\bpampuch\pdfmake\0.1.18\build\pdfmake.min.js" />
+    <Content Include="SubRestro\js\lib\datatables\cdn.rawgit.com\bpampuch\pdfmake\0.1.18\build\vfs_fonts.js" />
+    <Content Include="SubRestro\js\lib\datatables\cdn.rawgit.com\google\code-prettify\master\loader\run_prettify2102.js" />
+    <Content Include="SubRestro\js\lib\datatables\cdnjs.cloudflare.com\ajax\libs\jqueryui-touch-punch\0.2.3\jquery.ui.touch-punch.min.js" />
+    <Content Include="SubRestro\js\lib\datatables\cdnjs.cloudflare.com\ajax\libs\jszip\2.5.0\jszip.min.js" />
+    <Content Include="SubRestro\js\lib\datatables\datatables-init.js" />
+    <Content Include="SubRestro\js\lib\datatables\datatables.min.js" />
+    <Content Include="SubRestro\js\lib\datepicker\bootstrap-datepicker.min.js" />
+    <Content Include="SubRestro\js\lib\form-validation\jquery.validate-init.js" />
+    <Content Include="SubRestro\js\lib\form-validation\jquery.validate.min.js" />
+    <Content Include="SubRestro\js\lib\jquery-ui\jquery-ui.min.js" />
+    <Content Include="SubRestro\js\lib\jquery-ui\jquery.ui.touch-punch.min.js" />
+    <Content Include="SubRestro\js\lib\jquery\jquery.min.js" />
+    <Content Include="SubRestro\js\lib\menubar\sidebar.js" />
+    <Content Include="SubRestro\js\lib\preloader\pace.min.js" />
+    <Content Include="SubRestro\js\lib\sticky-kit-master\dist\sticky-kit.min.js" />
+    <Content Include="SubRestro\js\scripts.js" />
+    <Content Include="SubRestro\js\sidebarmenu.js" />
+    <Content Include="SubRestro\logout.aspx" />
+    <Content Include="SubRestro\order_update.aspx" />
+    <Content Include="SubRestro\update_menu.aspx" />
     <Content Include="Visitor\Forgotpassword.aspx" />
     <Content Include="Visitor\index.aspx" />
     <Content Include="Visitor\OTP.aspx" />
@@ -880,6 +1008,13 @@
     <Compile Include="admin\delete_restaurant.aspx.designer.cs">
       <DependentUpon>delete_restaurant.aspx</DependentUpon>
     </Compile>
+    <Compile Include="admin\delete_subrestaurant.aspx.cs">
+      <DependentUpon>delete_subrestaurant.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\delete_subrestaurant.aspx.designer.cs">
+      <DependentUpon>delete_subrestaurant.aspx</DependentUpon>
+    </Compile>
     <Compile Include="admin\delete_users.aspx.cs">
       <DependentUpon>delete_users.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -956,6 +1091,13 @@
     </Compile>
     <Compile Include="admin\update_restaurant.aspx.designer.cs">
       <DependentUpon>update_restaurant.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\update_subrestaurant.aspx.cs">
+      <DependentUpon>update_subrestaurant.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\update_subrestaurant.aspx.designer.cs">
+      <DependentUpon>update_subrestaurant.aspx</DependentUpon>
     </Compile>
     <Compile Include="Customer\AddToCart.aspx.cs">
       <DependentUpon>AddToCart.aspx</DependentUpon>
@@ -1105,6 +1247,27 @@
     <Compile Include="Restaurant\dashboard.aspx.designer.cs">
       <DependentUpon>dashboard.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Restaurant\delete_menu.aspx.cs">
+      <DependentUpon>delete_menu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Restaurant\delete_menu.aspx.designer.cs">
+      <DependentUpon>delete_menu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Restaurant\delete_orders.aspx.cs">
+      <DependentUpon>delete_orders.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Restaurant\delete_orders.aspx.designer.cs">
+      <DependentUpon>delete_orders.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Restaurant\delete_restaurant.aspx.cs">
+      <DependentUpon>delete_restaurant.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Restaurant\delete_restaurant.aspx.designer.cs">
+      <DependentUpon>delete_restaurant.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Restaurant\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1119,6 +1282,20 @@
     <Compile Include="Restaurant\logout.aspx.designer.cs">
       <DependentUpon>logout.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Restaurant\managerdetails.aspx.cs">
+      <DependentUpon>managerdetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Restaurant\managerdetails.aspx.designer.cs">
+      <DependentUpon>managerdetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Restaurant\order_update.aspx.cs">
+      <DependentUpon>order_update.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Restaurant\order_update.aspx.designer.cs">
+      <DependentUpon>order_update.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Restaurant\Registration.aspx.cs">
       <DependentUpon>Registration.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1132,6 +1309,90 @@
     </Compile>
     <Compile Include="Restaurant\Restro_Register.aspx.designer.cs">
       <DependentUpon>Restro_Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Restaurant\update_manager.aspx.cs">
+      <DependentUpon>update_manager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Restaurant\update_manager.aspx.designer.cs">
+      <DependentUpon>update_manager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Restaurant\update_menu.aspx.cs">
+      <DependentUpon>update_menu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Restaurant\update_menu.aspx.designer.cs">
+      <DependentUpon>update_menu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Restaurant\update_restaurant.aspx.cs">
+      <DependentUpon>update_restaurant.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Restaurant\update_restaurant.aspx.designer.cs">
+      <DependentUpon>update_restaurant.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SubRestro\add_menu.aspx.cs">
+      <DependentUpon>add_menu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SubRestro\add_menu.aspx.designer.cs">
+      <DependentUpon>add_menu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SubRestro\all_menu.aspx.cs">
+      <DependentUpon>all_menu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SubRestro\all_menu.aspx.designer.cs">
+      <DependentUpon>all_menu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SubRestro\all_orders.aspx.cs">
+      <DependentUpon>all_orders.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SubRestro\all_orders.aspx.designer.cs">
+      <DependentUpon>all_orders.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SubRestro\dashboard.aspx.cs">
+      <DependentUpon>dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SubRestro\dashboard.aspx.designer.cs">
+      <DependentUpon>dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SubRestro\delete_menu.aspx.cs">
+      <DependentUpon>delete_menu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SubRestro\delete_menu.aspx.designer.cs">
+      <DependentUpon>delete_menu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SubRestro\delete_orders.aspx.cs">
+      <DependentUpon>delete_orders.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SubRestro\delete_orders.aspx.designer.cs">
+      <DependentUpon>delete_orders.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SubRestro\logout.aspx.cs">
+      <DependentUpon>logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SubRestro\logout.aspx.designer.cs">
+      <DependentUpon>logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SubRestro\order_update.aspx.cs">
+      <DependentUpon>order_update.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SubRestro\order_update.aspx.designer.cs">
+      <DependentUpon>order_update.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SubRestro\update_menu.aspx.cs">
+      <DependentUpon>update_menu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SubRestro\update_menu.aspx.designer.cs">
+      <DependentUpon>update_menu.aspx</DependentUpon>
     </Compile>
     <Compile Include="Visitor\Forgotpassword.aspx.cs">
       <DependentUpon>Forgotpassword.aspx</DependentUpon>
@@ -1685,6 +1946,116 @@
     <Content Include="Restaurant\Registration\scss\layouts\main.scss" />
     <Content Include="Restaurant\Registration\scss\layouts\responsive.scss" />
     <Content Include="Restaurant\Registration\scss\style.scss" />
+    <Content Include="SubRestro\assets\fonts\et-line.eot" />
+    <Content Include="SubRestro\assets\fonts\et-line.ttf" />
+    <Content Include="SubRestro\assets\fonts\et-line.woff" />
+    <Content Include="SubRestro\assets\fonts\fontawesome-webfont.eot" />
+    <Content Include="SubRestro\assets\fonts\fontawesome-webfont.ttf" />
+    <Content Include="SubRestro\assets\fonts\fontawesome-webfont.woff" />
+    <Content Include="SubRestro\assets\fonts\fontawesome-webfont.woff2" />
+    <Content Include="SubRestro\assets\fonts\FontAwesome.otf" />
+    <Content Include="SubRestro\assets\fonts\icomoon.eot" />
+    <Content Include="SubRestro\assets\fonts\icomoon.ttf" />
+    <Content Include="SubRestro\assets\fonts\icomoon.woff" />
+    <Content Include="SubRestro\assets\fonts\roboto-bold-webfont.eot" />
+    <Content Include="SubRestro\assets\fonts\roboto-bold-webfont.ttf" />
+    <Content Include="SubRestro\assets\fonts\roboto-bold-webfont.woff" />
+    <Content Include="SubRestro\assets\fonts\roboto-bold-webfont.woff2" />
+    <Content Include="SubRestro\assets\fonts\roboto-light-webfont.woff" />
+    <Content Include="SubRestro\assets\fonts\roboto-light-webfont.woff2" />
+    <Content Include="SubRestro\assets\fonts\roboto-regular-webfont.woff" />
+    <Content Include="SubRestro\assets\fonts\roboto-regular-webfont.woff2" />
+    <Content Include="SubRestro\assets\fonts\robotocondensed-regular-webfont.eot" />
+    <Content Include="SubRestro\assets\fonts\robotocondensed-regular-webfont.ttf" />
+    <Content Include="SubRestro\assets\fonts\robotocondensed-regular-webfont.woff" />
+    <Content Include="SubRestro\assets\fonts\robotocondensed-regular-webfont.woff2" />
+    <Content Include="SubRestro\assets\js\bootstrap.bundle.js.map" />
+    <Content Include="SubRestro\assets\js\bootstrap.bundle.min.js.map" />
+    <Content Include="SubRestro\assets\js\bootstrap.esm.js.map" />
+    <Content Include="SubRestro\assets\js\bootstrap.esm.min.js.map" />
+    <Content Include="SubRestro\assets\js\bootstrap.js.map" />
+    <Content Include="SubRestro\assets\js\bootstrap.min.js.map" />
+    <Content Include="SubRestro\css\less\advance-widget.less" />
+    <Content Include="SubRestro\css\less\amchart.less" />
+    <Content Include="SubRestro\css\less\badge.less" />
+    <Content Include="SubRestro\css\less\booking-system.less" />
+    <Content Include="SubRestro\css\less\breadcrumb.less" />
+    <Content Include="SubRestro\css\less\button.less" />
+    <Content Include="SubRestro\css\less\calendar.less" />
+    <Content Include="SubRestro\css\less\card.less" />
+    <Content Include="SubRestro\css\less\carousel.less" />
+    <Content Include="SubRestro\css\less\chart.less" />
+    <Content Include="SubRestro\css\less\chartist.less" />
+    <Content Include="SubRestro\css\less\chat.less" />
+    <Content Include="SubRestro\css\less\compose-email.less" />
+    <Content Include="SubRestro\css\less\data-table.less" />
+    <Content Include="SubRestro\css\less\datamap.less" />
+    <Content Include="SubRestro\css\less\error.less" />
+    <Content Include="SubRestro\css\less\favourite_menu.less" />
+    <Content Include="SubRestro\css\less\flot-chart.less" />
+    <Content Include="SubRestro\css\less\font.less" />
+    <Content Include="SubRestro\css\less\fonts.less" />
+    <Content Include="SubRestro\css\less\footer.less" />
+    <Content Include="SubRestro\css\less\form-validation.less" />
+    <Content Include="SubRestro\css\less\forms.less" />
+    <Content Include="SubRestro\css\less\global.less" />
+    <Content Include="SubRestro\css\less\gmap.less" />
+    <Content Include="SubRestro\css\less\header.less" />
+    <Content Include="SubRestro\css\less\invoice-edit.less" />
+    <Content Include="SubRestro\css\less\invoice.less" />
+    <Content Include="SubRestro\css\less\knob.less" />
+    <Content Include="SubRestro\css\less\login.less" />
+    <Content Include="SubRestro\css\less\menu-upload.less" />
+    <Content Include="SubRestro\css\less\mixins.less" />
+    <Content Include="SubRestro\css\less\modal.less" />
+    <Content Include="SubRestro\css\less\morris-chart.less" />
+    <Content Include="SubRestro\css\less\nestable.less" />
+    <Content Include="SubRestro\css\less\order-list.less" />
+    <Content Include="SubRestro\css\less\order-progress.less" />
+    <Content Include="SubRestro\css\less\pagination.less" />
+    <Content Include="SubRestro\css\less\panel.less" />
+    <Content Include="SubRestro\css\less\preloader.less" />
+    <Content Include="SubRestro\css\less\products_1.less" />
+    <Content Include="SubRestro\css\less\products_2.less" />
+    <Content Include="SubRestro\css\less\products_3.less" />
+    <Content Include="SubRestro\css\less\profile-widget.less" />
+    <Content Include="SubRestro\css\less\profile.less" />
+    <Content Include="SubRestro\css\less\progress-bar.less" />
+    <Content Include="SubRestro\css\less\recent-comments.less" />
+    <Content Include="SubRestro\css\less\recent-message.less" />
+    <Content Include="SubRestro\css\less\responsive.less" />
+    <Content Include="SubRestro\css\less\scrollable.less" />
+    <Content Include="SubRestro\css\less\search.less" />
+    <Content Include="SubRestro\css\less\sidebar.less" />
+    <Content Include="SubRestro\css\less\social-media-stats.less" />
+    <Content Include="SubRestro\css\less\style.less" />
+    <Content Include="SubRestro\css\less\tab.less" />
+    <Content Include="SubRestro\css\less\table-export.less" />
+    <Content Include="SubRestro\css\less\table.less" />
+    <Content Include="SubRestro\css\less\timeline.less" />
+    <Content Include="SubRestro\css\less\todo-list.less" />
+    <Content Include="SubRestro\css\less\ui-block-quote.less" />
+    <Content Include="SubRestro\css\less\ui-element-basic.less" />
+    <Content Include="SubRestro\css\less\ui-user-card.less" />
+    <Content Include="SubRestro\css\less\variable.less" />
+    <Content Include="SubRestro\css\less\vector-map.less" />
+    <Content Include="SubRestro\css\less\vertical-carousel.less" />
+    <Content Include="SubRestro\css\less\weather.less" />
+    <Content Include="SubRestro\css\less\widget-stat.less" />
+    <Content Include="SubRestro\icons\font-awesome\fonts\fontawesome-webfont3e6e.eot" />
+    <Content Include="SubRestro\icons\font-awesome\fonts\fontawesome-webfont3e6e.ttf" />
+    <Content Include="SubRestro\icons\font-awesome\fonts\fontawesome-webfont3e6e.woff" />
+    <Content Include="SubRestro\icons\font-awesome\fonts\fontawesome-webfont3e6e.woff2" />
+    <Content Include="SubRestro\icons\font-awesome\fonts\fontawesome-webfontd41d.eot" />
+    <Content Include="SubRestro\icons\material-design-iconic-font\fonts\materialdesignicons-webfontd41d.eot" />
+    <Content Include="SubRestro\icons\material-design-iconic-font\fonts\materialdesignicons-webfontdc99.eot" />
+    <Content Include="SubRestro\icons\material-design-iconic-font\fonts\materialdesignicons-webfontdc99.ttf" />
+    <Content Include="SubRestro\icons\material-design-iconic-font\fonts\materialdesignicons-webfontdc99.woff" />
+    <Content Include="SubRestro\icons\material-design-iconic-font\fonts\materialdesignicons-webfontdc99.woff2" />
+    <Content Include="SubRestro\icons\themify-icons\fonts\themify.ttf" />
+    <Content Include="SubRestro\icons\themify-icons\fonts\themify.woff" />
+    <Content Include="SubRestro\icons\themify-icons\fonts\themify9f24.eot" />
+    <Content Include="SubRestro\icons\themify-icons\fonts\themifyd41d.eot" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1698,9 +2069,11 @@
     <Folder Include="Image\Img\dishes\" />
     <Folder Include="Image\Img\RestroMngProof\" />
     <Folder Include="Image\Img\Restro\" />
+    <Folder Include="Image\Img\sub_restro\" />
     <Folder Include="Restaurant\dishes\" />
     <Folder Include="Restaurant\Res_img\dishes\" />
     <Folder Include="Restaurant\Res_img\Restro manager adharcard\" />
+    <Folder Include="SubRestro\dishes\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

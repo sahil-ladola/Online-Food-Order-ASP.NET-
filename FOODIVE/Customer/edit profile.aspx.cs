@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Configuration;
-using System.Net;
-using System.Net.Mail;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace FOODIVE.Customer
 {
@@ -73,6 +69,7 @@ namespace FOODIVE.Customer
                 com.Parameters.AddWithValue("@r_id", Session["rid"]);
                 if (com.ExecuteNonQuery() != 0)
                 {
+                    Session["email"] = txtEmail.Text;
                     Page.ClientScript.RegisterStartupScript(this.GetType(), "script", "<script>alert('Profile Updated Successfully !!!')</script>");
                 }
                 else
@@ -102,11 +99,30 @@ namespace FOODIVE.Customer
                 SqlDataReader reader = result.ExecuteReader();
                 if (reader.Read())
                 {
-                    if (txtOldPassword.Text == reader["password"].ToString())
+                    string inputtedPassword = txtOldPassword.Text;
+                    string storedHashedPassword = reader["password"].ToString();
+                    string storedSalt = "mySalt";
+
+                    string saltedPassword = string.Concat(inputtedPassword, storedSalt);
+
+                    SHA256 sha256 = SHA256.Create();
+                    byte[] saltedPasswordBytes = Encoding.UTF8.GetBytes(saltedPassword);
+                    byte[] hashedPasswordBytes = sha256.ComputeHash(saltedPasswordBytes);
+                    string hashedPassword = Convert.ToBase64String(hashedPasswordBytes);
+                    if (hashedPassword == storedHashedPassword)
                     {
+                        string password = txtNewPassword.Text;
+                        string salt = "mySalt";
+                        string saltedPassword1 = string.Concat(password, salt);
+
+                        SHA256 sha = SHA256.Create();
+                        byte[] saltedPasswordByte = Encoding.UTF8.GetBytes(saltedPassword1);
+                        byte[] hashedPasswordByte = sha.ComputeHash(saltedPasswordByte);
+                        string newhashedPassword = Convert.ToBase64String(hashedPasswordByte);
+
                         string pass = "update register set password = @newPassword where email = @email";
                         SqlCommand com = new SqlCommand(pass, con);
-                        com.Parameters.AddWithValue("@newPassword", txtNewPassword.Text);
+                        com.Parameters.AddWithValue("@newPassword", newhashedPassword);
                         com.Parameters.AddWithValue("@email", Session["email"]);
 
                         try
@@ -146,4 +162,3 @@ namespace FOODIVE.Customer
     }
 }
 
-           

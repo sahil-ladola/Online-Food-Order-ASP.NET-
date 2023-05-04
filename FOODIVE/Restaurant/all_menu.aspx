@@ -95,8 +95,8 @@
                                     <table id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
                                         <thead class="thead-dark">
                                             <tr>
-                                                <th>Restaurant</th>
                                                 <th>Dish</th>
+                                                <th>Category</th>
                                                 <th>Description</th>
                                                 <th>Price</th>
                                                 <th>Image</th>
@@ -104,20 +104,29 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-
-                                            <td colspan="6">
-                                                <center>No Menu</center>
-                                            </td>
-                                            <%--<tr><td></td>
-                                                                <td></td>
-                                                                <td></td>
-                                                                <td></td>
-                                                                <td>
-                                                                    <div class="col-md-3 col-lg-8 m-b-10">
-                                                                    <center></center></div>
-                                                                </td>
-                                                                <td>
-                                                                </td></tr>--%>
+<% if (d_id.Count == 0)
+                                                { %>
+                                            <tr>
+                                                <td colspan="7">
+                                                    <center>No Menu</center>
+                                                </td>
+                                            </tr>
+                                            <% }
+                                                else
+                                                {
+                                                    for (int i = 0; i <= d_id.Count - 1; i++)
+                                                    {
+                                                    %>
+                                            <tr>
+                                                <td><% Response.Write(dishname[i]); %></td>
+                                                <td><% Response.Write(category[i]); %></td>
+                                                <td><% Response.Write(desc[i]); %></td>
+                                                <td><% Response.Write(price[i]); %></td>
+                                                <td><% Response.Write("<div class='col-md-3 col-lg-8 m-b-10'><center><img src='" + image[i] + "' class='img-responsive  radius' style='max-height:100px;max-width:150px;'/></center></div>"); %></td>
+                                                <td><% Response.Write("<a href='delete_menu.aspx?menu_del=" + d_id[i] + "' class='btn btn-danger btn-flat btn-addon btn-xs m-b-10'><i class='fa fa-trash-o' style='font-size:16px'></i></a><a href='update_menu.aspx?menu_upd=" + d_id[i] + "' class='btn btn-info btn-flat btn-addon btn-sm m-b-10 m-l-5'><i class='fa fa-edit'></i></a>");%></td>
+                                            </tr>
+                                            <% }
+                                                } %>
                                         </tbody>
                                     </table>
                                 </div>

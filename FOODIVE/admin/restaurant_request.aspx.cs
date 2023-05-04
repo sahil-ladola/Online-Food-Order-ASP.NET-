@@ -13,7 +13,7 @@ namespace FOODIVE.admin
     public partial class restaurant_request : System.Web.UI.Page
     {
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["dbconnection"].ConnectionString);
-        public List<string> req_id = new List<string>();
+        public List<string> reg_id = new List<string>();
         public List<string> mng_name = new List<string>();
         public List<string> mng_phone_num = new List<string>();
         public List<string> mng_email = new List<string>();
@@ -39,7 +39,7 @@ namespace FOODIVE.admin
             }
             if(!IsPostBack)
             {
-                getreq_id();
+                getreg_id();
                 getmng_phone_num();
                 getmng_name();
                 getmng_email();
@@ -57,16 +57,16 @@ namespace FOODIVE.admin
                 getmng_address();
             }
         }
-        public void getreq_id()
+        public void getreg_id()
         {
             con.Open();
-            string query = "select req_id from restro_register_request";
+            string query = "select reg_id from restro_register_request";
             SqlCommand cmd = new SqlCommand(query, con);
             SqlDataReader dr;
             dr = cmd.ExecuteReader();
             while (dr.Read())
             {
-                req_id.Add((dr["req_id"]).ToString());
+                reg_id.Add((dr["reg_id"]).ToString());
             }
             dr.Close();
             con.Close();

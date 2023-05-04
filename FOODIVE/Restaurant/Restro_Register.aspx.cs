@@ -1,14 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
-using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
 using System.Net;
 using System.Net.Mail;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace FOODIVE.Restaurant
 {
@@ -23,7 +20,7 @@ namespace FOODIVE.Restaurant
         {
             Page.Validate("validate");
             con.Open();
-            String query = "select * from restro where email = '" + txtrestro_email.Text + "'";
+            String query = "select email from restro where '"+ txtrestro_email.Text +"' union select email from sub_restro where '"+txtrestro_email.Text+"'";
             SqlCommand result = new SqlCommand(query, con);
             SqlDataReader dr = result.ExecuteReader();
             if (dr.Read() == true)
@@ -59,14 +56,22 @@ namespace FOODIVE.Restaurant
                         {
                             substatus = "0";
                         }
-                        string query1 = "insert into restro_register_request values('" + Session["mng_name"].ToString() + "','" + Session["mng_phone_num"].ToString() + "','" + Session["mng_email"].ToString() + "','" + Session["mng_password"].ToString() + "','" + Session["mng_adharcard"].ToString() + "','" + Session["mng_address"].ToString() + "','" + Session["mng_city"].ToString() + "','" + Session["mng_pincode"].ToString() + "','" + txtrestro_name.Text + "','" + txtrestro_phone_number.Text + "','" + txtrestro_email.Text + "','" + path.ToString() + "','" + substatus.ToString() + "','" + txtaddress.Text + "','" + txtcity.Text + "','" + txtpincode.Text + "')";
+                        string password = Session["mng_password"].ToString();
+                        string salt = "mySalt";
+                        string saltedPassword = string.Concat(password, salt);
+                        SHA256 sha256 = SHA256.Create();
+                        byte[] saltedPasswordBytes = Encoding.UTF8.GetBytes(saltedPassword);
+                        byte[] hashedPasswordBytes = sha256.ComputeHash(saltedPasswordBytes);
+                        string hashedPassword = Convert.ToBase64String(hashedPasswordBytes);
+
+                        string query1 = "insert into restro_register_request values('" + Session["mng_name"].ToString() + "','" + Session["mng_phone_num"].ToString() + "','" + Session["mng_email"].ToString() + "','" + hashedPassword + "','" + Session["mng_adharcard"].ToString() + "','" + Session["mng_address"].ToString() + "','" + Session["mng_city"].ToString() + "','" + Session["mng_pincode"].ToString() + "','" + txtrestro_name.Text + "','" + txtrestro_phone_number.Text + "','" + txtrestro_email.Text + "','" + path.ToString() + "','" + substatus.ToString() + "','" + txtaddress.Text + "','" + txtcity.Text + "','" + txtpincode.Text + "')";
                         SqlCommand ins = new SqlCommand(query1, con);
                         if (ins.ExecuteNonQuery() != 0)
                         {
                             con.Close();
                             String toEmail = Session["mng_email"].ToString();
                             String username = Session["mng_name"].ToString();
-                            String emailbody = "Dear <b>" + username + "!,</b><br> Your restaurant registration request has been initialized , we'll let you know when your give details verified.";
+                            String emailbody = "Dear <b>" + username + "!,</b><br> Your restaurant registration request has been initialized , we'll let you know when your given details verified.";
                             MailMessage mm = new MailMessage("foodiveonline@gmail.com", toEmail);
                             mm.Body = emailbody;
                             mm.IsBodyHtml = true;

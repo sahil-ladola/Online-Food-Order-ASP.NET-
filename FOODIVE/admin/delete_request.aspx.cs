@@ -24,7 +24,7 @@ namespace FOODIVE.admin
             con.Open();
             string mng_email = string.Empty;
             string mng_name = string.Empty;
-            string query = "select mng_email , mng_name from [restro_register_request] where [req_id] = " + Request.QueryString["res_req_del"];
+            string query = "select mng_email , mng_name from [restro_register_request] where [reg_id] = " + Request.QueryString["res_req_del"];
             SqlCommand cmd1 = new SqlCommand(query, con);
             SqlDataReader dr = cmd1.ExecuteReader();
             if(dr.Read())
@@ -32,7 +32,7 @@ namespace FOODIVE.admin
                 mng_email = dr["mng_email"].ToString();
                 mng_name = dr["mng_name"].ToString();
             }
-            String dlt = "delete from [restro_register_request] where [req_id] = " + Request.QueryString["res_req_del"];
+            String dlt = "delete from [restro_register_request] where [reg_id] = " + Request.QueryString["res_req_del"];
             SqlCommand cmd = new SqlCommand(dlt, con);
             if(cmd.ExecuteNonQuery() != 0)
             {

@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Configuration;
-using System.Net;
-using System.Net.Mail;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace FOODIVE
 {
@@ -41,32 +37,48 @@ namespace FOODIVE
 
         protected void btnlogin_Click(object sender, EventArgs e)
         {
+            //S@hil123
             ViewState["txtEmail"] = txtEmail.Text;
             ViewState["txtPassword"] = txtPassword.Text;
             con.Open();
-            string select = "select fname , lname , email , password , r_id from register where email = '" + txtEmail.Text+"' and password = '"+txtPassword.Text+"'";
+            string select = "select fname , lname , email , password , r_id from register where email = '" + txtEmail.Text+"'";
             SqlCommand result = new SqlCommand(select, con);
             SqlDataReader dr = result.ExecuteReader();
             if (dr.Read() == true)
             {
-                if (chkRememberme.Checked)
+                string inputtedPassword = txtPassword.Text;
+                string storedHashedPassword = dr["password"].ToString();
+                string storedSalt = "mySalt";
+
+                string saltedPassword = string.Concat(inputtedPassword, storedSalt);
+                SHA256 sha256 = SHA256.Create();
+                byte[] saltedPasswordBytes = Encoding.UTF8.GetBytes(saltedPassword);
+                byte[] hashedPasswordBytes = sha256.ComputeHash(saltedPasswordBytes);
+                string hashedPassword = Convert.ToBase64String(hashedPasswordBytes);
+                if (hashedPassword == storedHashedPassword)
                 {
-                    Response.Cookies["email"].Expires = DateTime.Now.AddDays(30);
-                    Response.Cookies["pass"].Expires = DateTime.Now.AddDays(30);
+                    if (chkRememberme.Checked)
+                    {
+                        Response.Cookies["email"].Expires = DateTime.Now.AddDays(30);
+                        Response.Cookies["pass"].Expires = DateTime.Now.AddDays(30);
+                    }
+                    else
+                    {
+                        Response.Cookies["email"].Expires = DateTime.Now.AddDays(-1);
+                        Response.Cookies["pass"].Expires = DateTime.Now.AddDays(-1);
+                    }
+                    Response.Cookies["email"].Value = txtEmail.Text.Trim();
+                    Response.Cookies["pass"].Value = txtPassword.Text.Trim();
+                    Session["rid"] = dr["r_id"];
+                    Session["login"] = "login";
+                    Session["email"] = dr["email"];
+                    Session["username"] = dr["fname"] + " " + dr["lname"];
+                    Response.Redirect("afterlogin.aspx");
                 }
                 else
                 {
-                    Response.Cookies["email"].Expires = DateTime.Now.AddDays(-1);
-                    Response.Cookies["pass"].Expires = DateTime.Now.AddDays(-1);
+                    Page.ClientScript.RegisterStartupScript(this.GetType(), "script", "<script>alert('Invalid Credential!')</script>");
                 }
-                Response.Cookies["email"].Value = txtEmail.Text.Trim();
-                Response.Cookies["pass"].Value = txtPassword.Text.Trim();
-
-                Session["rid"] = dr["r_id"];
-                Session["login"] = "login";
-                Session["email"] = dr["email"];
-                Session["username"] = dr["fname"] + " " + dr["lname"];
-                Response.Redirect("afterlogin.aspx");
             }
             else
             {

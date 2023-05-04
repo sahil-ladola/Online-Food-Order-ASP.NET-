@@ -37,6 +37,15 @@ namespace FOODIVE
                 }
             }
 
+            Session["txtEmail"] = txtEmail.Text;
+            Session["txtCity"] = txtCity.Text;
+            Session["txtAddress"] = txtAddress.Text;
+            Session["txtPincode"] = txtPincode.Text;
+            Session["txtPassword"] = txtPassword.Text;
+            Session["txtMobileNum"] = txtMobileNum.Text;
+            Session["txtLname"] = txtLname.Text;
+            Session["txtFname"] = txtFname.Text;
+
             var random = new Random();
             var sendOtp = random.Next(100000, 999999);
 
@@ -66,7 +75,7 @@ namespace FOODIVE
                     {
                         Session["RegOTP"] = sendOtp;
                         smtp.Send(mm);
-                        Response.Redirect("../OTP.aspx");
+                        Response.Redirect("/Visitor/OTP.aspx");
                     }
                     catch (Exception ex)
                     {

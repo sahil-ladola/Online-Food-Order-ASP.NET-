@@ -100,25 +100,34 @@
                                                 <th>Phone</th>
                                                 <th>Address</th>
                                                 <th>Image</th>
+                                                <th>Manager details</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <td colspan="9">
-                                                <center>No Restaurants</center>
-                                            </td>
-                                            <%--<tr><td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td>
-                                                        <div class="col-md-3 col-lg-8 m-b-10">
-                                                        <center</center></div>
-                                                    </td>
-                                                    <td>
-                                                    </td></tr>--%>
+                                            <% if (rest_id.Count == 0)
+                                                {%>
+                                            <tr>
+                                                <td colspan="7">
+                                                    <center>No Restaurants</center>
+                                                </td>
+                                            </tr>
+                                            <%}
+                                                else
+                                                {
+                                                    for (int i = 0; i <= rest_id.Count - 1; i++)
+                                                    {%>
+                                            <tr>    
+                                                <td><% Response.Write(restro_name[i]); %></td>
+                                                <td><% Response.Write(email[i]); %></td>
+                                                <td><% Response.Write(mobile_num[i]); %></td>
+                                                <td><% Response.Write(address[i]); %></td>
+                                                <td><% Response.Write("<div class='col-md-3 col-lg-8 m-b-10'><center><img src='"+ image[i] +"' class='img-responsive radius' style='min-width:150px;min-height:100px;'/></center></div>"); %></td>
+                                                <td><% Response.Write("<center><a href='managerdetails.aspx?mng_id=" + manager[i] + "' class='btn btn-outline-success btn-flat btn-addon btn-sm m-b-10 m-l-5'><i class='fa fa-user'></i></a></center>"); %></td>
+                                                <td><% Response.Write("<a href='delete_restaurant.aspx?res_del=" + rest_id[i] + "' class='btn btn-danger btn-flat btn-addon btn-xs m-b-10'><i class='fa fa-trash-o' style='font-size:16px'></i></a><a href='update_restaurant.aspx?res_upd=" + rest_id[i] + "' class='btn btn-info btn-flat btn-addon btn-sm m-b-10 m-l-5'><i class='fa fa-edit'></i></a>"); %></td>
+                                            </tr>
+                                            <%}
+                                                }%>
                                         </tbody>
                                     </table>
                                 </div>

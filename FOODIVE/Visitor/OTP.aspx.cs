@@ -2,6 +2,8 @@
 using System.Web.UI;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace FOODIVE.Visitor
 {
@@ -32,6 +34,15 @@ namespace FOODIVE.Visitor
 
                     using (SqlConnection connection = new SqlConnection(connectionString))
                     {
+                        string password = Session["txtPassword"].ToString();
+                        string salt = "mySalt";
+
+                        string saltedPassword = string.Concat(password, salt);
+                        SHA256 sha256 = SHA256.Create();
+                        byte[] saltedPasswordBytes = Encoding.UTF8.GetBytes(saltedPassword);
+                        byte[] hashedPasswordBytes = sha256.ComputeHash(saltedPasswordBytes);
+                        string hashedPassword = Convert.ToBase64String(hashedPasswordBytes);
+
                         connection.Open();
 
                         string query = "INSERT INTO register (fname, lname, mobile_num, address, city, pincode, email, password) VALUES (@fname, @lname, @mobile_num, @address, @city, @pincode, @email, @password)";
@@ -44,7 +55,7 @@ namespace FOODIVE.Visitor
                             command.Parameters.AddWithValue("@city", Session["txtCity"]);
                             command.Parameters.AddWithValue("@pincode", Session["txtPincode"]);
                             command.Parameters.AddWithValue("@email", Session["txtEmail"]);
-                            command.Parameters.AddWithValue("@password", "HashedPasswordGoesHere");
+                            command.Parameters.AddWithValue("@password", hashedPassword);
 
                             command.ExecuteNonQuery();
                         }

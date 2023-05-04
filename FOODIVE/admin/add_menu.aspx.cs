@@ -113,7 +113,7 @@ namespace FOODIVE.admin
                         sub_restro_id = dr2["subrest_id"].ToString();
                         restro_id = dr2["rest_id"].ToString();
                     }
-                    string query = "insert into dishes values('" + restro_id.ToString() + "','" + sub_restro_id.ToString() + "','" + DropDownList1.SelectedValue.ToString() + "','" + txtd_name.Text.ToString() + "','" + txtabout.Text.ToString() + "','" + txtprice.Text.ToString() + "','" + path.ToString() + "')";
+                    string query = "insert into dishes ([rest_id],[subrest_id],[cate_id],[dishname],[description],[price],[image]) values('" + restro_id.ToString() + "','" + sub_restro_id.ToString() + "','" + DropDownList1.SelectedValue.ToString() + "','" + txtd_name.Text.ToString() + "','" + txtabout.Text.ToString() + "','" + txtprice.Text.ToString() + "','" + path.ToString() + "')";
                     SqlCommand ins = new SqlCommand(query, con);
                     if (ins.ExecuteNonQuery() != 0)
                     {

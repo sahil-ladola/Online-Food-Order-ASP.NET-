@@ -21,7 +21,6 @@ namespace FOODIVE.Customer
         public List<string> pincode = new List<string>();
         protected void Page_Load(object sender, EventArgs e)
         {
-            
             if (Session["login"] == null)
             {
                 Response.Redirect("Login.aspx");
@@ -37,92 +36,26 @@ namespace FOODIVE.Customer
                 Response.AddHeader("Pragma", "no-cache");
                 lblusername.Text = Session["username"].ToString();
             }
-            gettitle();
-            getrest_id();
-            getimage();
-            getaddress();
-            getcity();
-            getpincode();
+            getdata();
         }
-        public void getrest_id()
+        public void getdata()
         {
             con.Open();
-            string query = "select top 3 rest_id from [restro]";
+            string query = "SELECT * FROM restro";
             SqlCommand cmd = new SqlCommand(query, con);
             SqlDataReader dr = cmd.ExecuteReader();
+
             while (dr.Read())
             {
-                rest_id.Add((dr["rest_id"]).ToString());
-            }
-            dr.Close();
-            con.Close();
-        }
-        public void gettitle()
-        {
-            con.Open();
-            string query = "select top 3 title from [restro]";
-            SqlCommand cmd = new SqlCommand(query, con);
-            SqlDataReader dr = cmd.ExecuteReader();
-            while (dr.Read())
-            {
-                title.Add((dr["title"]).ToString());
-            }
-            dr.Close();
-            con.Close();
-        }
-        public void getimage()
-        {
-            con.Open();
-            string query = "select top 3 image from [restro]";
-            SqlCommand cmd = new SqlCommand(query, con);
-            SqlDataReader dr = cmd.ExecuteReader();
-            while (dr.Read())
-            {
-                image.Add((dr["image"]).ToString());
-            }
-            dr.Close();
-            con.Close();
-        }
-        public void getaddress()
-        {
-            con.Open();
-            string query = "select top 3 address from [restro]";
-            SqlCommand cmd = new SqlCommand(query, con);
-            SqlDataReader dr = cmd.ExecuteReader();
-            while (dr.Read())
-            {
-                address.Add((dr["address"]).ToString());
-            }
-            dr.Close();
-            con.Close();
-        }
-        public void getcity()
-        {
-            con.Open();
-            string query = "select top 3 city from [restro]";
-            SqlCommand cmd = new SqlCommand(query, con);
-            SqlDataReader dr = cmd.ExecuteReader();
-            while (dr.Read())
-            {
-                city.Add((dr["city"]).ToString());
-            }
-            dr.Close();
-            con.Close();
-        }
-        public void getpincode()
-        {
-            con.Open();
-            string query = "select top 3 pincode from [restro]";
-            SqlCommand cmd = new SqlCommand(query, con);
-            SqlDataReader dr = cmd.ExecuteReader();
-            while (dr.Read())
-            {
-                pincode.Add((dr["pincode"]).ToString());
+                rest_id.Add(dr["rest_id"].ToString());
+                title.Add(dr["title"].ToString());
+                image.Add(dr["image"].ToString());
+                address.Add(dr["address"].ToString());
+                city.Add(dr["city"].ToString());
+                pincode.Add(dr["pincode"].ToString());
             }
             dr.Close();
             con.Close();
         }
     }
-
-
 }

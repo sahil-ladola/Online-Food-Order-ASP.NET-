@@ -148,7 +148,6 @@
                                     </div>
                                     <div class="form-actions">
                                         <asp:Button ID="btnsubmit" class="btn btn-primary" runat="server" Text="Save" OnClick="btnsubmit_Click" />
-                                        <%--<a href="add_menu.aspx" class="btn btn-inverse">Cancel</a>--%>
                                     </div>
                                 </div>
                             </form>

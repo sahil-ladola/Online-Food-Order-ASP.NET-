@@ -115,7 +115,7 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                             <% if (req_id.Count == 0)
+                                             <% if (reg_id.Count == 0)
                                                 {
                                             %>
                                             <tr>
@@ -126,7 +126,7 @@
                                             <% }
                                                 else
                                                 {
-                                                    for (int i = 0; i <= req_id.Count - 1; i++)
+                                                    for (int i = 0; i <= reg_id.Count - 1; i++)
                                                     {
                                             %>
                                             <tr>
@@ -152,7 +152,7 @@
                                                 <td><% Response.Write(res_address[i]);%></td>
                                                 <td><% Response.Write(res_city[i]);%></td>
                                                 <td><% Response.Write(res_pincode[i]);%></td>
-                                                <td><% Response.Write("<a href='delete_request.aspx?res_req_del=" + req_id[i] + "' class='btn btn-danger btn-flat btn-addon btn-xs m-b-10'><i class='fa fa-trash-o' style='font-size:16px'></i></a><a href='accept_request.aspx?res_req_acc=" + req_id[i] + "' class='btn btn-info btn-flat btn-addon btn-sm m-b-10 m-l-5'><i class='fa fa-check'></i></a>"); %></td>
+                                                <td><% Response.Write("<a href='delete_request.aspx?res_req_del=" + reg_id[i] + "' class='btn btn-danger btn-flat btn-addon btn-xs m-b-10'><i class='fa fa-trash-o' style='font-size:16px'></i></a><a href='accept_request.aspx?res_req_acc=" + reg_id[i] + "' class='btn btn-info btn-flat btn-addon btn-sm m-b-10 m-l-5'><i class='fa fa-check'></i></a>"); %></td>
                                             </tr>
                                             <%
                                                     }

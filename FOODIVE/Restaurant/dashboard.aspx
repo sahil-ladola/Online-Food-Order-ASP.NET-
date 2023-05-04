@@ -58,19 +58,14 @@
                         <li><a href=" dashboard.aspx"><i class="fa fa-tachometer active"></i><span>Dashboard</span></a>
                         </li>
                         <li class="nav-label">Log</li>
-                        <%--<li><a href=" all_users.aspx"><span><i class="fa fa-user f-s-20 "></i></span><span>Users</span></a></li>--%>
+                        
                         <li><a class="has-arrow" href="#" aria-expanded="false"><i class="fa fa-archive f-s-20 color-warning"></i><span class="hide-menu">Restaurant</span></a>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href=" all_restaurant.aspx">All Restaurant</a></li>
                                 <li><a href="add_restaurant.aspx">Add Sub-branch Restaurant</a></li>
                             </ul>
                         </li>
-                        <%--<li><a class="has-arrow" href="#" aria-expanded="false"><i class="fa fa-delicious f-s-20 color-warning"></i><span class="hide-menu">Categories</span></a>
-                            <ul aria-expanded="false" class="collapse">
-                                <li><a href="all_category.aspx">All Categories</a></li>
-                                <li><a href="add_category.aspx">Add Categories</a></li>
-                            </ul>
-                        </li>--%>
+                        
                         <li><a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-cutlery" aria-hidden="true"></i><span class="hide-menu">Menu</span></a>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href=" all_menu.aspx">All Menues</a></li>
@@ -90,28 +85,14 @@
                             <h4 class="m-b-0 text-white">Dashboard</h4>
                         </div>
                         <div class="row">
-                            <%--<div class="col-md-4">
-                                <div class="card p-30">
-                                    <div class="media">
-                                        <div class="media-left meida media-middle">
-                                            <span><i class="fa fa-home f-s-40 "></i></span>
-                                        </div>
-                                        <div class="media-body media-text-right">
-                                            <h2></h2>
-                                            <p class="m-b-0">Restaurants</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>--%>
-
-                            <div class="col-md-6">
+                             <div class="col-md-6">
                                 <div class="card p-30">
                                     <div class="media">
                                         <div class="media-left meida media-middle">
                                             <span><i class="fa fa-cutlery f-s-40" aria-hidden="true"></i></span>
                                         </div>
                                         <div class="media-body media-text-right">
-                                            <h2></h2>
+                                            <asp:Label ID="lbldishes" style="font-size : 2rem" CssClass="text-secondary" runat="server" Text="0"></asp:Label>
                                             <p class="m-b-0">Dishes</p>
                                         </div>
                                     </div>
@@ -125,41 +106,17 @@
                                             <span><i class="fa fa-shopping-cart f-s-40" aria-hidden="true"></i></span>
                                         </div>
                                         <div class="media-body media-text-right">
-                                            <h2></h2>
+                                            <asp:Label ID="lbltotal" style="font-size : 2rem" CssClass="text-secondary" runat="server" Text="0"></asp:Label>
                                             <p class="m-b-0">Total Orders</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <%--<div class="col-md-4">
-                                <div class="card p-30">
-                                    <div class="media">
-                                        <div class="media-left meida media-middle">
-                                            <span><i class="fa fa-users f-s-40"></i></span>
-                                        </div>
-                                        <div class="media-body media-text-right">
-                                            <h2></h2>
-                                            <p class="m-b-0">Users</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>--%>
+                           
                         </div>
                         <div class="row">
-                            <%--<div class="col-md-4">
-                                <div class="card p-30">
-                                    <div class="media">
-                                        <div class="media-left meida media-middle">
-                                            <span><i class="fa fa-th-large f-s-40" aria-hidden="true"></i></span>
-                                        </div>
-                                        <div class="media-body media-text-right">
-                                            <h2></h2>
-                                            <p class="m-b-0">Categories</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>--%>
+                            
                             <div class="col-md-6">
                                 <div class="card p-30">
                                     <div class="media">
@@ -167,7 +124,7 @@
                                             <span><i class="fa fa-spinner f-s-40" aria-hidden="true"></i></span>
                                         </div>
                                         <div class="media-body media-text-right">
-                                            <h2></h2>
+                                            <asp:Label ID="lblprocess" style="font-size : 2rem" CssClass="text-secondary" runat="server" Text="0"></asp:Label>
                                             <p class="m-b-0">Processing Orders</p>
                                         </div>
                                     </div>
@@ -181,7 +138,7 @@
                                             <span><i class="fa fa-check f-s-40" aria-hidden="true"></i></span>
                                         </div>
                                         <div class="media-body media-text-right">
-                                            <h2></h2>
+                                            <asp:Label ID="lbldeliver" style="font-size : 2rem" CssClass="text-secondary" runat="server" Text="0"></asp:Label>
                                             <p class="m-b-0">Delivered Orders</p>
                                         </div>
                                     </div>
@@ -197,7 +154,7 @@
                                             <span><i class="fa fa-times f-s-40" aria-hidden="true"></i></span>
                                         </div>
                                         <div class="media-body media-text-right">
-                                            <h2></h2>
+                                            <asp:Label ID="lblcancel" style="font-size : 2rem" CssClass="text-secondary" runat="server" Text="0"></asp:Label>
                                             <p class="m-b-0">Cancelled Orders</p>
                                         </div>
                                     </div>
@@ -215,7 +172,7 @@
                                             <span><i class="fa fa-usd f-s-40" aria-hidden="true"></i></span>
                                         </div>
                                         <div class="media-body media-text-right">
-                                            <h2></h2>
+                                            <asp:Label ID="lblearn" style="font-size : 2rem" CssClass="text-secondary" runat="server" Text="0"></asp:Label>
                                             <p class="m-b-0">Total Earnings</p>
                                         </div>
                                     </div>

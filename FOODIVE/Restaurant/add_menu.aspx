@@ -11,8 +11,8 @@
     <meta name="author" content="">
     <title>FOODIVE | Add Menu</title>
     <style>
-        *{
-            font-family:'Open Sans', sans-serif;
+        * {
+            font-family: 'Open Sans', sans-serif;
         }
     </style>
     <link rel="shortcut icon" href="../Image/Favicon/Favicon.png" type="image/x-icon">
@@ -57,19 +57,13 @@
                         <li><a href=" dashboard.aspx"><i class="fa fa-tachometer"></i><span>Dashboard</span></a>
                         </li>
                         <li class="nav-label">Log</li>
-                        <%--<li><a href=" all_users.aspx"><span><i class="fa fa-user f-s-20 "></i></span><span>Users</span></a></li>--%>
+
                         <li><a class="has-arrow" href="#" aria-expanded="false"><i class="fa fa-archive f-s-20 color-warning"></i><span class="hide-menu">Restaurant</span></a>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href=" all_restaurant.aspx">All Restaurant</a></li>
                                 <li><a href="add_restaurant.aspx">Add Sub-branch Restaurant</a></li>
                             </ul>
                         </li>
-                        <%--<li><a class="has-arrow" href="#" aria-expanded="false"><i class="fa fa-delicious f-s-20 color-warning"></i><span class="hide-menu">Categories</span></a>
-                            <ul aria-expanded="false" class="collapse">
-                                <li><a href="all_category.aspx">All Categories</a></li>
-                                <li><a href="add_category.aspx">Add Categories</a></li>
-                            </ul>
-                        </li>--%>
                         <li><a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-cutlery" aria-hidden="true"></i><span class="hide-menu">Menu</span></a>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href=" all_menu.aspx">All Menues</a></li>
@@ -90,62 +84,56 @@
                             <h4 class="m-b-0 text-white">Add Menu</h4>
                         </div>
                         <div class="card-body">
-                            <form action='' runat="server" method='post' enctype="multipart/form-data">
+                            <form runat="server" method='post' enctype="multipart/form-data">
                                 <div class="form-body">
                                     <hr>
                                     <div class="row p-t-20">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label class="control-label">Dish Name</label>
-                                                <asp:TextBox ID="txtd_name" class="form-control" pattern="[A-Z a-z0-9]*" runat="server"></asp:TextBox>
+                                                <label class="control-label">Dish Name </label>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtd_name" ErrorMessage="All field must be filled" Display="Dynamic" ForeColor="Red" Font-Bold="True" Font-Size="Small"></asp:RequiredFieldValidator>
+                                                        <asp:RegularExpressionValidator ID="validationfirstname" runat="server" ControlToValidate="txtd_name" ErrorMessage="Invalid Dish name" ValidationExpression="[a-zA-Z][ a-zA-Z]{2,}" Display="Dynamic" ForeColor="Red" Font-Bold="True" Font-Size="Small"></asp:RegularExpressionValidator>
+                                                <asp:TextBox ID="txtd_name" class="form-control" runat="server"></asp:TextBox>
                                             </div>
                                         </div>
 
                                         <div class="col-md-6">
                                             <div class="form-group has-danger">
-                                                <label class="control-label">Description</label>
-                                                <asp:TextBox ID="txtabout" pattern="[A-Z a-z0-9]*" class="form-control form-control-danger" runat="server"></asp:TextBox>
+                                                <label class="control-label">Description </label>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtabout" ErrorMessage="All field must be filled" Display="Dynamic" ForeColor="Red" Font-Bold="True" Font-Size="Small"></asp:RequiredFieldValidator>
+                                                <asp:TextBox ID="txtabout" class="form-control form-control-danger" runat="server"></asp:TextBox>
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="row p-t-20">
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                             <div class="form-group">
                                                 <label class="control-label">Price </label>
-                                                <asp:TextBox ID="txtprice" runat="server" pattern="[0-9]*" class="form-control" placeholder="00.00/-"></asp:TextBox>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="txtprice" ErrorMessage="All field must be filled" Display="Dynamic" ForeColor="Red" Font-Bold="True" Font-Size="Small"></asp:RequiredFieldValidator>
+                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="txtprice" ErrorMessage="Invalid Price" Display="Dynamic" ValidationExpression="^\d{0,8}(\.\d{1,4})?$" ForeColor="Red" Font-Bold="True" Font-Size="Small"></asp:RegularExpressionValidator>
+                                                <asp:TextBox ID="txtprice" runat="server" class="form-control" placeholder="00.00/-"></asp:TextBox>
                                             </div>
                                         </div>
 
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                             <div class="form-group has-danger">
-                                                <label class="control-label">Image</label>
+                                                <label class="control-label">Image </label>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="file" ErrorMessage="All field must be filled" Display="Dynamic" ForeColor="Red" Font-Bold="True" Font-Size="Small"></asp:RequiredFieldValidator>
                                                 <asp:FileUpload ID="file" class="form-control form-control-danger" placeholder="12n" runat="server" />
                                             </div>
                                         </div>
-                                    </div>
 
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label class="control-label">Select Restaurant</label>
-                                                <select name="res_name" class="form-control custom-select" data-placeholder="Choose a Category" tabindex="1">
-                                                    <option>-- Select Restaurant --</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                             <div class="form-group">
                                                 <label class="control-label">Select Category</label>
-                                                <select name="res_name" class="form-control custom-select" data-placeholder="Choose a Category" tabindex="1">
-                                                    <option>-- Select Category --</option>
-                                                </select>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="DropDownList1" InitialValue="-1" ErrorMessage="Option must be selected" Display="Dynamic" ForeColor="Red" Font-Bold="True" Font-Size="Small"></asp:RequiredFieldValidator>
+                                                <asp:DropDownList ID="DropDownList1" class="form-control" runat="server"></asp:DropDownList>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="form-actions">
                                         <asp:Button ID="btnsubmit" class="btn btn-primary" runat="server" Text="Save" OnClick="btnsubmit_Click" />
-                                        <a href="add_menu.aspx" class="btn btn-inverse">Cancel</a>
                                     </div>
                                 </div>
                             </form>

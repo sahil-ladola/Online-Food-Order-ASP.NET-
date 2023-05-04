@@ -11,8 +11,8 @@
     <meta name="author" content="">
     <title>FOODIVE | Add Sub-branch Restaurant</title>
     <style>
-        *{
-            font-family:'Open Sans', sans-serif;
+        * {
+            font-family: 'Open Sans', sans-serif;
         }
     </style>
     <link rel="shortcut icon" href="../Image/Favicon/Favicon.png" type="image/x-icon">
@@ -91,65 +91,124 @@
                             <h4 class="m-b-0 text-white">Add Sub-branch Restaurant</h4>
                         </div>
                         <div class="card-body">
-                            <%--<form action='' method='post' enctype="multipart/form-data">
+                            <form runat="server" enctype="multipart/form-data">
                                 <div class="form-body">
                                     <hr>
+                                    <h4 class="text-dark">Manager Details</h4>
+                                    <hr />
+                                    <div class="row p-t-20">
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="name">Full Name</label>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ValidationGroup="validate" runat="server" ControlToValidate="txtname" ErrorMessage="All field must be filled" Display="Dynamic" ForeColor="Red" Font-Bold="True" Font-Size="Small"></asp:RequiredFieldValidator>
+                                                <asp:RegularExpressionValidator ID="validationfirstname" ValidationGroup="validate" runat="server" ControlToValidate="txtname" ErrorMessage="Invalid Full name" ValidationExpression="[a-zA-Z][ a-zA-Z]{2,}" Display="Dynamic" ForeColor="Red" Font-Bold="True" Font-Size="Small"></asp:RegularExpressionValidator>
+                                                <asp:TextBox ID="txtname" class="form-control form-control-danger" runat="server"></asp:TextBox>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <div class="form-group has-danger">
+                                                <label for="phone_number">Phone number</label>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ValidationGroup="validate" ControlToValidate="txtphone_number" ErrorMessage="All field must be filled" Display="Dynamic" ForeColor="Red" Font-Bold="True" Font-Size="Small"></asp:RequiredFieldValidator>
+                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ValidationGroup="validate" ControlToValidate="txtphone_number" ErrorMessage="Invalid Phone number" Display="Dynamic" ValidationExpression="[6789][0-9]{9}" ForeColor="Red" Font-Bold="True" Font-Size="Small"></asp:RegularExpressionValidator>
+                                                <asp:TextBox ID="txtphone_number" class="form-control form-control-danger" runat="server" MaxLength="10"></asp:TextBox>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="email">Email</label>
+                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator3" ValidationGroup="validate" runat="server" ControlToValidate="txtemail" ErrorMessage="Invalid Email" ValidationExpression="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" Display="Dynamic" ForeColor="Red" Font-Bold="True" Font-Size="Small"></asp:RegularExpressionValidator>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator6" ValidationGroup="validate" runat="server" ControlToValidate="txtemail" ErrorMessage="All field must be filled" Display="Dynamic" ForeColor="Red" Font-Bold="True" Font-Size="Small"></asp:RequiredFieldValidator>
+                                                <asp:TextBox ID="txtemail" class="form-control form-control-danger" TextMode="Email" runat="server"></asp:TextBox>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <div class="row p-t-20">
                                         <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label class="control-label">Dish Name</label>
-                                                <input type="text" name="d_name" pattern="[A-Z a-z0-9]*" class="form-control">
+                                            <div class="form-group has-danger">
+                                                <label for="password">Password</label>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ValidationGroup="validate" ControlToValidate="txtpassword" ErrorMessage="All field must be filled" Display="Dynamic" ForeColor="Red" Font-Bold="True" Font-Size="Small"></asp:RequiredFieldValidator>
+                                                <asp:RegularExpressionValidator ID="RegularExpressionValidatorpassword" ValidationGroup="validate" runat="server" ControlToValidate="txtpassword" ErrorMessage="Password must contain: Minimum 8 characters atleast 1 UpperCase Alphabet, 1 LowerCase Alphabet, 1 Number and 1 Special Character" ForeColor="Red" Display="Dynamic" ValidationExpression="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,}" Font-Bold="True" Font-Size="Small"></asp:RegularExpressionValidator>
+                                                <asp:TextBox ID="txtpassword" TextMode="Password" class="form-control form-control-danger" runat="server"></asp:TextBox>
                                             </div>
                                         </div>
-
                                         <div class="col-md-6">
                                             <div class="form-group has-danger">
-                                                <label class="control-label">Description</label>
-                                                <input type="text" name="about" pattern="[A-Z a-z0-9]*" class="form-control form-control-danger">
+                                                <label for="Aadhaar">Aadhaar card photo</label>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" ValidationGroup="validate" runat="server" ControlToValidate="FileAadhaar" ErrorMessage="All field must be filled" Display="Dynamic" ForeColor="Red" Font-Bold="True" Font-Size="Small"></asp:RequiredFieldValidator>
+                                                <asp:FileUpload ID="FileAadhaar" class="form-control form-control-danger" runat="server" />
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="row p-t-20">
+                                        <div class="col-md-4">
+                                            <div class="form-group has-danger">
+                                                <label for="address">Address</label>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" ValidationGroup="validate" runat="server" ControlToValidate="txtaddress" ErrorMessage="All field must be filled" Display="Dynamic" ForeColor="Red" Font-Bold="True" Font-Size="Small"></asp:RequiredFieldValidator>
+                                                <asp:TextBox ID="txtaddress" class="form-control form-control-danger" runat="server"></asp:TextBox>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <div class="form-group has-danger">
+                                                <label for="city">City</label>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator12" runat="server" ValidationGroup="validate" ControlToValidate="txtcity" ErrorMessage="All field must be filled" Display="Dynamic" ForeColor="Red" Font-Bold="True" Font-Size="Small"></asp:RequiredFieldValidator>
+                                    <asp:RegularExpressionValidator ID="validationcity" runat="server" ValidationGroup="validate" ControlToValidate="txtcity" ErrorMessage="Invalid City" ValidationExpression="[a-zA-Z][a-zA-Z]{2,}" Display="Dynamic" ForeColor="Red" Font-Bold="True" Font-Size="Small"></asp:RegularExpressionValidator>
+                                    <asp:TextBox ID="txtcity" class="form-control form-control-danger" runat="server"></asp:TextBox>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="pincode">Pincode</label>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator13" runat="server" ValidationGroup="validate" ControlToValidate="txtpincode" ErrorMessage="All field must be filled" Display="Dynamic" ForeColor="Red" Font-Bold="True" Font-Size="Small"></asp:RequiredFieldValidator>
+                                    <asp:RegularExpressionValidator ID="validationPincode" runat="server" ValidationGroup="validate" ControlToValidate="txtpincode" ErrorMessage="Invalid Pincode" ValidationExpression="[0-9]{6}" Display="Dynamic" ForeColor="Red" Font-Bold="True" Font-Size="Small"></asp:RegularExpressionValidator>
+                                    <asp:TextBox MaxLength="6" class="form-control form-control-danger" ID="txtpincode" runat="server"></asp:TextBox>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <h4 class="text-dark">Sub-Restaurant Details</h4>
+                                    <hr>
 
                                     <div class="row p-t-20">
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label class="control-label">Price </label>
-                                                <input type="text" name="price" pattern="[0-9]*" class="form-control" placeholder="00.00/-">
-                                            </div>
+                                        <div class="col-md-4">
+                                            <label for="txtrestro_name">Sub-Restaurant name</label>
+                                            <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ValidationGroup="validate" ControlToValidate="txtrestro_name" ErrorMessage="All field must be filled" Display="Dynamic" ForeColor="Red" Font-Bold="True" Font-Size="Small"></asp:RequiredFieldValidator>
+                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ValidationGroup="validate" ControlToValidate="txtrestro_name" ErrorMessage="Invalid Restaurant name" ValidationExpression="[a-zA-Z0-9][ a-zA-Z0-9]{2,}" Display="Dynamic" ForeColor="Red" Font-Bold="True" Font-Size="Small"></asp:RegularExpressionValidator>
+                                            <asp:TextBox ID="txtrestro_name" class="form-control form-control-danger" runat="server"></asp:TextBox>
                                         </div>
-
-                                        <div class="col-md-6">
-                                            <div class="form-group has-danger">
-                                                <label class="control-label">Image</label>
-                                                <input type="file" name="file" id="lastName" class="form-control form-control-danger" placeholder="12n">
-                                            </div>
+                                        <div class="col-md-4">
+                                            <label for="txtrestro_phone_number">Phone number</label>
+                                            <asp:RequiredFieldValidator ID="RequiredFieldValidator5" ValidationGroup="validate" runat="server" ControlToValidate="txtrestro_phone_number" ErrorMessage="All field must be filled" Display="Dynamic" ForeColor="Red" Font-Bold="True" Font-Size="Small"></asp:RequiredFieldValidator>
+                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator4" ValidationGroup="validate" runat="server" ControlToValidate="txtrestro_phone_number" ErrorMessage="Invalid Phone number" Display="Dynamic" ValidationExpression="[6789][0-9]{9}" ForeColor="Red" Font-Bold="True" Font-Size="Small"></asp:RegularExpressionValidator>
+                                            <asp:TextBox MaxLength="10" class="form-control form-control-danger" ID="txtrestro_phone_number" runat="server"></asp:TextBox>
                                         </div>
-                                    </div>
-
-                                    <div class="row">
-                                        <%--<div class="col-md-6">
-                                            <div class="form-group">
-                                                <label class="control-label">Select Restaurant</label>
-                                                <select name="res_name" class="form-control custom-select" data-placeholder="Choose a Category" tabindex="1">
-                                                    <option>-- Select Restaurant --</option>
-                                                </select>
-                                            </div>
-                                        </div>--%>
-                                        <%--<div class="col-md-12">
-                                            <div class="form-group">
-                                                <label class="control-label">Select Category</label>
-                                                <select name="res_name" class="form-control custom-select" data-placeholder="Choose a Category" tabindex="1">
-                                                    <option>-- Select Category --</option>
-                                                </select>
-                                            </div>
+                                        <div class="col-md-4">
+                                            <label for="txtrestro_email">Email</label>
+                                            <asp:RegularExpressionValidator ValidationGroup="validate" ID="RegularExpressionValidator5" runat="server" ControlToValidate="txtrestro_email" ErrorMessage="Invalid Email" ValidationExpression="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" Display="Dynamic" ForeColor="Red" Font-Bold="True" Font-Size="Small"></asp:RegularExpressionValidator>
+                                            <asp:RequiredFieldValidator ValidationGroup="validate" ID="RequiredFieldValidator9" runat="server" ControlToValidate="txtrestro_email" ErrorMessage="All field must be filled" Display="Dynamic" ForeColor="Red" Font-Bold="True" Font-Size="Small"></asp:RequiredFieldValidator>
+                                            <asp:TextBox ID="txtrestro_email" class="form-control form-control-danger" TextMode="Email" runat="server"></asp:TextBox>
                                         </div>
                                     </div>
-                                    <div class="form-actions">
-                                        <input type="submit" name="submit" class="btn btn-primary" value="Save">
-                                        <a href="add_menu.aspx" class="btn btn-inverse">Cancel</a>
+                                    <div class="row p-t-20">
+                                        <div class="col-md-6">
+                                            <label for="Filerestro_img">Sub-Restaurant image</label>
+                                            <asp:RequiredFieldValidator ValidationGroup="validate" ID="RequiredFieldValidator10" runat="server" ControlToValidate="Filerestro_img" ErrorMessage="All field must be filled" Display="Dynamic" ForeColor="Red" Font-Bold="True" Font-Size="Small"></asp:RequiredFieldValidator>
+                                            <asp:FileUpload ID="Filerestro_img" class="form-control form-control-danger" runat="server" />
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="txtaddress">Address</label>
+                                            <asp:RequiredFieldValidator ValidationGroup="validate" ID="RequiredFieldValidator11" runat="server" ControlToValidate="txtaddress" ErrorMessage="All field must be filled" Display="Dynamic" ForeColor="Red" Font-Bold="True" Font-Size="Small"></asp:RequiredFieldValidator>
+                                            <asp:TextBox ID="TextBox1" class="form-control form-control-danger" runat="server"></asp:TextBox>
+                                        </div>
                                     </div>
                                 </div>
-                            </form>--%>
+                                <div class="form-actions p-t-20">
+                                    <asp:Button ID="btnsubmit" class="btn btn-primary" runat="server" Text="Submit" OnClick="btnsubmit_Click" />
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>

@@ -12,67 +12,76 @@ namespace FOODIVE.Restaurant
 {
     public partial class Registration : System.Web.UI.Page
     {
-        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["dbconnection"].ConnectionString);
+        private readonly string connectionString = ConfigurationManager.ConnectionStrings["dbconnection"].ConnectionString;
+
         protected void Page_Load(object sender, EventArgs e)
-        { 
+        {
+            
         }
 
         protected void submit_Click(object sender, EventArgs e)
         {
             Page.Validate("validate");
-            con.Open();
-            String query = "select * from restro_manager where email = '" + txtemail.Text + "'";
-            SqlCommand result = new SqlCommand(query, con);
-            SqlDataReader dr = result.ExecuteReader();
-            if (dr.Read() == true)
+            if (!Page.IsValid)
             {
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "script", "<script>alert('Email is already taken.')</script>");
-                dr.Close();
-                con.Close();
+                return;
             }
-            else
+
+            using (var con = new SqlConnection(connectionString))
             {
-                if (!IsValidExtension(FileAadhaar.PostedFile.FileName))
+                try
                 {
-                    Page.ClientScript.RegisterStartupScript(this.GetType(), "script", "<script>alert('Only Images allowed.')</script>");
-                }
-                else
-                {
+                    con.Open();
+                    string query = "select * from restro_manager where email = @Email";
+                    using (var result = new SqlCommand(query, con))
+                    {
+                        result.Parameters.AddWithValue("@Email", txtemail.Text);
+                        using (var dr = result.ExecuteReader())
+                        {
+                            if (dr.Read())
+                            {
+                                Page.ClientScript.RegisterStartupScript(this.GetType(), "script", "<script>alert('Email is already taken.')</script>");
+                                return;
+                            }
+                        }
+                    }
+
+                    if (!IsValidExtension(FileAadhaar.PostedFile.FileName))
+                    {
+                        Page.ClientScript.RegisterStartupScript(this.GetType(), "script", "<script>alert('Only Images allowed.')</script>");
+                        return;
+                    }
+
                     double fileSize = FileAadhaar.PostedFile.ContentLength;
                     if (fileSize > 3145728.00)
                     {
                         Page.ClientScript.RegisterStartupScript(this.GetType(), "script", "<script>alert('You can only upload files of size lesser than 3 MB.')</script>");
+                        return;
                     }
-                    else
-                    {
-                        FileAadhaar.SaveAs(Request.PhysicalApplicationPath + "Image/Img/RestroMngProof/" + FileAadhaar.FileName.ToString());
-                        string path = "/Image/Img/RestroMngProof/" + FileAadhaar.FileName.ToString();
-                        Session["mng_name"] = txtname.Text;
-                        Session["mng_phone_num"] = txtphone_number.Text;
-                        Session["mng_email"] = txtemail.Text;
-                        Session["mng_password"] = txtpassword.Text;
-                        Session["mng_adharcard"] = path;
-                        Session["mng_address"] = txtaddress.Text;
-                        Session["mng_city"] = txtcity.Text;
-                        Session["mng_pincode"] = txtpincode.Text;
-                        Response.Redirect("Restro_Register.aspx");
-                    }
+
+                    FileAadhaar.SaveAs(Request.PhysicalApplicationPath + "Image/Img/RestroMngProof/" + FileAadhaar.FileName.ToString());
+                    string path = "/Image/Img/RestroMngProof/" + FileAadhaar.FileName.ToString();
+                    Session["mng_name"] = txtname.Text;
+                    Session["mng_phone_num"] = txtphone_number.Text;
+                    Session["mng_email"] = txtemail.Text;
+                    Session["mng_password"] = txtpassword.Text;
+                    Session["mng_adharcard"] = path;
+                    Session["mng_address"] = txtaddress.Text;
+                    Session["mng_city"] = txtcity.Text;
+                    Session["mng_pincode"] = txtpincode.Text;
+                    Response.Redirect("Restro_Register.aspx");
+                }
+                catch (Exception ex)
+                {
+                    Response.Write(ex);
                 }
             }
         }
+
         private bool IsValidExtension(string filePath)
         {
-            bool isValid = false;
             string[] fileExtensions = { ".bmp", ".jpg", ".png", ".gif", ".jpeg", ".BMP", ".JPG", ".PNG", ".GIF", ".JPEG" };
-
-            for (int i = 0; i <= fileExtensions.Length - 1; i++)
-            {
-                if (filePath.Contains(fileExtensions[i]))
-                {
-                    isValid = true;
-                }
-            }
-            return isValid;
+            return fileExtensions.Any(x => filePath.EndsWith(x, StringComparison.OrdinalIgnoreCase));
         }
 
         protected void reset_Click(object sender, EventArgs e)
